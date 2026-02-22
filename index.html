@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Елена | Декор и салон</title>
+    <title>Свадебный декор | Елена - Обнинск, Калуга, Москва</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="Елена - профессиональный декоратор. Оформление свадеб и праздников в Обнинске, Калуге, Наро-Фоминске и ближайших городах. Выезжаю по всей Калужской области и Москве. 20+ проектов в портфолио.">
+    <meta name="keywords" content="свадебный декор Обнинск, декор Калуга, оформление свадьбы, фотозона, декор торжеств, выездной декоратор">
+    <meta name="author" content="Елена">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Микроразметка для поисковиков -->
+    <div style="display:none;" itemscope itemtype="https://schema.org/LocalBusiness">
+        <span itemprop="name">Свадебный декор Елены</span>
+        <span itemprop="areaServed">Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва</span>
+        <span itemprop="priceRange">Договорная</span>
+    </div>
+    
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{
@@ -15,7 +28,7 @@
             flex-direction:column;
         }
         
-        /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ */
+        /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ С ВАШИМ ЦВЕТОМ */
         .menu-button {
             position: fixed;
             bottom: 25px;
@@ -23,7 +36,7 @@
             width: auto;
             min-width: 90px;
             height: 50px;
-            background: #d4af37;
+            background: #67bed9;
             border-radius: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 100;
@@ -44,7 +57,7 @@
         .menu-button:hover,
         .menu-button:active {
             transform: scale(1.05);
-            background: #c19b2e;
+            background: #4a9bbf;
         }
         
         .menu-icon {
@@ -75,7 +88,7 @@
         .sidenav h3 {
             font-size: 18px;
             font-weight: 300;
-            color: #d4af37;
+            color: #67bed9;
             margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 1px solid #f0f0f0;
@@ -104,7 +117,7 @@
         }
         
         .sidenav a:hover {
-            color: #d4af37;
+            color: #67bed9;
             padding-left: 10px;
         }
         
@@ -198,7 +211,7 @@
         }
         
         .about-highlight {
-            color: #d4af37;
+            color: #67bed9;
             font-weight: 400;
         }
         
@@ -283,7 +296,7 @@
         }
         
         .project-meta{
-            color:#d4af37;
+            color:#67bed9;
             font-size:14px;
             font-weight:500;
             margin-bottom:12px;
@@ -321,7 +334,7 @@
         }
         
         .back-link:hover {
-            color: #d4af37;
+            color: #67bed9;
         }
         
         /* СТРАНИЦЫ В РАЗРАБОТКЕ */
@@ -385,7 +398,7 @@
         }
         
         .phone-number a:hover {
-            color: #d4af37;
+            color: #67bed9;
         }
         
         .contact-icon {
@@ -413,6 +426,13 @@
             width: 36px;
             height: 36px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .city-info {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 10px;
+            font-weight: 300;
         }
         
         .protection-note{
@@ -469,6 +489,12 @@
                     Где стараюсь прожить её вместе с невестой, чтобы помочь выбрать то самое платье — то, в котором она почувствует себя собой.</p>
                     
                     <p>И конечно — декор. Мой взгляд на него — честный, структурный, но при этом очень тёплый. Потому что физик во мне любит порядок, а женщина — нежность.</p>
+                    
+                    <p>
+                        <span class="about-highlight">География моих проектов</span><br>
+                        Основная работа — в Обнинске и ближайших городах: Боровск, Жуков, Белоусово, Балабаново.<br>
+                        Также оформляю свадьбы в Калуге, Наро-Фоминске и с радостью выезжаю в Москву.
+                    </p>
                 </div>
                 
                 <div class="about-photo">
@@ -747,7 +773,6 @@
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
-
             <div class="row">
                 <!-- Проект 1: Выписка -->
                 <div class="column">
@@ -767,7 +792,6 @@
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
-
             <div class="dev-section">
                 <h3>Раздел в разработке</h3>
                 <p>
@@ -777,7 +801,6 @@
                 <p>
                     А пока вы можете посмотреть примеры работ в наших соцсетях:
                 </p>
-                
                 <div class="social-row">
                     <a href="https://t.me/decorobninsk" target="_blank" class="social-icon-link">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="social-icon-img">
@@ -796,7 +819,6 @@
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
-
             <div class="dev-section">
                 <h3>Раздел в разработке</h3>
                 <p>
@@ -806,13 +828,12 @@
                 <p>
                     А пока вы можете посмотреть больше в наших соцсетях:
                 </p>
-                
                 <div class="social-row">
                     <a href="https://instagram.com/wedding_salon_obninsk" target="_blank" class="social-icon-link">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon-img">
                     </a>
                     <a href="https://vk.com/wedding_salon_obninsk" target="_blank" class="social-icon-link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo.svg" alt="VK" class="social-icon-img">
+                        <img src="https://vk.com/images/icons/favicons/favicon-32x32.png" alt="VK" class="social-icon-img">
                     </a>
                 </div>
             </div>
@@ -838,6 +859,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon-img">
             </a>
         </div>
+        <div class="city-info">Работаю в Обнинске, Калуге, Наро-Фоминске и выезжаю по всей Калужской области и Москве</div>
         <div class="protection-note">фотографии защищены</div>
     </div>
 
