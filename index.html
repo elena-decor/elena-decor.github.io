@@ -454,6 +454,17 @@
             margin-top: 20px;
         }
     </style>
+    
+    <!-- 🔥 ЗАЩИТА ОТ ПРАВОГО КЛИКА НА ИЗОБРАЖЕНИЯХ (НОВОЕ) 🔥 -->
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                alert('📸 Фотографии защищены авторским правом. Для использования свяжитесь с Еленой.');
+                return false;
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Микроразметка для поисковиков (структурированные данные) -->
@@ -536,7 +547,8 @@
                 <!-- Проект 1 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/ylgvnU89ehY9Hw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/9fbNDwmw/2025-07-03-13-10-50-print-00015.jpg" alt="Круглая арка">
+                        <!-- ⚠️ ВАЖНО: добавлен loading="lazy" для всех фото -->
+                        <img class="project-cover" src="https://i.postimg.cc/9fbNDwmw/2025-07-03-13-10-50-print-00015.jpg" loading="lazy" alt="Круглая арка">
                         <div class="project-info">
                             <div class="project-title">Круглая арка, белые блоки + ткань</div>
                             <div class="project-meta">52 фото</div>
@@ -547,7 +559,7 @@
                 <!-- Проект 2 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/pAvYUjq3smKetA" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/zvNffQ0s/2025-07-04-14-36-09-print-00007.jpg" alt="Белые розы">
+                        <img class="project-cover" src="https://i.postimg.cc/zvNffQ0s/2025-07-04-14-36-09-print-00007.jpg" loading="lazy" alt="Белые розы">
                         <div class="project-info">
                             <div class="project-title">Белые розы + ткань</div>
                             <div class="project-meta">79 фото</div>
@@ -558,7 +570,7 @@
                 <!-- Проект 3 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/V2JZtdw6UfMXaQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/FHjbTY6N/IMG-4098.png" alt="Бело-зеленый">
+                        <img class="project-cover" src="https://i.postimg.cc/FHjbTY6N/IMG-4098.png" loading="lazy" alt="Бело-зеленый">
                         <div class="project-info">
                             <div class="project-title">Бело-зеленый с новыми стойками под цветы</div>
                             <div class="project-meta">17 фото</div>
@@ -569,7 +581,7 @@
                 <!-- Проект 4 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/BHGGzfbsiWjnXQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/xCMc24W7/IMG-7361.jpg" alt="Белое дерево">
+                        <img class="project-cover" src="https://i.postimg.cc/xCMc24W7/IMG-7361.jpg" loading="lazy" alt="Белое дерево">
                         <div class="project-info">
                             <div class="project-title">Белое дерево и гипсофила</div>
                             <div class="project-meta">32 фото</div>
@@ -580,7 +592,7 @@
                 <!-- Проект 5 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/0Vv7-bvCkWGMAQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/QMHr1Kmb/2025-08-23-13-14-07-print-00008.jpg" alt="Я хочу быть с тобой">
+                        <img class="project-cover" src="https://i.postimg.cc/QMHr1Kmb/2025-08-23-13-14-07-print-00008.jpg" loading="lazy" alt="Я хочу быть с тобой">
                         <div class="project-info">
                             <div class="project-title">Я хочу быть с тобой</div>
                             <div class="project-meta">36 фото</div>
@@ -591,7 +603,7 @@
                 <!-- Проект 6 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/4_b2nWFxg3JzWA" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/tTktb7QX/IMG-4101.webp" alt="Black & White">
+                        <img class="project-cover" src="https://i.postimg.cc/tTktb7QX/IMG-4101.webp" loading="lazy" alt="Black & White">
                         <div class="project-info">
                             <div class="project-title">Black & White</div>
                             <div class="project-meta">66 фото</div>
@@ -602,7 +614,7 @@
                 <!-- Проект 7 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/SxDDvUwuPgoXHQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/8CQZqTZ1/2025-07-25-15-26-30-print-00004.jpg" alt="Ткани и паникум">
+                        <img class="project-cover" src="https://i.postimg.cc/8CQZqTZ1/2025-07-25-15-26-30-print-00004.jpg" loading="lazy" alt="Ткани и паникум">
                         <div class="project-info">
                             <div class="project-title">Ткани и паникум</div>
                             <div class="project-meta">49 фото</div>
@@ -618,7 +630,7 @@
                 <!-- Проект 8 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/uhhOtxIEk0mt1A" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/ZRwgqywQ/IMG-1265.jpg" alt="Минимализм">
+                        <img class="project-cover" src="https://i.postimg.cc/ZRwgqywQ/IMG-1265.jpg" loading="lazy" alt="Минимализм">
                         <div class="project-info">
                             <div class="project-title">Минимализм с живыми цветами. Новые гостевые стойки</div>
                             <div class="project-meta">45 фото</div>
@@ -629,7 +641,7 @@
                 <!-- Проект 9 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/NvyYX39Fll6k_A" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/zvjnNnpw/2025-02-01-12-12-30-print-00012.jpg" alt="Мох и аспидистра">
+                        <img class="project-cover" src="https://i.postimg.cc/zvjnNnpw/2025-02-01-12-12-30-print-00012.jpg" loading="lazy" alt="Мох и аспидистра">
                         <div class="project-info">
                             <div class="project-title">Мох и аспидистра</div>
                             <div class="project-meta">64 фото</div>
@@ -640,7 +652,7 @@
                 <!-- Проект 10 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/XNuQKvpHdVeJuQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/P58Qp85Q/0G7A9816.jpg" alt="Гипсофила">
+                        <img class="project-cover" src="https://i.postimg.cc/P58Qp85Q/0G7A9816.jpg" loading="lazy" alt="Гипсофила">
                         <div class="project-info">
                             <div class="project-title">Гипсофила и воздушная фотозона</div>
                             <div class="project-meta">81 фото + 17 видео</div>
@@ -656,7 +668,7 @@
                 <!-- Проект 11 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/BbZUjWHH2xbIAQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/50cTfwpT/2025-08-02-15-53-04-print-00043.jpg" alt="Серебро и жемчуг">
+                        <img class="project-cover" src="https://i.postimg.cc/50cTfwpT/2025-08-02-15-53-04-print-00043.jpg" loading="lazy" alt="Серебро и жемчуг">
                         <div class="project-info">
                             <div class="project-title">Серебро и жемчуг</div>
                             <div class="project-meta">51 фото</div>
@@ -667,7 +679,7 @@
                 <!-- Проект 12 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/E7mIZQ7wbP9Mhg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/fyqZM8LP/2025-07-19-13-48-36-print-00001.jpg" alt="Сочная фуксия">
+                        <img class="project-cover" src="https://i.postimg.cc/fyqZM8LP/2025-07-19-13-48-36-print-00001.jpg" loading="lazy" alt="Сочная фуксия">
                         <div class="project-info">
                             <div class="project-title">Сочная фуксия</div>
                             <div class="project-meta">18 фото</div>
@@ -683,7 +695,7 @@
                 <!-- Проект 13 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/P1FNgTSvoLFIng" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/Tw12t7JF/2025-10-28-12-14-26-print-00012.jpg" alt="Нежная пудра">
+                        <img class="project-cover" src="https://i.postimg.cc/Tw12t7JF/2025-10-28-12-14-26-print-00012.jpg" loading="lazy" alt="Нежная пудра">
                         <div class="project-info">
                             <div class="project-title">Нежная пудра</div>
                             <div class="project-meta">21 фото</div>
@@ -694,7 +706,7 @@
                 <!-- Проект 14 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/ZrJe-14GkTsV9g" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/B6pYnNW5/IMG-8438.jpg" alt="Белый деревянный бэк + голубые цветы">
+                        <img class="project-cover" src="https://i.postimg.cc/B6pYnNW5/IMG-8438.jpg" loading="lazy" alt="Белый деревянный бэк + голубые цветы">
                         <div class="project-info">
                             <div class="project-title">Белый деревянный бэк + голубые цветы</div>
                             <div class="project-meta">36 фото</div>
@@ -710,7 +722,7 @@
                 <!-- Проект 15 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/Crp-xrELmvBXKg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/wTrmdNrd/078.jpg" alt="RED wedding">
+                        <img class="project-cover" src="https://i.postimg.cc/wTrmdNrd/078.jpg" loading="lazy" alt="RED wedding">
                         <div class="project-info">
                             <div class="project-title">RED wedding</div>
                             <div class="project-meta">19 фото</div>
@@ -726,7 +738,7 @@
                 <!-- Проект 16: Forest wedding -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/UG-4Kn_X0k42jw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/rFT6570D/2025-07-25-14-20-29-print-00022.jpg" alt="Forest wedding">
+                        <img class="project-cover" src="https://i.postimg.cc/rFT6570D/2025-07-25-14-20-29-print-00022.jpg" loading="lazy" alt="Forest wedding">
                         <div class="project-info">
                             <div class="project-title">Forest wedding</div>
                             <div class="project-meta">45 фото</div>
@@ -742,7 +754,7 @@
                 <!-- Проект 17: Deep in the woods -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/rWhypVHdQJUsPQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/T2CjcDh5/IMG-7302.jpg" alt="Deep in the woods">
+                        <img class="project-cover" src="https://i.postimg.cc/T2CjcDh5/IMG-7302.jpg" loading="lazy" alt="Deep in the woods">
                         <div class="project-info">
                             <div class="project-title">Deep in the woods</div>
                             <div class="project-meta">29 фото</div>
@@ -753,7 +765,7 @@
                 <!-- Проект 18: Peach and Green -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/rcXC88SCAANwLw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/V6TfYgDL/2020-03-24-06-26-37.jpg" alt="Peach and Green">
+                        <img class="project-cover" src="https://i.postimg.cc/V6TfYgDL/2020-03-24-06-26-37.jpg" loading="lazy" alt="Peach and Green">
                         <div class="project-info">
                             <div class="project-title">Peach and Green</div>
                             <div class="project-meta">13 фото</div>
@@ -769,7 +781,7 @@
                 <!-- Проект 19: Country wedding -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/AxUDM-LwvJr2KQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/Df60DVVm/IMG-2123.jpg" alt="Country wedding">
+                        <img class="project-cover" src="https://i.postimg.cc/Df60DVVm/IMG-2123.jpg" loading="lazy" alt="Country wedding">
                         <div class="project-info">
                             <div class="project-title">Country wedding</div>
                             <div class="project-meta">28 фото</div>
@@ -780,7 +792,7 @@
                 <!-- Проект 20: The Purple Garden -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/3fPi68YPW-Rvcg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/TPPvps7F/2024-04-12-04-12-40-%285%29.jpg" alt="The Purple Garden">
+                        <img class="project-cover" src="https://i.postimg.cc/TPPvps7F/2024-04-12-04-12-40-%285%29.jpg" loading="lazy" alt="The Purple Garden">
                         <div class="project-info">
                             <div class="project-title">The Purple Garden</div>
                             <div class="project-meta">32 фото</div>
@@ -799,7 +811,7 @@
                 <!-- Проект 1: Выписка -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/eIB0-ux6vLv9Cw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/3NB7VLX1/DSC00276.jpg" alt="Выписка">
+                        <img class="project-cover" src="https://i.postimg.cc/3NB7VLX1/DSC00276.jpg" loading="lazy" alt="Выписка">
                         <div class="project-info">
                             <div class="project-title">Выписка</div>
                             <div class="project-meta">12 фото</div>
