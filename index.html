@@ -378,7 +378,7 @@
         /* КОНТАКТЫ */
         .contacts {
             margin-top: 60px;
-            padding: 40px 0 20px;
+            padding: 0 0 20px;
             border-top: 1px solid #eee;
             text-align: center;
             color: #888;
@@ -453,6 +453,107 @@
             font-size:11px;
             margin-top: 20px;
         }
+        
+        /* СТИЛИ ДЛЯ ФОРМЫ */
+        .form-container {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 40px 0 20px;
+            border: 1px solid #eee;
+        }
+        
+        .form-title {
+            text-align: center;
+            font-weight: 300;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+        
+        .form-group {
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+        
+        .form-group.full-width {
+            flex: 1 1 100%;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border 0.2s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #67bed9;
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px 0;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .checkbox-group input {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        
+        .btn-submit {
+            background: #67bed9;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: block;
+            margin: 0 auto;
+            min-width: 200px;
+        }
+        
+        .btn-submit:hover {
+            background: #4a9bbf;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .form-group {
+                flex: 1 1 auto;
+            }
+        }
     </style>
     
     <!-- 🔥 ЗАЩИТА ОТ ПРАВОГО КЛИКА НА ИЗОБРАЖЕНИЯХ -->
@@ -498,6 +599,8 @@
             <li><a onclick="showPage('photozone'); closeMenu()">Фотозона в студии</a></li>
             <li><a onclick="showPage('balloons'); closeMenu()">Шары</a></li>
             <li><a onclick="showPage('brides'); closeMenu()">Невесты</a></li>
+            <!-- НОВЫЙ ПУНКТ: Контакты -->
+            <li><a onclick="showPage('contacts'); closeMenu()">Контакты</a></li>
         </ul>
     </div>
 
@@ -802,7 +905,7 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ФОТОЗОНА В СТУДИИ (Только Выписка) -->
+        <!-- СТРАНИЦА ФОТОЗОНА В СТУДИИ -->
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -821,6 +924,8 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- Здесь будут новые проекты -->
         </div>
 
         <!-- СТРАНИЦА ШАРЫ (в разработке) -->
@@ -833,20 +938,7 @@
                     Здесь скоро появятся проекты с шарами —<br>
                     воздушные арки, фотозоны и декор для праздников.
                 </p>
-                <p>
-                    А пока вы можете посмотреть примеры работ в наших соцсетях:
-                </p>
-                <div class="social-row">
-                    <a href="https://t.me/decorobninsk" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="social-icon-img">
-                    </a>
-                    <a href="https://wa.me/79036367999" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-icon-img">
-                    </a>
-                    <a href="https://instagram.com/decor.obninsk" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon-img">
-                    </a>
-                </div>
+                <!-- Контакты УДАЛЕНЫ, остался только текст -->
             </div>
         </div>
 
@@ -860,40 +952,69 @@
                     Здесь будут фотографии невест из моего салона —<br>
                     образы, детали, вдохновение.
                 </p>
-                <p>
-                    А пока вы можете посмотреть больше в наших соцсетях:
-                </p>
-                <div class="social-row">
-                    <a href="https://instagram.com/wedding_salon_obninsk" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon-img">
-                    </a>
-                    <a href="https://vk.com/wedding_salon_obninsk" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vk.svg" alt="VK" class="social-icon-img" style="filter: invert(70%) sepia(60%) saturate(500%) hue-rotate(150deg) brightness(90%) contrast(90%);">
-                    </a>
-                </div>
+                <!-- Контакты УДАЛЕНЫ, остался только текст -->
+            </div>
+        </div>
+
+        <!-- НОВАЯ СТРАНИЦА: Контакты (пока пустая) -->
+        <div id="page-contacts" class="page">
+            <h1>Контакты</h1>
+            <div class="back-link" onclick="showPage('about')">← на главную</div>
+            <div class="dev-section">
+                <h3>Страница готовится</h3>
+                <p>Здесь скоро появятся адрес салона, карта, самовывоз шаров и все контакты.</p>
+                <p>А пока вы можете связаться со мной через плавающее меню или форму ниже.</p>
             </div>
         </div>
     </div>
 
-    <!-- КОНТАКТЫ -->
+    <!-- ПОДВАЛ С ФОРМОЙ (новый) -->
     <div class="contacts">
-        <div class="contacts-title">контакты</div>
-        <div class="phone-number">
-            <a href="tel:+79036367999">
-                <span class="contact-icon">📞</span> +7 (903) 636-79-99
-            </a>
+        <div class="form-container">
+            <h3 class="form-title">Нужен расчёт стоимости?</h3>
+            
+            <!--
+                ВНИМАНИЕ: Это тестовая форма (данные никуда не отправляются).
+                Чтобы заявки приходили в ВК:
+                1. Зарегистрируйся на qform.io
+                2. Создай форму с такими же полями
+                3. Настрой интеграцию с ВКонтакте
+                4. Получи код формы и замени action
+            -->
+            <form action="#" method="POST" onsubmit="alert('Форма пока в настройке. Для тестовых целей.'); return false;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Ваш телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Выберите услугу</option>
+                            <option value="decor">Декор</option>
+                            <option value="photozone">Фотозона</option>
+                            <option value="balloons">Шары</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <textarea class="form-control" placeholder="Комментарий (необязательно)" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">Я соглашаюсь на обработку персональных данных</label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Отправить заявку</button>
+            </form>
         </div>
-        <div class="social-row">
-            <a href="https://t.me/elena_luce_solare" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="social-icon-img">
-            </a>
-            <a href="https://wa.me/79036367999" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-icon-img">
-            </a>
-            <a href="https://instagram.com/decor.obninsk" target="_blank" rel="noopener noreferrer" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon-img">
-            </a>
-        </div>
+
         <div class="city-info">Работаю в Обнинске и области, Калуге, Наро-Фоминске и выезжаю по всей Калужской области и Москве</div>
         <div class="protection-note">фотографии защищены</div>
     </div>
