@@ -455,7 +455,7 @@
         }
     </style>
     
-    <!-- 🔥 ЗАЩИТА ОТ ПРАВОГО КЛИКА НА ИЗОБРАЖЕНИЯХ (НОВОЕ) 🔥 -->
+    <!-- 🔥 ЗАЩИТА ОТ ПРАВОГО КЛИКА НА ИЗОБРАЖЕНИЯХ -->
     <script>
         document.addEventListener('contextmenu', function(e) {
             if (e.target.tagName === 'IMG') {
@@ -531,7 +531,7 @@
                 </div>
                 
                 <div class="about-photo">
-                    <img src="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg" alt="Елена">
+                    <img src="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg" alt="Елена" loading="lazy">
                 </div>
             </div>
         </div>
@@ -547,7 +547,6 @@
                 <!-- Проект 1 -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/ylgvnU89ehY9Hw" target="_blank" class="project-card">
-                        <!-- ⚠️ ВАЖНО: добавлен loading="lazy" для всех фото -->
                         <img class="project-cover" src="https://i.postimg.cc/9fbNDwmw/2025-07-03-13-10-50-print-00015.jpg" loading="lazy" alt="Круглая арка">
                         <div class="project-info">
                             <div class="project-title">Круглая арка, белые блоки + ткань</div>
@@ -807,8 +806,10 @@
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
+            
+            <!-- Проект 1: Выписка -->
+            <h2>Выписка</h2>
             <div class="row">
-                <!-- Проект 1: Выписка -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/eIB0-ux6vLv9Cw" target="_blank" class="project-card">
                         <img class="project-cover" src="https://i.postimg.cc/3NB7VLX1/DSC00276.jpg" loading="lazy" alt="Выписка">
@@ -818,6 +819,50 @@
                             <div class="project-tags">панели solaair • фигуры ПВХ • шары</div>
                         </div>
                     </a>
+                </div>
+            </div>
+
+            <!-- НОВЫЙ ПРОЕКТ: Феи -->
+            <h2>Феи</h2>
+            <div class="row">
+                <!-- Обложка проекта -->
+                <div class="column">
+                    <a href="https://disk.yandex.ru/d/..." target="_blank" class="project-card">
+                        <img class="project-cover" src="https://i.ibb.co/TxsjKKtW/DSC00579.jpg" loading="lazy" alt="Феи">
+                        <div class="project-info">
+                            <div class="project-title">Феи</div>
+                            <div class="project-meta">9 фото</div>
+                            <div class="project-tags">фотозона • студия • сказка</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Остальные фото проекта Феи (галерея) -->
+            <div class="row">
+                <div class="column">
+                    <img src="https://i.ibb.co/5yskNv6/DSC00605.jpg" loading="lazy" alt="Феи 1" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/0RdvnJT8/DSC00601.jpg" loading="lazy" alt="Феи 2" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/fY2HmZJy/DSC00565.jpg" loading="lazy" alt="Феи 3" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/5hJg985F/DSC00563.jpg" loading="lazy" alt="Феи 4" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/TDrvWMbY/DSC00559.jpg" loading="lazy" alt="Феи 5" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/fYHsVR7n/DSC00557.jpg" loading="lazy" alt="Феи 6" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/h1d0LWY1/DSC00432.jpg" loading="lazy" alt="Феи 7" style="width:100%; border-radius:12px; margin-bottom:15px;">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/wrzNKv8t/DSC00541.jpg" loading="lazy" alt="Феи 8" style="width:100%; border-radius:12px; margin-bottom:15px;">
                 </div>
             </div>
         </div>
