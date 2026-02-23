@@ -375,7 +375,7 @@
             line-height: 1.6;
         }
         
-        /* КОНТАКТЫ */
+        /* КОНТАКТЫ И ФОРМА */
         .contacts {
             margin-top: 60px;
             padding: 0 0 20px;
@@ -393,58 +393,10 @@
             text-transform: uppercase;
         }
         
-        .phone-number {
-            margin-bottom: 20px;
-        }
-        
-        .phone-number a {
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .phone-number a:hover {
-            color: #67bed9;
-        }
-        
-        .contact-icon {
-            font-size: 20px;
-            opacity: 0.8;
-        }
-        
-        .social-row {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .social-icon-link {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        
-        .social-icon-link:hover {
-            transform: scale(1.1);
-        }
-        
-        .social-icon-img {
-            width: 36px;
-            height: 36px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-        
         .city-info {
             color: #aaa;
             font-size: 12px;
-            margin-top: 10px;
+            margin-top: 20px;
             font-weight: 300;
         }
         
@@ -454,23 +406,55 @@
             margin-top: 20px;
         }
         
-        /* СТИЛИ ДЛЯ ФОРМЫ */
-        .form-container {
+        /* СТИЛИ ДЛЯ АККОРДЕОНА */
+        .accordion-container {
             background: #f9f9f9;
             border-radius: 20px;
-            padding: 40px 30px;
             margin: 40px 0 20px;
             border: 1px solid #eee;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
         
-        .form-title {
-            text-align: center;
+        .accordion-header {
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .accordion-header h3 {
             font-weight: 300;
-            font-size: 24px;
+            font-size: 20px;
             color: #333;
-            margin-bottom: 30px;
+            margin: 0;
         }
         
+        .accordion-arrow {
+            font-size: 24px;
+            color: #67bed9;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-arrow.open {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 30px;
+        }
+        
+        .accordion-content.open {
+            max-height: 500px;
+            padding: 0 30px 30px 30px;
+        }
+        
+        /* СТИЛИ ДЛЯ ФОРМЫ */
         .form-row {
             display: flex;
             flex-wrap: wrap;
@@ -552,6 +536,9 @@
             }
             .form-group {
                 flex: 1 1 auto;
+            }
+            .accordion-header h3 {
+                font-size: 18px;
             }
         }
     </style>
@@ -938,7 +925,6 @@
                     Здесь скоро появятся проекты с шарами —<br>
                     воздушные арки, фотозоны и декор для праздников.
                 </p>
-                <!-- Контакты УДАЛЕНЫ, остался только текст -->
             </div>
         </div>
 
@@ -952,7 +938,6 @@
                     Здесь будут фотографии невест из моего салона —<br>
                     образы, детали, вдохновение.
                 </p>
-                <!-- Контакты УДАЛЕНЫ, остался только текст -->
             </div>
         </div>
 
@@ -968,51 +953,56 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ С ФОРМОЙ (новый) -->
+    <!-- ПОДВАЛ С АККОРДЕОНОМ -->
     <div class="contacts">
-        <div class="form-container">
-            <h3 class="form-title">Нужен расчёт стоимости?</h3>
-            
-            <!--
-                ВНИМАНИЕ: Это тестовая форма (данные никуда не отправляются).
-                Чтобы заявки приходили в ВК:
-                1. Зарегистрируйся на qform.io
-                2. Создай форму с такими же полями
-                3. Настрой интеграцию с ВКонтакте
-                4. Получи код формы и замени action
-            -->
-            <form action="#" method="POST" onsubmit="alert('Форма пока в настройке. Для тестовых целей.'); return false;">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Ваше имя" required>
+        <!-- АККОРДЕОН -->
+        <div class="accordion-container" id="accordion">
+            <div class="accordion-header" onclick="toggleAccordion()">
+                <h3>Нужен расчёт стоимости?</h3>
+                <span class="accordion-arrow" id="accordionArrow">▼</span>
+            </div>
+            <div class="accordion-content" id="accordionContent">
+                <!--
+                    ВНИМАНИЕ: Это тестовая форма (данные никуда не отправляются).
+                    Чтобы заявки приходили в ВК:
+                    1. Зарегистрируйся на qform.io
+                    2. Создай форму с такими же полями
+                    3. Настрой интеграцию с ВКонтакте
+                    4. Получи код формы и замени action
+                -->
+                <form action="#" method="POST" onsubmit="alert('Форма пока в настройке. Для тестовых целей.'); return false;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Ваш телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Выберите услугу</option>
+                                <option value="decor">Декор</option>
+                                <option value="photozone">Фотозона</option>
+                                <option value="balloons">Шары</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Ваш телефон" required>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <textarea class="form-control" placeholder="Комментарий (необязательно)" rows="2"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <select class="form-control" required>
-                            <option value="" disabled selected>Выберите услугу</option>
-                            <option value="decor">Декор</option>
-                            <option value="photozone">Фотозона</option>
-                            <option value="balloons">Шары</option>
-                            <option value="other">Другое</option>
-                        </select>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">Я соглашаюсь на обработку персональных данных</label>
                     </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <textarea class="form-control" placeholder="Комментарий (необязательно)" rows="2"></textarea>
-                    </div>
-                </div>
-                
-                <div class="checkbox-group">
-                    <input type="checkbox" id="consent" required>
-                    <label for="consent">Я соглашаюсь на обработку персональных данных</label>
-                </div>
-                
-                <button type="submit" class="btn-submit">Отправить заявку</button>
-            </form>
+                    
+                    <button type="submit" class="btn-submit">Отправить заявку</button>
+                </form>
+            </div>
         </div>
 
         <div class="city-info">Работаю в Обнинске и области, Калуге, Наро-Фоминске и выезжаю по всей Калужской области и Москве</div>
@@ -1036,7 +1026,47 @@
             });
             document.getElementById('page-' + pageId).classList.add('active');
             closeMenu();
+            
+            // Сбрасываем скролл при переключении страницы
+            window.scrollTo(0, 0);
         }
+        
+        // Функция для аккордеона
+        function toggleAccordion() {
+            const content = document.getElementById('accordionContent');
+            const arrow = document.getElementById('accordionArrow');
+            
+            content.classList.toggle('open');
+            arrow.classList.toggle('open');
+        }
+        
+        // Функция для автоматического открытия на компьютере при 80% скролла
+        function checkScrollAndOpenAccordion() {
+            // Только на компьютере (ширина > 768px)
+            if (window.innerWidth > 768) {
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                // Вычисляем процент прокрутки
+                const scrollPercent = (scrollPosition / (documentHeight - windowHeight)) * 100;
+                
+                // Если прокрутили 80% и аккордеон ещё не открыт
+                if (scrollPercent >= 80) {
+                    const content = document.getElementById('accordionContent');
+                    const arrow = document.getElementById('accordionArrow');
+                    
+                    // Открываем аккордеон, если он ещё не открыт
+                    if (!content.classList.contains('open')) {
+                        content.classList.add('open');
+                        arrow.classList.add('open');
+                    }
+                }
+            }
+        }
+        
+        // Слушаем событие скролла
+        window.addEventListener('scroll', checkScrollAndOpenAccordion);
     </script>
 </body>
 </html>
