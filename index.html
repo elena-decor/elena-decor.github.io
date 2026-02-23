@@ -32,7 +32,7 @@
         body{
             background:#fafafa;
             font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding:20px;
+            padding:20px 20px 120px 20px; /* Увеличен нижний отступ для плашки */
             color:#333;
             min-height:100vh;
             display:flex;
@@ -42,7 +42,7 @@
         /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ */
         .menu-button {
             position: fixed;
-            bottom: 25px;
+            bottom: 85px; /* Подняли выше, чтобы не перекрывалось с плашкой */
             right: 25px;
             width: auto;
             min-width: 90px;
@@ -375,49 +375,32 @@
             line-height: 1.6;
         }
         
-        /* КОНТАКТЫ И ФОРМА */
-        .contacts {
-            margin-top: 60px;
-            padding: 0 0 20px;
+        /* ===== ЗАКРЕПЛЁННАЯ ПЛАШКА ===== */
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-top: 1px solid #eee;
-            text-align: center;
-            color: #888;
-            font-weight: 300;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            padding: 15px 20px;
         }
         
-        .contacts-title {
-            font-size: 14px;
-            color: #aaa;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-        
-        .city-info {
-            color: #aaa;
-            font-size: 12px;
-            margin-top: 20px;
-            font-weight: 300;
-        }
-        
-        .protection-note{
-            color:#ccc;
-            font-size:11px;
-            margin-top: 20px;
-        }
-        
-        /* СТИЛИ ДЛЯ АККОРДЕОНА */
         .accordion-container {
+            max-width: 1200px;
+            margin: 0 auto;
             background: #f9f9f9;
             border-radius: 20px;
-            margin: 40px 0 20px;
             border: 1px solid #eee;
             overflow: hidden;
             transition: all 0.3s ease;
         }
         
         .accordion-header {
-            padding: 20px 30px;
+            padding: 15px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -427,13 +410,13 @@
         
         .accordion-header h3 {
             font-weight: 300;
-            font-size: 20px;
+            font-size: 18px;
             color: #333;
             margin: 0;
         }
         
         .accordion-arrow {
-            font-size: 24px;
+            font-size: 20px;
             color: #67bed9;
             transition: transform 0.3s ease;
         }
@@ -446,12 +429,12 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
-            padding: 0 30px;
+            padding: 0 25px;
         }
         
         .accordion-content.open {
-            max-height: 500px;
-            padding: 0 30px 30px 30px;
+            max-height: 450px;
+            padding: 0 25px 25px 25px;
         }
         
         /* СТИЛИ ДЛЯ ФОРМЫ */
@@ -474,7 +457,7 @@
         
         .form-control {
             width: 100%;
-            padding: 14px 18px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 30px;
             font-size: 14px;
@@ -515,9 +498,9 @@
             background: #67bed9;
             color: white;
             border: none;
-            padding: 14px 40px;
+            padding: 12px 30px;
             border-radius: 30px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             cursor: pointer;
             transition: background 0.2s;
@@ -531,15 +514,41 @@
         }
         
         @media (max-width: 768px) {
+            body {
+                padding: 20px 20px 100px 20px;
+            }
+            .menu-button {
+                bottom: 70px;
+            }
+            .accordion-header h3 {
+                font-size: 16px;
+            }
             .form-row {
                 flex-direction: column;
+                gap: 10px;
             }
             .form-group {
                 flex: 1 1 auto;
             }
-            .accordion-header h3 {
-                font-size: 18px;
+            .accordion-content.open {
+                max-height: 500px;
             }
+        }
+        
+        /* КОНТАКТЫ (старый блок больше не используется) */
+        .city-info {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .protection-note {
+            color: #ccc;
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
     
@@ -586,7 +595,7 @@
             <li><a onclick="showPage('photozone'); closeMenu()">Фотозона в студии</a></li>
             <li><a onclick="showPage('balloons'); closeMenu()">Шары</a></li>
             <li><a onclick="showPage('brides'); closeMenu()">Невесты</a></li>
-            <!-- НОВЫЙ ПУНКТ: Контакты -->
+            <!-- Пункт Контакты -->
             <li><a onclick="showPage('contacts'); closeMenu()">Контакты</a></li>
         </ul>
     </div>
@@ -911,8 +920,6 @@
                     </a>
                 </div>
             </div>
-            
-            <!-- Здесь будут новые проекты -->
         </div>
 
         <!-- СТРАНИЦА ШАРЫ (в разработке) -->
@@ -921,10 +928,7 @@
             <div class="back-link" onclick="showPage('about')">← на главную</div>
             <div class="dev-section">
                 <h3>Раздел в разработке</h3>
-                <p>
-                    Здесь скоро появятся проекты с шарами —<br>
-                    воздушные арки, фотозоны и декор для праздников.
-                </p>
+                <p>Здесь скоро появятся проекты с шарами — воздушные арки, фотозоны и декор для праздников.</p>
             </div>
         </div>
 
@@ -934,28 +938,23 @@
             <div class="back-link" onclick="showPage('about')">← на главную</div>
             <div class="dev-section">
                 <h3>Раздел в разработке</h3>
-                <p>
-                    Здесь будут фотографии невест из моего салона —<br>
-                    образы, детали, вдохновение.
-                </p>
+                <p>Здесь будут фотографии невест из моего салона — образы, детали, вдохновение.</p>
             </div>
         </div>
 
-        <!-- НОВАЯ СТРАНИЦА: Контакты (пока пустая) -->
+        <!-- СТРАНИЦА КОНТАКТЫ (в разработке) -->
         <div id="page-contacts" class="page">
             <h1>Контакты</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
             <div class="dev-section">
                 <h3>Страница готовится</h3>
                 <p>Здесь скоро появятся адрес салона, карта, самовывоз шаров и все контакты.</p>
-                <p>А пока вы можете связаться со мной через плавающее меню или форму ниже.</p>
             </div>
         </div>
     </div>
 
-    <!-- ПОДВАЛ С АККОРДЕОНОМ -->
-    <div class="contacts">
-        <!-- АККОРДЕОН -->
+    <!-- ЗАКРЕПЛЁННАЯ ПЛАШКА ВНИЗУ -->
+    <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
             <div class="accordion-header" onclick="toggleAccordion()">
                 <h3>Нужен расчёт стоимости?</h3>
@@ -1004,10 +1003,11 @@
                 </form>
             </div>
         </div>
-
-        <div class="city-info">Работаю в Обнинске и области, Калуге, Наро-Фоминске и выезжаю по всей Калужской области и Москве</div>
-        <div class="protection-note">фотографии защищены</div>
     </div>
+
+    <!-- Информация в подвале (не закреплённая) -->
+    <div class="city-info">Работаю в Обнинске и области, Калуге, Наро-Фоминске и выезжаю по всей Калужской области и Москве</div>
+    <div class="protection-note">фотографии защищены</div>
 
     <script>
         function toggleMenu() {
@@ -1031,7 +1031,7 @@
             window.scrollTo(0, 0);
         }
         
-        // Функция для аккордеона
+        // Функция для аккордеона (просто открытие/закрытие, без скролла)
         function toggleAccordion() {
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
@@ -1039,34 +1039,6 @@
             content.classList.toggle('open');
             arrow.classList.toggle('open');
         }
-        
-        // Функция для автоматического открытия на компьютере при 80% скролла
-        function checkScrollAndOpenAccordion() {
-            // Только на компьютере (ширина > 768px)
-            if (window.innerWidth > 768) {
-                const scrollPosition = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                
-                // Вычисляем процент прокрутки
-                const scrollPercent = (scrollPosition / (documentHeight - windowHeight)) * 100;
-                
-                // Если прокрутили 80% и аккордеон ещё не открыт
-                if (scrollPercent >= 80) {
-                    const content = document.getElementById('accordionContent');
-                    const arrow = document.getElementById('accordionArrow');
-                    
-                    // Открываем аккордеон, если он ещё не открыт
-                    if (!content.classList.contains('open')) {
-                        content.classList.add('open');
-                        arrow.classList.add('open');
-                    }
-                }
-            }
-        }
-        
-        // Слушаем событие скролла
-        window.addEventListener('scroll', checkScrollAndOpenAccordion);
     </script>
 </body>
 </html>
