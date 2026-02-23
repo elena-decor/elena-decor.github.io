@@ -27,6 +27,32 @@
     <meta name="yandex-verification" content="35497f6b8b6e8619" />
     <meta name="google-site-verification" content="google6d34b75076aa58eb" />
     
+    <!-- ===== СКРИПТ QFORM (вставлен в head) ===== -->
+    <script type="text/javascript" async="async">
+      (function () {
+        function init() {
+          const scr = document.createElement("script");
+          scr.type = "text/javascript";
+          scr.async = "async";
+          scr.src = "//cdn.qform.io/forms.js?v=" + new Date().getTime();
+          scr.charset="UTF-8";
+          const scrInsert = document.getElementsByTagName("script")[0];
+          scrInsert.parentNode.insertBefore(scr, scrInsert);
+        }
+        const d = document;
+        const w = window;
+        if (d.readyState === "interactive") {
+          init();
+        } else {
+          if (w.attachEvent) {
+            w.attachEvent("onload", init);
+          } else {
+            w.addEventListener("DOMContentLoaded", init, false);
+          }
+        }
+      })();
+    </script>
+    
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{
@@ -42,7 +68,7 @@
         /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ — ПОДНЯТА ВЫШЕ */
         .menu-button {
             position: fixed;
-            bottom: 110px;  /* УВЕЛИЧЕНО с 85px до 110px, чтобы не налезать на плашку */
+            bottom: 110px;
             right: 25px;
             width: auto;
             min-width: 90px;
@@ -433,84 +459,13 @@
         }
         
         .accordion-content.open {
-            max-height: 450px;
+            max-height: 600px;
             padding: 0 25px 25px 25px;
         }
         
-        /* СТИЛИ ДЛЯ ФОРМЫ */
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-            justify-content: center;
-        }
-        
-        .form-group {
-            flex: 1 1 200px;
-            min-width: 200px;
-        }
-        
-        .form-group.full-width {
-            flex: 1 1 100%;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border 0.2s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: #67bed9;
-        }
-        
-        select.form-control {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 15px;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 15px 0;
-            font-size: 13px;
-            color: #666;
-        }
-        
-        .checkbox-group input {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-        
-        .btn-submit {
-            background: #67bed9;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: block;
-            margin: 0 auto;
-            min-width: 200px;
-        }
-        
-        .btn-submit:hover {
-            background: #4a9bbf;
+        /* Стили для контейнера формы */
+        .qform-container {
+            margin-top: 10px;
         }
         
         @media (max-width: 768px) {
@@ -518,24 +473,16 @@
                 padding: 20px 20px 100px 20px;
             }
             .menu-button {
-                bottom: 100px;  /* УВЕЛИЧЕНО для телефонов — подняли ещё выше */
+                bottom: 100px;
             }
             .accordion-header h3 {
                 font-size: 16px;
             }
-            .form-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .form-group {
-                flex: 1 1 auto;
-            }
             .accordion-content.open {
-                max-height: 500px;
+                max-height: 700px;
             }
         }
         
-        /* КОНТАКТЫ (старый блок больше не используется) */
         .city-info {
             color: #aaa;
             font-size: 12px;
@@ -919,50 +866,7 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Проект 2: Феи -->
-            <h2>Феи</h2>
-            <div class="row">
-                <!-- Обложка проекта -->
-                <div class="column">
-                    <div class="project-card">
-                        <img class="project-cover" src="https://i.ibb.co/TxsjKKtW/DSC00579.jpg" loading="lazy" alt="Феи">
-                        <div class="project-info">
-                            <div class="project-title">Феи</div>
-                            <div class="project-meta">9 фото</div>
-                            <div class="project-tags">фотозона • студия • сказка</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Галерея фото проекта Феи -->
-            <div class="row">
-                <div class="column">
-                    <img src="https://i.ibb.co/gptd5w3/DSC00605.jpg" loading="lazy" alt="Феи 1" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/fzPLX0fB/DSC00601.jpg" loading="lazy" alt="Феи 2" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/d0rDnXZV/DSC00565.jpg" loading="lazy" alt="Феи 3" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/VYkcNSvm/DSC00563.jpg" loading="lazy" alt="Феи 4" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/WNsxVvPG/DSC00559.jpg" loading="lazy" alt="Феи 5" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/C5QfpdFM/DSC00557.jpg" loading="lazy" alt="Феи 6" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/7NphjWkN/DSC00432.jpg" loading="lazy" alt="Феи 7" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-                <div class="column">
-                    <img src="https://i.ibb.co/CsH5nr4L/DSC00541.jpg" loading="lazy" alt="Феи 8" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                </div>
-            </div>
+            <!-- Проект Феи временно убран до добавления фото -->
         </div>
 
         <!-- СТРАНИЦА ШАРЫ (в разработке) -->
@@ -1004,46 +908,10 @@
                 <span class="accordion-arrow" id="accordionArrow">▼</span>
             </div>
             <div class="accordion-content" id="accordionContent">
-                <!--
-                    ВНИМАНИЕ: Это тестовая форма (данные никуда не отправляются).
-                    Чтобы заявки приходили в ВК:
-                    1. Зарегистрируйся на qform.io
-                    2. Создай форму с такими же полями
-                    3. Настрой интеграцию с ВКонтакте
-                    4. Получи код формы и замени action
-                -->
-                <form action="#" method="POST" onsubmit="alert('Форма пока в настройке. Для тестовых целей.'); return false;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Ваш телефон" required>
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" required>
-                                <option value="" disabled selected>Выберите услугу</option>
-                                <option value="decor">Декор</option>
-                                <option value="photozone">Фотозона</option>
-                                <option value="balloons">Шары</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <textarea class="form-control" placeholder="Комментарий (необязательно)" rows="2"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="consent" required>
-                        <label for="consent">Я соглашаюсь на обработку персональных данных</label>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">Отправить заявку</button>
-                </form>
+                <div class="qform-container">
+                    <!-- ===== HTML-код формы QFORM ===== -->
+                    <div data-formid="form_sy2uJtkyaE_w6vNtgzWl60ICNOAaUxPZ"></div>
+                </div>
             </div>
         </div>
     </div>
