@@ -581,7 +581,7 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ДЕКОР -->
+        <!-- СТРАНИЦА ДЕКОР (ВСЕ ПРОЕКТЫ НА МЕСТЕ) -->
         <div id="page-decor" class="page">
             <h1>Декор</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -866,7 +866,6 @@
                     </a>
                 </div>
             </div>
-            <!-- Проект Феи временно убран до добавления фото -->
         </div>
 
         <!-- СТРАНИЦА ШАРЫ (в разработке) -->
@@ -889,7 +888,7 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА КОНТАКТЫ (ОБНОВЛЕНА С НОВОЙ КАРТОЙ) -->
+        <!-- СТРАНИЦА КОНТАКТЫ (ФИНАЛ) -->
         <div id="page-contacts" class="page">
             <h1>Контакты</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -897,28 +896,29 @@
             <div style="max-width:800px; margin:0 auto; padding:20px;">
                 <h2 style="font-weight:300; margin-bottom:30px;">Как меня найти</h2>
                 
-                <!-- Адреса и контакты -->
-                <div style="display:flex; flex-wrap:wrap; gap:30px; margin-bottom:40px;">
-                    <div style="flex:1 1 250px;">
-                        <h3 style="color:#67bed9; margin-bottom:10px;">📍 Свадебный салон</h3>
-                        <p style="margin-bottom:5px;">Калужская область, Обнинск, улица Лейпунского, 4</p>
-                        <p style="margin-bottom:5px;">📞 +7 (903) 636-79-99</p>
-                        <p style="margin-bottom:5px;">Работаем по предварительной записи</p>
-                        <p>суббота-воскресенье: с 11:00 до 18:00</p>
-                    </div>
-                    <div style="flex:1 1 250px;">
-                        <h3 style="color:#67bed9; margin-bottom:10px;">🎈 Самовывоз шаров</h3>
-                        <p style="margin-bottom:5px;">Калужская область, Обнинск, улица Гагарина, 46</p>
-                        <p style="margin-bottom:5px;">📞 +7 (903) 636-79-99</p>
-                        <p style="margin-bottom:5px;">Ежедневно до 22:00</p>
-                        <p>По предварительной договорённости</p>
-                    </div>
-                </div>
-
-                <!-- КАРТА (НОВАЯ, ИНТЕРАКТИВНАЯ) -->
-                <h2 style="font-weight:300; margin-bottom:20px;">📍 Карта проезда</h2>
+                <!-- КАРТА (ИНТЕРАКТИВНАЯ, РАСТЯНУТАЯ) -->
                 <div style="width:100%; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0f9cda4d718d97eb929ba907cd57bd3e1d0dedf5b1bf9c7ed3ee7faf189b0cb2&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+
+                <!-- КОНТАКТЫ ПОД КАРТОЙ (кликабельные телефоны) -->
+                <div style="margin-top: 25px; padding: 20px; background: #f9f9f9; border-radius: 16px;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1 1 250px;">
+                            <h3 style="color: #67bed9; margin-bottom: 10px;">📍 Свадебный салон</h3>
+                            <p style="margin-bottom: 5px;">ул. Лейпунского, 4</p>
+                            <p style="margin-bottom: 5px;">📞 <a href="tel:+79036367999" style="color: #67bed9; text-decoration: none;">+7 (903) 636-79-99</a></p>
+                            <p style="margin-bottom: 5px;">⏰ По предварительной записи</p>
+                            <p>суббота-воскресенье: 11:00–18:00</p>
+                        </div>
+                        <div style="flex: 1 1 250px;">
+                            <h3 style="color: #67bed9; margin-bottom: 10px;">🎈 Самовывоз шаров</h3>
+                            <p style="margin-bottom: 5px;">ул. Гагарина, 46</p>
+                            <p style="margin-bottom: 5px;">📞 <a href="tel:+79036367999" style="color: #67bed9; text-decoration: none;">+7 (903) 636-79-99</a></p>
+                            <p style="margin-bottom: 5px;">⏰ Ежедневно до 22:00</p>
+                            <p>❗ По предварительной договорённости</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
