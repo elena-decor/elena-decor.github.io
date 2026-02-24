@@ -547,8 +547,8 @@
     </div>
 
     <div class="main-content">
-        <!-- ГЛАВНАЯ СТРАНИЦА (О СЕБЕ) -->
-        <div id="page-about" class="page active">
+        <!-- ГЛАВНАЯ СТРАНИЦА (О СЕБЕ) — БЕЗ active -->
+        <div id="page-about" class="page">
             <div class="about-container">
                 <div class="about-text">
                     <h1>Всем привет! Меня зовут Елена.</h1>
@@ -1004,7 +1004,13 @@
                         p.classList.remove('active');
                     });
                     page.classList.add('active');
+                } else {
+                    // Если хеш невалидный, показываем "О себе"
+                    document.getElementById('page-about').classList.add('active');
                 }
+            } else {
+                // Если хеша нет, показываем "О себе"
+                document.getElementById('page-about').classList.add('active');
             }
         });
     </script>
