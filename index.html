@@ -450,25 +450,26 @@
                 font-size: 16px;
             }
             
-            /* Фиксируем шапку аккордеона при открытой форме */
+            /* КОГДА ФОРМА ОТКРЫТА — шапка всегда сверху */
+            .accordion-content.open {
+                padding-top: 80px !important; /* Отступ, чтобы поля были под шапкой */
+            }
+
             .accordion-content.open ~ .accordion-header {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
-                z-index: 1000;
                 background: white;
+                z-index: 1000;
                 border-bottom: 1px solid #eee;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
 
-            .accordion-content.open {
-                padding-top: 70px; /* Отступ, чтобы не перекрывать шапку */
-            }
-
-            /* Увеличиваем стрелочку для удобства */
+            /* Чтобы стрелочка была побольше и заметнее */
             .accordion-arrow {
-                font-size: 24px;
+                font-size: 26px;
+                padding: 5px;
             }
         }
         
@@ -1054,7 +1055,7 @@
             }
             
             closeMenu();
-            closeAccordion(); // Автоматически закрываем форму при переходе
+            closeAccordion();
             window.scrollTo(0, 0);
         }
         
@@ -1070,7 +1071,6 @@
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
             
-            // Если форма открыта и клик был не по аккордеону и не по его содержимому
             if (content.classList.contains('open') && !accordion.contains(e.target)) {
                 closeAccordion();
             }
