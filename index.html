@@ -9,7 +9,7 @@
     <meta name="author" content="Елена Нестерова">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph метатеги для красивого превью -->
+    <!-- Open Graph метатеги -->
     <meta property="og:title" content="Декоратор Елена Нестерова | Оформление праздников, фотозоны, воздушные шары" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://decor-obninsk.ru/" />
@@ -20,20 +20,25 @@
     <meta property="og:site_name" content="Декоратор Елена Нестерова" />
     <meta property="og:locale" content="ru_RU" />
     
-    <!-- Микроразметка для поисковиков -->
+    <!-- Микроразметка -->
     <meta name="yandex-verification" content="35497f6b8b6e8619" />
     <meta name="google-site-verification" content="google6d34b75076aa58eb" />
     
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{
-            background:#fafafa;
-            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding:20px 20px 120px 20px;
-            color:#333;
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px 20px 120px 20px;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ */
@@ -41,7 +46,6 @@
             position: fixed;
             bottom: 110px;
             right: 25px;
-            width: auto;
             min-width: 90px;
             height: 50px;
             background: #67bed9;
@@ -52,7 +56,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
+            transition: all 0.2s;
             border: none;
             color: white;
             padding: 0 20px;
@@ -62,8 +66,7 @@
             text-transform: uppercase;
         }
         
-        .menu-button:hover,
-        .menu-button:active {
+        .menu-button:hover {
             transform: scale(1.05);
             background: #4a9bbf;
         }
@@ -170,13 +173,12 @@
             color: #888;
             font-size: 14px;
             font-weight: 300;
-            letter-spacing: 0.3px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        /* ГЛАВНАЯ СТРАНИЦА (О СЕБЕ) */
+        /* ГЛАВНАЯ СТРАНИЦА */
         .about-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -207,7 +209,6 @@
             font-weight: 300;
             margin-bottom: 20px;
             color: #222;
-            text-align: left;
         }
         
         .about-text p {
@@ -223,110 +224,146 @@
             font-weight: 400;
         }
         
-        /* СТРАНИЦЫ ПРОЕКТОВ */
+        /* ===== ГИБКАЯ MASONRY-СЕТКА ===== */
         .page h1 {
-            font-size:28px;
-            font-weight:300;
-            margin-bottom:30px;
-            color:#222;
-            text-align:center;
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #222;
+            text-align: center;
         }
         
-        .page h2{
-            font-size:22px;
-            font-weight:400;
-            margin:40px 0 20px;
-            color:#444;
-            padding-bottom:8px;
-            border-bottom:2px solid #f0f0f0;
+        .page h2 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 40px 0 20px;
+            color: #444;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
         }
         
+        /* Базовый контейнер */
         .row {
             display: flex;
             flex-wrap: wrap;
-            margin: 0 -10px 30px -10px;
+            gap: 15px;
+            margin: 0 0 30px 0;
         }
         
-        .column {
-            flex: 0 0 100%;
-            padding: 0 10px;
-            margin-bottom: 20px;
+        /* По умолчанию Masonry (колонки) */
+        .row.masonry {
+            display: block;
+            column-count: 1;
+            column-gap: 15px;
         }
         
+        /* Адаптация колонок под экран */
         @media (min-width: 600px) {
-            .column {
-                flex: 0 0 50%;
+            .row.masonry {
+                column-count: 2;
             }
         }
         
         @media (min-width: 900px) {
-            .column {
-                flex: 0 0 33.333%;
+            .row.masonry {
+                column-count: 3;
             }
         }
         
-        .project-card{
-            background:white;
-            border-radius:12px;
-            overflow:hidden;
-            box-shadow:0 4px 12px rgba(0,0,0,0.05);
-            text-decoration:none;
-            color:inherit;
-            border:1px solid #eee;
-            display:block;
-            height:100%;
-            transition:transform 0.2s, box-shadow 0.2s;
+        @media (min-width: 1400px) {
+            .row.masonry {
+                column-count: 4;
+            }
         }
         
-        .project-card:hover{
-            transform:translateY(-4px);
-            box-shadow:0 12px 24px rgba(0,0,0,0.1);
+        /* Карточка проекта для Masonry */
+        .row.masonry .column {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+            break-inside: avoid;
         }
         
-        .project-cover{
-            width:100%;
-            height:200px;
-            object-fit:contain;
-            object-position:center;
-            background:#fafafa;
-            display:block;
+        /* Обычная строка для 1-3 проектов */
+        .row:not(.masonry) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
         
-        .project-info{
-            padding:16px;
+        .row:not(.masonry) .column {
+            flex: 0 0 auto;
+            width: calc(33.333% - 10px);
+            min-width: 250px;
         }
         
-        .project-title{
-            font-size:18px;
-            font-weight:500;
-            margin-bottom:8px;
-            color:#222;
+        @media (max-width: 768px) {
+            .row:not(.masonry) .column {
+                width: 100%;
+            }
         }
         
-        .project-meta{
-            color:#67bed9;
-            font-size:14px;
-            font-weight:500;
-            margin-bottom:12px;
+        /* Карточка проекта */
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #eee;
+            display: block;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .project-tags{
-            color:#777;
-            font-size:13px;
-            line-height:1.5;
-            border-top:1px solid #f0f0f0;
-            padding-top:12px;
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
         
-        .empty-message{
-            color:#999;
-            font-size:16px;
-            padding:30px;
-            text-align:center;
-            background:white;
-            border-radius:12px;
-            border:1px dashed #ddd;
-            margin-bottom:40px;
+        /* Фото-обложка */
+        .project-cover {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .project-info {
+            padding: 16px;
+        }
+        
+        .project-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        
+        .project-meta {
+            color: #67bed9;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .project-tags {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.5;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+        
+        .empty-message {
+            color: #999;
+            font-size: 16px;
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            border: 1px dashed #ddd;
+            margin-bottom: 40px;
         }
         
         .back-link {
@@ -352,7 +389,6 @@
             padding: 60px 20px;
             text-align: center;
             border: 1px solid #eee;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -372,7 +408,7 @@
             line-height: 1.6;
         }
         
-        /* ===== ЗАКРЕПЛЁННАЯ ПЛАШКА ===== */
+        /* ЗАКРЕПЛЁННАЯ ПЛАШКА */
         .fixed-footer {
             position: fixed;
             bottom: 0;
@@ -393,7 +429,6 @@
             border-radius: 20px;
             border: 1px solid #eee;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
         
         .accordion-header {
@@ -439,6 +474,7 @@
             margin-top: 10px;
         }
         
+        /* МОБИЛЬНЫЕ ПРАВКИ ДЛЯ АККОРДЕОНА */
         @media (max-width: 768px) {
             body {
                 padding: 20px 20px 100px 20px;
@@ -446,15 +482,11 @@
             .menu-button {
                 bottom: 100px;
             }
-            .accordion-header h3 {
-                font-size: 16px;
+            
+            .accordion-content.open {
+                padding-top: 80px;
             }
             
-            /* КОГДА ФОРМА ОТКРЫТА — шапка всегда сверху */
-            .accordion-content.open {
-                padding-top: 80px !important; /* Отступ, чтобы поля были под шапкой */
-            }
-
             .accordion-content.open ~ .accordion-header {
                 position: fixed;
                 top: 0;
@@ -465,8 +497,7 @@
                 border-bottom: 1px solid #eee;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
-
-            /* Чтобы стрелочка была побольше и заметнее */
+            
             .accordion-arrow {
                 font-size: 26px;
                 padding: 5px;
@@ -489,7 +520,7 @@
         }
     </style>
     
-    <!-- ЗАЩИТА ОТ ПРАВОГО КЛИКА -->
+    <!-- ЗАЩИТА ФОТО -->
     <script>
         document.addEventListener('contextmenu', function(e) {
             if (e.target.tagName === 'IMG') {
@@ -501,7 +532,7 @@
     </script>
 </head>
 <body>
-    <!-- Микроразметка для поисковиков -->
+    <!-- Микроразметка -->
     <div style="display:none;" itemscope itemtype="https://schema.org/LocalBusiness">
         <span itemprop="name">Декоратор Елена Нестерова</span>
         <span itemprop="areaServed">Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва</span>
@@ -533,7 +564,7 @@
     </div>
 
     <div class="main-content">
-        <!-- ГЛАВНАЯ СТРАНИЦА (О СЕБЕ) -->
+        <!-- О СЕБЕ -->
         <div id="page-about" class="page active">
             <div class="about-container">
                 <div class="about-text">
@@ -559,14 +590,14 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ДЕКОР -->
+        <!-- ДЕКОР -->
         <div id="page-decor" class="page">
             <h1>Декор</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
 
-            <!-- Лодочная станция -->
+            <!-- Лодочная станция (7 проектов - masonry) -->
             <h2>Лодочная станция</h2>
-            <div class="row">
+            <div class="row masonry">
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/ylgvnU89ehY9Hw" target="_blank" class="project-card">
                         <img class="project-cover" src="https://i.postimg.cc/9fbNDwmw/2025-07-03-13-10-50-print-00015.jpg" loading="lazy" alt="Круглая арка">
@@ -639,7 +670,7 @@
                 </div>
             </div>
 
-            <!-- Ресторан Веранда -->
+            <!-- Ресторан Веранда (3 проекта - строка) -->
             <h2>Ресторан «Веранда»</h2>
             <div class="row">
                 <div class="column">
@@ -674,7 +705,7 @@
                 </div>
             </div>
 
-            <!-- Rocket Hall -->
+            <!-- Rocket Hall (2 проекта - строка) -->
             <h2>Rocket Hall</h2>
             <div class="row">
                 <div class="column">
@@ -699,7 +730,7 @@
                 </div>
             </div>
 
-            <!-- Ресторан Карас -->
+            <!-- Ресторан Карас (2 проекта - строка) -->
             <h2>Ресторан «Карас»</h2>
             <div class="row">
                 <div class="column">
@@ -724,7 +755,7 @@
                 </div>
             </div>
 
-            <!-- Ресторан-бар LOFT -->
+            <!-- Ресторан-бар LOFT (1 проект - строка) -->
             <h2>Ресторан-бар LOFT</h2>
             <div class="row">
                 <div class="column">
@@ -739,7 +770,7 @@
                 </div>
             </div>
 
-            <!-- GoodWin Hall -->
+            <!-- GoodWin Hall (1 проект - строка) -->
             <h2>GoodWin Hall</h2>
             <div class="row">
                 <div class="column">
@@ -754,7 +785,7 @@
                 </div>
             </div>
 
-            <!-- ЭтноМир -->
+            <!-- ЭтноМир (2 проекта - строка) -->
             <h2>ЭтноМир</h2>
             <div class="row">
                 <div class="column">
@@ -779,7 +810,7 @@
                 </div>
             </div>
 
-            <!-- Яхонты Таруса -->
+            <!-- Яхонты Таруса (2 проекта - строка) -->
             <h2>Яхонты Таруса</h2>
             <div class="row">
                 <div class="column">
@@ -805,13 +836,12 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ФОТОЗОНА В СТУДИИ (8 проектов) -->
+        <!-- ФОТОЗОНА В СТУДИИ (8 проектов - masonry) -->
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
             
-            <!-- Единый ряд для всех 8 проектов -->
-            <div class="row">
+            <div class="row masonry">
                 <!-- 1. Выписка -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/eIB0-ux6vLv9Cw" target="_blank" class="project-card">
@@ -910,17 +940,32 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ШАРЫ (в разработке) -->
+                       <!-- СТРАНИЦА ШАРЫ -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
-            <div class="dev-section">
-                <h3>Раздел в разработке</h3>
-                <p>Здесь скоро появятся проекты с шарами — воздушные арки, фотозоны и декор для праздников.</p>
+
+            <!-- Нежность (3 фото) -->
+            <div class="row masonry">
+                <div class="column">
+                    <a href="/images/nezhnost/nezhnost (1).jpg" target="_blank">
+                        <img src="/images/nezhnost/nezhnost (1).jpg" style="width:100%; border-radius:12px; display:block; cursor:pointer;">
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="/images/nezhnost/nezhnost (2).jpg" target="_blank">
+                        <img src="/images/nezhnost/nezhnost (2).jpg" style="width:100%; border-radius:12px; display:block; cursor:pointer;">
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="/images/nezhnost/nezhnost (3).jpg" target="_blank">
+                        <img src="/images/nezhnost/nezhnost (3).jpg" style="width:100%; border-radius:12px; display:block; cursor:pointer;">
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- СТРАНИЦА НЕВЕСТЫ -->
+        <!-- НЕВЕСТЫ -->
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -959,7 +1004,7 @@
             </div>
         </div>
 
-                <!-- СТРАНИЦА КОНТАКТЫ (только декор, без кнопки) -->
+        <!-- КОНТАКТЫ -->
         <div id="page-contacts" class="page">
             <h1>Контакты</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -982,8 +1027,9 @@
                 </a>
             </div>
         </div>
+    </div>
 
-    <!-- ЗАКРЕПЛЁННАЯ ПЛАШКА ВНИЗУ -->
+    <!-- ПОДВАЛ -->
     <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
             <div class="accordion-header" onclick="toggleAccordion()">
@@ -1066,7 +1112,6 @@
             arrow.classList.toggle('open');
         }
 
-        // Закрытие формы при клике вне аккордеона
         document.addEventListener('click', function(e) {
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
