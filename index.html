@@ -224,11 +224,11 @@
             font-weight: 400;
         }
         
-        /* ===== АДАПТИВНАЯ MASONRY-СЕТКА ===== */
+        /* ===== АДАПТИВНАЯ СЕТКА ===== */
         .page h1 {
             font-size: 28px;
             font-weight: 300;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
             color: #222;
             text-align: center;
         }
@@ -236,7 +236,7 @@
         .page h2 {
             font-size: 22px;
             font-weight: 400;
-            margin: 20px 0 20px;
+            margin: 40px 0 20px;
             color: #444;
             padding-bottom: 8px;
             border-bottom: 2px solid #f0f0f0;
@@ -600,7 +600,7 @@
             </div>
         </div>
 
-        <!-- ДЕКОР (полная версия) -->
+        <!-- ДЕКОР -->
         <div id="page-decor" class="page">
             <h1>Декор</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
@@ -950,30 +950,37 @@
             </div>
         </div>
 
-        <!-- ШАРЫ (корневой раздел) -->
+        <!-- ШАРЫ (список проектов) -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
-            <!-- Навигация -->
-            <div id="breadcrumbs" style="margin-bottom:20px; font-size:14px; color:#888;"></div>
+            <!-- Кнопка назад на главную -->
+            <div style="margin-bottom:20px;">
+                <a onclick="showPage('about')" style="color:#67bed9; cursor:pointer;">← Главная</a>
+            </div>
 
-            <div class="dev-section">
-                <h3>Категории шаров</h3>
-                <p>Выберите категорию:</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 30px;">
-                    <a onclick="showPage('balloons-nezhnost')" style="background: #67bed9; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; cursor: pointer;">✨ Нежная магия</a>
-                    <!-- Сюда потом добавишь другие категории -->
+            <!-- Сетка проектов -->
+            <div class="row">
+                <!-- Нежная магия -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('balloons-nezhnost')">
+                        <img src="/images/nezhnost/nezhnost (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Нежная магия</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- ШАРЫ (Нежная магия) -->
+        <!-- НЕЖНАЯ МАГИЯ (фото) -->
         <div id="page-balloons-nezhnost" class="page">
-            <h1>Шары</h1>
-            <!-- Навигация построится автоматически из script -->
-            <div id="breadcrumbs" style="margin-bottom:20px; font-size:14px; color:#888;"></div>
+            <h1>Нежная магия</h1>
+            <!-- Кнопка назад в Шары -->
+            <div style="margin-bottom:20px;">
+                <a onclick="showPage('balloons')" style="color:#67bed9; cursor:pointer;">← Шары</a>
+            </div>
 
-            <!-- Нежная магия -->
-            <h2>Нежная магия</h2>
+            <!-- Все фото проекта -->
             <div class="row masonry">
                 <div class="column">
                     <img src="/images/nezhnost/nezhnost (1).jpg" onclick="openModal(this.src)" style="width:100%; border-radius:12px; cursor:pointer;">
@@ -1078,30 +1085,6 @@
             </div>
             <div class="accordion-content" id="accordionContent">
                 <div class="qform-container">
-                    <script type="text/javascript" async="async">
-                        (function () {
-                            function init() {
-                                const scr = document.createElement("script");
-                                scr.type = "text/javascript";
-                                scr.async = "async";
-                                scr.src = "//cdn.qform.io/forms.js?v=" + new Date().getTime();
-                                scr.charset="UTF-8";
-                                const scrInsert = document.getElementsByTagName("script")[0];
-                                scrInsert.parentNode.insertBefore(scr, scrInsert);
-                            }
-                            const d = document;
-                            const w = window;
-                            if (d.readyState === "interactive") {
-                                init();
-                            } else {
-                                if (w.attachEvent) {
-                                    w.attachEvent("onload", init);
-                                } else {
-                                    w.addEventListener("DOMContentLoaded", init, false);
-                                }
-                            }
-                        })();
-                    </script>
                     <div data-formid="form_sy2uJtkyaE_w6vNtgzWl60ICNOAaUxPZ"></div>
                 </div>
             </div>
@@ -1149,9 +1132,6 @@
             closeMenu();
             closeAccordion();
             window.scrollTo(0, 0);
-            
-            // Обновляем навигацию при смене страницы
-            buildBreadcrumbs(pageId);
         }
         
         function toggleAccordion() {
@@ -1184,37 +1164,6 @@
         function closeModal() {
             document.getElementById('photoModal').style.display = 'none';
         }
-
-        // УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ (хлебные крошки)
-        function buildBreadcrumbs(pageId) {
-            let parts = pageId.split('-');
-            let bread = '';
-
-            for (let i = 0; i < parts.length; i++) {
-                let part = parts.slice(0, i+1).join('-');
-                let name = '';
-
-                // Задаём человеческие названия для каждого раздела
-                if (part === 'about') name = 'Главная';
-                else if (part === 'decor') name = 'Декор';
-                else if (part === 'photozone') name = 'Фотозона';
-                else if (part === 'balloons') name = 'Шары';
-                else if (part === 'balloons-nezhnost') name = 'Нежная магия';
-                else if (part === 'balloons-nezhnost-video') name = 'Видео';
-                else if (part === 'brides') name = 'Невесты';
-                else if (part === 'contacts') name = 'Контакты';
-                else name = part;
-
-                if (i === parts.length - 1) {
-                    bread += `<span style="color:#333;">${name}</span>`;
-                } else {
-                    bread += `<a onclick="showPage('${part}')" style="color:#67bed9; cursor:pointer; text-decoration:none;">${name}</a> <span style="margin:0 5px;">/</span>`;
-                }
-            }
-
-            let container = document.getElementById('breadcrumbs');
-            if (container) container.innerHTML = bread;
-        }
         
         window.addEventListener('load', function() {
             const hash = window.location.hash.substring(1) || 'about';
@@ -1224,15 +1173,7 @@
                     p.classList.remove('active');
                 });
                 page.classList.add('active');
-                buildBreadcrumbs(hash);
-            } else {
-                buildBreadcrumbs('about');
             }
-
-            // Дополнительная защита от перетаскивания
-            document.querySelectorAll('img').forEach(img => {
-                img.setAttribute('draggable', 'false');
-            });
         });
     </script>
 </body>
