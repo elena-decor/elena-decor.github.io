@@ -950,8 +950,24 @@
             </div>
         </div>
 
-        <!-- ШАРЫ -->
+        <!-- ШАРЫ (корневой раздел) -->
         <div id="page-balloons" class="page">
+            <h1>Шары</h1>
+            <!-- Навигация -->
+            <div id="breadcrumbs" style="margin-bottom:20px; font-size:14px; color:#888;"></div>
+
+            <div class="dev-section">
+                <h3>Категории шаров</h3>
+                <p>Выберите категорию:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 30px;">
+                    <a onclick="showPage('balloons-nezhnost')" style="background: #67bed9; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; cursor: pointer;">✨ Нежная магия</a>
+                    <!-- Сюда потом добавишь другие категории -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ШАРЫ (Нежная магия) -->
+        <div id="page-balloons-nezhnost" class="page">
             <h1>Шары</h1>
             <!-- Навигация построится автоматически из script -->
             <div id="breadcrumbs" style="margin-bottom:20px; font-size:14px; color:#888;"></div>
@@ -1169,7 +1185,7 @@
             document.getElementById('photoModal').style.display = 'none';
         }
 
-                // УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ (хлебные крошки)
+        // УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ (хлебные крошки)
         function buildBreadcrumbs(pageId) {
             let parts = pageId.split('-');
             let bread = '';
@@ -1221,4 +1237,3 @@
     </script>
 </body>
 </html>
-
