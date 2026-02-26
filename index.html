@@ -449,9 +449,26 @@
             .accordion-header h3 {
                 font-size: 16px;
             }
+            
+            /* Фиксируем шапку аккордеона при открытой форме */
+            .accordion-content.open ~ .accordion-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                background: white;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
             .accordion-content.open {
-                max-height: none;
-                height: auto;
+                padding-top: 70px; /* Отступ, чтобы не перекрывать шапку */
+            }
+
+            /* Увеличиваем стрелочку для удобства */
+            .accordion-arrow {
+                font-size: 24px;
             }
         }
         
@@ -1017,6 +1034,13 @@
             document.getElementById('sidenav').classList.remove('open');
             document.getElementById('overlay').classList.remove('show');
         }
+
+        function closeAccordion() {
+            const content = document.getElementById('accordionContent');
+            const arrow = document.getElementById('accordionArrow');
+            content.classList.remove('open');
+            arrow.classList.remove('open');
+        }
         
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
@@ -1030,6 +1054,7 @@
             }
             
             closeMenu();
+            closeAccordion(); // Автоматически закрываем форму при переходе
             window.scrollTo(0, 0);
         }
         
@@ -1039,6 +1064,17 @@
             content.classList.toggle('open');
             arrow.classList.toggle('open');
         }
+
+        // Закрытие формы при клике вне аккордеона
+        document.addEventListener('click', function(e) {
+            const accordion = document.getElementById('accordion');
+            const content = document.getElementById('accordionContent');
+            
+            // Если форма открыта и клик был не по аккордеону и не по его содержимому
+            if (content.classList.contains('open') && !accordion.contains(e.target)) {
+                closeAccordion();
+            }
+        });
         
         window.addEventListener('load', function() {
             const hash = window.location.hash.substring(1);
