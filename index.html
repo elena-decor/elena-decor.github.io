@@ -284,7 +284,7 @@
             break-inside: avoid;
         }
         
-        /* Обычная строка для 1-3 проектов */
+        /* Обычная строка для 1-3 проектов (и для Шаров) */
         .row:not(.masonry) {
             display: flex;
             flex-wrap: wrap;
@@ -543,6 +543,13 @@
 
         .close:hover {
             color: #67bed9;
+        }
+
+        /* ЗАЩИТА ФОТО - запрет перетаскивания */
+        img {
+            -webkit-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
         }
         
         .city-info {
@@ -981,13 +988,13 @@
             </div>
         </div>
 
-        <!-- СТРАНИЦА ШАРЫ (с попапом) -->
+        <!-- СТРАНИЦА ШАРЫ (адаптивная сетка + попап) -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
             <div class="back-link" onclick="showPage('about')">← на главную</div>
 
             <!-- Нежность (3 фото) -->
-            <div class="row masonry">
+            <div class="row">
                 <div class="column">
                     <img src="/images/nezhnost/nezhnost (1).jpg" onclick="openModal(this.src)" style="width:100%; border-radius:12px; display:block; cursor:pointer;">
                 </div>
@@ -1162,6 +1169,11 @@
             }
         });
 
+        // Запрет на перетаскивание всех фото
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+        });
+
         // ФУНКЦИИ ДЛЯ ПОПАПА
         function openModal(src) {
             document.getElementById('modalImage').src = src;
@@ -1183,6 +1195,11 @@
                     page.classList.add('active');
                 }
             }
+
+            // Дополнительная защита от перетаскивания после загрузки
+            document.querySelectorAll('img').forEach(img => {
+                img.setAttribute('draggable', 'false');
+            });
         });
     </script>
 </body>
