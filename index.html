@@ -1016,6 +1016,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- Единорог -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('balloons-edinorog')">
+                        <img src="/images/edinorog/edinorog (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Единорог</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1056,6 +1065,65 @@
                 </div>
                 <div class="column">
                     <img src="/images/nezhnost/nezhnost (17).jpg" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <!-- ЕДИНОРОГ (фото) -->
+        <div id="page-balloons-edinorog" class="page">
+            <!-- липкая кнопка назад в Шары -->
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+
+            <h1>Единорог</h1>
+
+            <!-- Все фото проекта в Pinterest-сетке -->
+            <div class="row masonry">
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (1).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (2).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (3).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (4).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (5).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (6).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (7).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (8).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (9).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (10).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (11).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (12).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (13).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (14).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (15).jpg" onclick="openModal(this.src)">
                 </div>
             </div>
         </div>
@@ -1124,7 +1192,7 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ (аккордеон с формой) - теперь без задержки -->
+    <!-- ПОДВАЛ (аккордеон с формой) - без задержки -->
     <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
             <div class="accordion-header" onclick="toggleAccordion()">
@@ -1135,7 +1203,6 @@
                 <div class="qform-container">
                     <script type="text/javascript">
                         (function() {
-                            // Ждём готовности DOM (структуры страницы), но не картинок
                             if (document.readyState === 'loading') {
                                 document.addEventListener('DOMContentLoaded', function() {
                                     var scr = document.createElement('script');
@@ -1144,7 +1211,6 @@
                                     document.body.appendChild(scr);
                                 });
                             } else {
-                                // DOM уже готов
                                 var scr = document.createElement('script');
                                 scr.src = '//cdn.qform.io/forms.js?v=' + new Date().getTime();
                                 scr.async = true;
