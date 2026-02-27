@@ -589,7 +589,7 @@
     </script>
 </head>
 <body>
-    <!-- Микроразметка -->
+    <!-- Микроразметка (исправлено) -->
     <div style="display:none;" itemscope itemtype="https://schema.org/LocalBusiness">
         <span itemprop="name">Декоратор Елена Нестерова</span>
         <span itemprop="areaServed">Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва</span>
@@ -1124,7 +1124,7 @@
         </div>
     </div>
 
-      <!-- ПОДВАЛ -->
+    <!-- ПОДВАЛ (аккордеон с формой) -->
     <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
             <div class="accordion-header" onclick="toggleAccordion()">
@@ -1199,16 +1199,20 @@
         function toggleAccordion() {
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
-            content.classList.toggle('open');
-            arrow.classList.toggle('open');
+            
+            if (content && arrow) {
+                content.classList.toggle('open');
+                arrow.classList.toggle('open');
+            }
         }
 
         document.addEventListener('click', function(e) {
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
             
-            if (content.classList.contains('open') && !accordion.contains(e.target)) {
-                closeAccordion();
+            if (content && content.classList.contains('open') && !accordion.contains(e.target)) {
+                content.classList.remove('open');
+                document.getElementById('accordionArrow').classList.remove('open');
             }
         });
 
