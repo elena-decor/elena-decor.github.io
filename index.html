@@ -589,7 +589,7 @@
     </script>
 </head>
 <body>
-    <!-- Микроразметка (исправлено) -->
+    <!-- Микроразметка -->
     <div style="display:none;" itemscope itemtype="https://schema.org/LocalBusiness">
         <span itemprop="name">Декоратор Елена Нестерова</span>
         <span itemprop="areaServed">Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва</span>
@@ -1133,20 +1133,7 @@
             </div>
             <div class="accordion-content" id="accordionContent">
                 <div class="qform-container">
-                    <script type="text/javascript" async="async">
-                        (function () {
-                            function init() {
-                                const scr = document.createElement("script");
-                                scr.type = "text/javascript";
-                                scr.async = "async";
-                                scr.src = "//cdn.qform.io/forms.js?v=" + new Date().getTime();
-                                scr.charset="UTF-8";
-                                const scrInsert = document.getElementsByTagName("script")[0];
-                                scrInsert.parentNode.insertBefore(scr, scrInsert);
-                            }
-                            init();
-                        })();
-                    </script>
+                    <script type="text/javascript" async src="//cdn.qform.io/forms.js?form=form_sy2uJtkyaE_w6vNtgzWl60ICNOAaUxPZ"></script>
                     <div data-formid="form_sy2uJtkyaE_w6vNtgzWl60ICNOAaUxPZ"></div>
                 </div>
             </div>
@@ -1176,8 +1163,10 @@
         function closeAccordion() {
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
-            content.classList.remove('open');
-            arrow.classList.remove('open');
+            if (content && arrow) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            }
         }
         
         function showPage(pageId) {
@@ -1210,9 +1199,10 @@
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
             
-            if (content && content.classList.contains('open') && !accordion.contains(e.target)) {
+            if (content && content.classList.contains('open') && accordion && !accordion.contains(e.target)) {
                 content.classList.remove('open');
-                document.getElementById('accordionArrow').classList.remove('open');
+                const arrow = document.getElementById('accordionArrow');
+                if (arrow) arrow.classList.remove('open');
             }
         });
 
