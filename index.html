@@ -1124,7 +1124,7 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ (аккордеон с формой) - финальная исправленная версия -->
+    <!-- ПОДВАЛ (аккордеон с формой) - теперь без задержки -->
     <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
             <div class="accordion-header" onclick="toggleAccordion()">
@@ -1135,15 +1135,21 @@
                 <div class="qform-container">
                     <script type="text/javascript">
                         (function() {
-                            // Ждём полной загрузки страницы
-                            window.addEventListener('load', function() {
+                            // Ждём готовности DOM (структуры страницы), но не картинок
+                            if (document.readyState === 'loading') {
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    var scr = document.createElement('script');
+                                    scr.src = '//cdn.qform.io/forms.js?v=' + new Date().getTime();
+                                    scr.async = true;
+                                    document.body.appendChild(scr);
+                                });
+                            } else {
+                                // DOM уже готов
                                 var scr = document.createElement('script');
-                                scr.type = 'text/javascript';
-                                scr.async = true;
                                 scr.src = '//cdn.qform.io/forms.js?v=' + new Date().getTime();
-                                scr.charset = 'UTF-8';
+                                scr.async = true;
                                 document.body.appendChild(scr);
-                            });
+                            }
                         })();
                     </script>
                     <div data-formid="form_sy2uJtkyaE_w6vNtgzWl60ICNOAaUxPZ"></div>
