@@ -564,6 +564,30 @@
         [id^="page-balloons-"] .back-to-balloons a:hover {
             text-decoration: underline;
         }
+
+        /* Стили для кнопки назад в фотозоне */
+        #page-mini-photozones .back-to-balloons {
+            position: sticky;
+            top: 0;
+            background: #fafafa;
+            padding: 15px 0;
+            z-index: 10;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        #page-mini-photozones .back-to-balloons a {
+            color: #67bed9;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            display: inline-block;
+        }
+
+        #page-mini-photozones .back-to-balloons a:hover {
+            text-decoration: underline;
+        }
     </style>
     
     <!-- ЗАЩИТА ОТ ПРАВОГО КЛИКА -->
@@ -983,8 +1007,22 @@
                         </div>
                     </a>
                 </div>
+                
+                <!-- 9. Мини фотозоны -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('mini-photozones')">
+                        <img class="project-cover" src="/images/mini/mini%20(1).jpg" loading="lazy" alt="Мини фотозоны">
+                        <div class="project-info">
+                            <div class="project-title">Мини фотозоны</div>
+                            <div class="project-meta">124 фото</div>
+                            <div class="project-tags">панели solaair • шары • интерьерные цветы • неон • ПВХ • конструкции</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                       <!-- МИНИ ФОТОЗОНЫ (все 124 фото) -->
+        <!-- МИНИ ФОТОЗОНЫ (все 124 фото) -->
         <div id="page-mini-photozones" class="page">
             <!-- липкая кнопка назад в Фотозону -->
             <div class="back-to-balloons">
@@ -1369,6 +1407,7 @@
                 </div>
             </div>
         </div>
+
         <!-- ШАРЫ (список проектов) -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
@@ -1609,4 +1648,3 @@
     </script>
 </body>
 </html>
-
