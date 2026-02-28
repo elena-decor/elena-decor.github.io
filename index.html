@@ -923,8 +923,8 @@
                         </div>
                     </a>
                 </div>
-
-                <!-- 4. Мини фотозоны -->
+                
+                <!-- 4. Мини фотозоны (новый проект) -->
                 <div class="column">
                     <a href="#photozone-mini" onclick="showPage('photozone-mini'); return false;" class="project-card">
                         <img class="project-cover" src="/images/mini/mini (1).jpg" loading="lazy" alt="Мини фотозоны">
@@ -935,7 +935,7 @@
                         </div>
                     </a>
                 </div>
-                
+
                 <!-- 5. Девичник -->
                 <div class="column">
                     <a href="https://disk.yandex.ru/d/B3Ns47Iyook0RQ" target="_blank" class="project-card">
@@ -997,17 +997,17 @@
                 </div>
             </div>
 
-            <!-- МИНИ ФОТОЗОНЫ (фото) -->
+            <!-- МИНИ ФОТОЗОНЫ (отдельная страница) -->
             <div id="page-photozone-mini" class="page">
                 <!-- липкая кнопка назад в Фотозону -->
-                <div class="back-to-photozone" style="position: sticky; top: 0; background: #fafafa; padding: 15px 0; z-index: 10; border-bottom: 1px solid #eee; margin-bottom: 25px;">
+                <div style="position: sticky; top: 0; background: #fafafa; padding: 15px 0; z-index: 10; border-bottom: 1px solid #eee; margin-bottom: 25px;">
                     <a onclick="showPage('photozone')" style="color: #67bed9; text-decoration: none; font-size: 16px; cursor: pointer;">← Фотозона в студии</a>
                 </div>
 
                 <h1>Мини фотозоны</h1>
 
                 <!-- Все фото проекта в Pinterest-сетке (124 фото) -->
-                <div class="row masonry" id="mini-gallery">
+                <div class="row masonry">
                     <div class="column"><img src="/images/mini/mini (1).jpg" onclick="openModal(this.src)"></div>
                     <div class="column"><img src="/images/mini/mini (2).jpg" onclick="openModal(this.src)"></div>
                     <div class="column"><img src="/images/mini/mini (3).jpg" onclick="openModal(this.src)"></div>
@@ -1137,6 +1137,184 @@
                 <!-- Подпись с тегами -->
                 <div style="margin-top: 20px; padding: 20px; background: #f9f9f9; border-radius: 12px; border: 1px solid #eee; text-align: center; color: #777; font-size: 14px;">
                     панели solaair • шары • интерьерные цветы • неон • ПВХ • конструкции
+                </div>
+            </div>
+        </div>
+
+        <!-- ШАРЫ (список проектов) -->
+        <div id="page-balloons" class="page">
+            <h1>Шары</h1>
+            <!-- Кнопка назад на главную -->
+            <div style="margin-bottom:20px;">
+                <a onclick="showPage('about')" style="color:#67bed9; cursor:pointer;">← Главная</a>
+            </div>
+
+            <!-- Сетка проектов -->
+            <div class="row">
+                <!-- Нежная магия -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('balloons-nezhnost')">
+                        <img src="/images/nezhnost/nezhnost (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Нежная магия</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Единорог -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('balloons-edinorog')">
+                        <img src="/images/edinorog/edinorog (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Единорог</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- НЕЖНАЯ МАГИЯ (фото) -->
+        <div id="page-balloons-nezhnost" class="page">
+            <!-- липкая кнопка назад в Шары -->
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+
+            <h1>Нежная магия</h1>
+
+            <!-- Все фото проекта в Pinterest-сетке -->
+            <div class="row masonry">
+                <!-- старые фото (нежность) -->
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (1).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (3).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (5).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (7).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (9).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (11).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (13).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (15).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/nezhnost (17).jpg" onclick="openModal(this.src)">
+                </div>
+
+                <!-- новые фото (зайка) -->
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (1).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (2).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (3).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (4).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (5).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (6).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (7).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (8).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (9).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (10).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (11).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (12).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (13).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (14).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/nezhnost/zayka (15).jpg" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </div>
+        <!-- ЕДИНОРОГ (фото) -->
+        <div id="page-balloons-edinorog" class="page">
+            <!-- липкая кнопка назад в Шары -->
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+
+            <h1>Единорог</h1>
+
+            <!-- Все фото проекта в Pinterest-сетке -->
+            <div class="row masonry">
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (1).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (2).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (3).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (4).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (5).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (6).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (7).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (8).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (9).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (10).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (11).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (12).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (13).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (14).jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="column">
+                    <img src="/images/edinorog/edinorog (15).jpg" onclick="openModal(this.src)">
                 </div>
             </div>
         </div>
