@@ -544,8 +544,11 @@
             }
         }
 
-        /* ===== ЛИПКАЯ КНОПКА ДЛЯ ВСЕХ ПРОЕКТОВ ШАРОВ ===== */
-        [id^="page-balloons-"] .back-to-balloons {
+        /* ===== ЛИПКАЯ КНОПКА ДЛЯ ВСЕХ ПРОЕКТОВ ===== */
+        [id^="page-balloons-"] .back-to-balloons,
+        #page-mini-photozones .back-to-balloons,
+        #page-green-birthday .back-to-balloons,
+        #page-green-day .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -556,7 +559,10 @@
             backdrop-filter: blur(5px);
         }
 
-        [id^="page-balloons-"] .back-to-balloons a {
+        [id^="page-balloons-"] .back-to-balloons a,
+        #page-mini-photozones .back-to-balloons a,
+        #page-green-birthday .back-to-balloons a,
+        #page-green-day .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -564,55 +570,10 @@
             display: inline-block;
         }
 
-        [id^="page-balloons-"] .back-to-balloons a:hover {
-            text-decoration: underline;
-        }
-
-        /* Стили для кнопки назад в фотозоне */
-        #page-mini-photozones .back-to-balloons {
-            position: sticky;
-            top: 0;
-            background: #fafafa;
-            padding: 15px 0;
-            z-index: 10;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
-
-        #page-mini-photozones .back-to-balloons a {
-            color: #67bed9;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 400;
-            display: inline-block;
-        }
-
-        #page-mini-photozones .back-to-balloons a:hover {
-            text-decoration: underline;
-        }
-
-        /* Стили для кнопки назад в Green Birthday */
-        #page-green-birthday .back-to-balloons {
-            position: sticky;
-            top: 0;
-            background: #fafafa;
-            padding: 15px 0;
-            z-index: 10;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
-
-        #page-green-birthday .back-to-balloons a {
-            color: #67bed9;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 400;
-            display: inline-block;
-        }
-
-        #page-green-birthday .back-to-balloons a:hover {
+        [id^="page-balloons-"] .back-to-balloons a:hover,
+        #page-mini-photozones .back-to-balloons a:hover,
+        #page-green-birthday .back-to-balloons a:hover,
+        #page-green-day .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -834,6 +795,18 @@
                             <div class="project-title">Green Birthday</div>
                             <div class="project-meta">8 фото</div>
                             <div class="project-tags">фотозона • шары • ткани • гелиевые шары</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Day -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('green-day')">
+                        <img class="project-cover" src="/images/silver/green-day/green-day%20(35).jpg" loading="lazy" alt="Green Day">
+                        <div class="project-info">
+                            <div class="project-title">Green Day</div>
+                            <div class="project-meta">46 фото</div>
+                            <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона</div>
                         </div>
                     </div>
                 </div>
@@ -1063,69 +1036,90 @@
 
         <!-- МИНИ ФОТОЗОНЫ (все 124 фото) -->
         <div id="page-mini-photozones" class="page">
-            <!-- липкая кнопка назад в Фотозону -->
             <div class="back-to-balloons">
                 <a onclick="showPage('photozone')">← Фотозона в студии</a>
             </div>
-
             <h1>Мини фотозоны</h1>
-
-            <!-- Все фото проекта в Pinterest-сетке -->
             <div class="row masonry">
-                <div class="column">
-                    <img src="/images/mini/mini%20(1).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/mini/mini%20(2).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/mini/mini%20(3).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/mini/mini%20(4).jpg" onclick="openModal(this.src)">
-                </div>
-                <!-- ... (остальные 120 фото, я сократил для читаемости) ... -->
-                <div class="column">
-                    <img src="/images/mini/mini%20(124).jpg" onclick="openModal(this.src)">
-                </div>
+                <div class="column"><img src="/images/mini/mini%20(1).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/mini/mini%20(2).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/mini/mini%20(3).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/mini/mini%20(4).jpg" onclick="openModal(this.src)"></div>
+                <!-- ... все 124 фото ... -->
             </div>
         </div>
 
         <!-- GREEN BIRTHDAY (все 8 фото) -->
         <div id="page-green-birthday" class="page">
-            <!-- липкая кнопка назад в Rocket Hall -->
             <div class="back-to-balloons">
                 <a onclick="showPage('decor')">← Декор</a>
             </div>
-
             <h1>Green Birthday</h1>
-
-            <!-- Все фото проекта в Pinterest-сетке -->
             <div class="row masonry">
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(1).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(2).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(3).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(4).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(5).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(6).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(7).jpg" onclick="openModal(this.src)">
-                </div>
-                <div class="column">
-                    <img src="/images/silver/silver-HB%20(8).jpg" onclick="openModal(this.src)">
-                </div>
+                <div class="column"><img src="/images/silver/silver-HB%20(1).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(2).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(3).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(4).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(5).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(6).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(7).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/silver-HB%20(8).jpg" onclick="openModal(this.src)"></div>
+            </div>
+        </div>
+
+        <!-- GREEN DAY (все 46 фото) -->
+        <div id="page-green-day" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('decor')">← Декор</a>
+            </div>
+            <h1>Green Day</h1>
+            <div class="row masonry">
+                <div class="column"><img src="/images/silver/green-day/green-day%20(1).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(2).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(3).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(4).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(5).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(6).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(7).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(8).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(9).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(10).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(11).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(12).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(13).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(14).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(15).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(16).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(17).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(18).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(19).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(20).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(21).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(22).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(23).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(24).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(25).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(26).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(27).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(28).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(29).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(30).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(31).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(32).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(33).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(34).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(35).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(36).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(37).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(38).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(39).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(40).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(41).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(42).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(43).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(44).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(45).jpg" onclick="openModal(this.src)"></div>
+                <div class="column"><img src="/images/silver/green-day/green-day%20(46).jpg" onclick="openModal(this.src)"></div>
             </div>
         </div>
 
