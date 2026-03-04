@@ -317,13 +317,13 @@
         }
         
         .project-info {
-            padding: 16px;
+            padding: 12px 16px 8px 16px;
         }
         
         .project-title {
             font-size: 18px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: #222;
         }
         
@@ -332,7 +332,7 @@
             font-size: 13px;
             line-height: 1.5;
             border-top: 1px solid #f0f0f0;
-            padding-top: 12px;
+            padding-top: 8px;
         }
         
         .back-link {
@@ -542,7 +542,8 @@
         #page-mini-photozones .back-to-balloons,
         #page-green-birthday .back-to-balloons,
         #page-green-day .back-to-balloons,
-        #page-superheroes .back-to-balloons {
+        #page-superheroes .back-to-balloons,
+        #page-korobka-surpris .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -557,7 +558,8 @@
         #page-mini-photozones .back-to-balloons a,
         #page-green-birthday .back-to-balloons a,
         #page-green-day .back-to-balloons a,
-        #page-superheroes .back-to-balloons a {
+        #page-superheroes .back-to-balloons a,
+        #page-korobka-surpris .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -569,7 +571,8 @@
         #page-mini-photozones .back-to-balloons a:hover,
         #page-green-birthday .back-to-balloons a:hover,
         #page-green-day .back-to-balloons a:hover,
-        #page-superheroes .back-to-balloons a:hover {
+        #page-superheroes .back-to-balloons a:hover,
+        #page-korobka-surpris .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -1058,6 +1061,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- Коробка сюрприз -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('korobka-surpris')">
+                        <img src="/images/korobka-surpris/korobka-surpris-1 (2).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Коробка сюрприз</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1086,6 +1098,15 @@
             </div>
             <h1>Супергерои</h1>
             <div class="row masonry" id="superheroes-gallery"></div>
+        </div>
+
+        <!-- КОРОБКА СЮРПРИЗ (все 17 фото) -->
+        <div id="page-korobka-surpris" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Коробка сюрприз</h1>
+            <div class="row masonry" id="korobka-surpris-gallery"></div>
         </div>
 
         <!-- НЕВЕСТЫ -->
@@ -1300,6 +1321,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/supergeroi/supergeroi (${i}).jpg" onclick="openModal(this.src)">`;
                     superheroes.appendChild(column);
+                }
+            }
+            
+            // Коробка сюрприз (1-17)
+            const korobka = document.getElementById('korobka-surpris-gallery');
+            if (korobka) {
+                for (let i = 1; i <= 17; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" onclick="openModal(this.src)">`;
+                    korobka.appendChild(column);
                 }
             }
             
