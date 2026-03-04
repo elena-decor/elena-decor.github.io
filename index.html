@@ -543,7 +543,8 @@
         #page-green-birthday .back-to-balloons,
         #page-green-day .back-to-balloons,
         #page-superheroes .back-to-balloons,
-        #page-korobka-surpris .back-to-balloons {
+        #page-korobka-surpris .back-to-balloons,
+        #page-powder-white .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -559,7 +560,8 @@
         #page-green-birthday .back-to-balloons a,
         #page-green-day .back-to-balloons a,
         #page-superheroes .back-to-balloons a,
-        #page-korobka-surpris .back-to-balloons a {
+        #page-korobka-surpris .back-to-balloons a,
+        #page-powder-white .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -572,7 +574,8 @@
         #page-green-birthday .back-to-balloons a:hover,
         #page-green-day .back-to-balloons a:hover,
         #page-superheroes .back-to-balloons a:hover,
-        #page-korobka-surpris .back-to-balloons a:hover {
+        #page-korobka-surpris .back-to-balloons a:hover,
+        #page-powder-white .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -792,6 +795,21 @@
                         <div class="project-info">
                             <div class="project-title">Green Day</div>
                             <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фазенда (новая локация) -->
+            <h2>Фазенда</h2>
+            <div class="row masonry">
+                <!-- Powder & White -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('powder-white')">
+                        <img class="project-cover" src="/images/fazenda/powder and white/powder and white (22).jpg" loading="lazy" alt="Powder & White">
+                        <div class="project-info">
+                            <div class="project-title">Powder & White</div>
+                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы • фотозона • панели solaair</div>
                         </div>
                     </div>
                 </div>
@@ -1109,6 +1127,15 @@
             <div class="row masonry" id="korobka-surpris-gallery"></div>
         </div>
 
+        <!-- POWDER & WHITE (все 22 фото) -->
+        <div id="page-powder-white" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('decor')">← Декор</a>
+            </div>
+            <h1>Powder & White</h1>
+            <div class="row masonry" id="powder-white-gallery"></div>
+        </div>
+
         <!-- НЕВЕСТЫ -->
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
@@ -1332,6 +1359,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" onclick="openModal(this.src)">`;
                     korobka.appendChild(column);
+                }
+            }
+            
+            // Powder & White (1-22)
+            const powder = document.getElementById('powder-white-gallery');
+            if (powder) {
+                for (let i = 1; i <= 22; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/fazenda/powder and white/powder and white (${i}).jpg" onclick="openModal(this.src)">`;
+                    powder.appendChild(column);
                 }
             }
             
