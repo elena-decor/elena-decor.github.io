@@ -545,7 +545,8 @@
         #page-superheroes .back-to-balloons,
         #page-korobka-surpris .back-to-balloons,
         #page-powder-white .back-to-balloons,
-        #page-vypusk-karas .back-to-balloons {
+        #page-vypusk-karas .back-to-balloons,
+        #page-pervyy-god .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -563,7 +564,8 @@
         #page-superheroes .back-to-balloons a,
         #page-korobka-surpris .back-to-balloons a,
         #page-powder-white .back-to-balloons a,
-        #page-vypusk-karas .back-to-balloons a {
+        #page-vypusk-karas .back-to-balloons a,
+        #page-pervyy-god .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -578,7 +580,8 @@
         #page-superheroes .back-to-balloons a:hover,
         #page-korobka-surpris .back-to-balloons a:hover,
         #page-powder-white .back-to-balloons a:hover,
-        #page-vypusk-karas .back-to-balloons a:hover {
+        #page-vypusk-karas .back-to-balloons a:hover,
+        #page-pervyy-god .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -1112,11 +1115,27 @@
                 <!-- здесь пока нет проектов -->
             </div>
 
-            <!-- Мир красок 🎨 -->
-            <h2>Мир красок 🎨</h2>
+            <!-- Красочные праздники 🎨🎂 -->
+            <h2>Красочные праздники 🎨🎂</h2>
             <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
-                Цветовые решения для стильных праздников — от нежных оттенков до ярких акцентов
+                Цветовые решения для стильных праздников и поводов для радости
             </div>
+
+            <!-- Подраздел: Первый год 👶 -->
+            <h3 style="color:#67bed9; margin: 30px 0 15px; font-weight:400;">Первый год 👶</h3>
+            <div class="row masonry">
+                <div class="column">
+                    <div class="project-card" onclick="showPage('pervyy-god')">
+                        <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Первый год</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Подраздел: Нежная магия ✨ -->
+            <h3 style="color:#67bed9; margin: 30px 0 15px; font-weight:400;">Нежная магия ✨</h3>
             <div class="row masonry">
                 <div class="column">
                     <div class="project-card" onclick="showPage('balloons-nezhnost')">
@@ -1128,11 +1147,8 @@
                 </div>
             </div>
 
-            <!-- Мир праздников 🎂 -->
-            <h2>Мир праздников 🎂</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
-                Для именинников всех возрастов и поводов для радости
-            </div>
+            <!-- Подраздел: Коробка сюрприз 🎁 -->
+            <h3 style="color:#67bed9; margin: 30px 0 15px; font-weight:400;">Коробка сюрприз 🎁</h3>
             <div class="row masonry">
                 <div class="column">
                     <div class="project-card" onclick="showPage('korobka-surpris')">
@@ -1188,6 +1204,15 @@
             </div>
             <h1>Коробка сюрприз</h1>
             <div class="row masonry" id="korobka-surpris-gallery"></div>
+        </div>
+
+        <!-- ПЕРВЫЙ ГОД (все 15 фото) -->
+        <div id="page-pervyy-god" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Первый год</h1>
+            <div class="row masonry" id="pervyy-god-gallery"></div>
         </div>
 
         <!-- POWDER & WHITE (все 22 фото) -->
@@ -1383,7 +1408,7 @@
                 }
             }
             
-            // Нежная магия (старые фото + новые)
+            // Нежная магия (только нежность, без заек)
             const neznost = document.getElementById('nezhnost-gallery');
             if (neznost) {
                 const oldPhotos = [1,3,5,7,9,11,13,15,17];
@@ -1391,12 +1416,6 @@
                     const column = document.createElement('div');
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/nezhnost/nezhnost (${num}).jpg" onclick="openModal(this.src)">`;
-                    neznost.appendChild(column);
-                }
-                for (let i = 1; i <= 15; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" onclick="openModal(this.src)">`;
                     neznost.appendChild(column);
                 }
             }
@@ -1431,6 +1450,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" onclick="openModal(this.src)">`;
                     korobka.appendChild(column);
+                }
+            }
+            
+            // Первый год (1-15)
+            const pervyyGod = document.getElementById('pervyy-god-gallery');
+            if (pervyyGod) {
+                for (let i = 1; i <= 15; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" onclick="openModal(this.src)">`;
+                    pervyyGod.appendChild(column);
                 }
             }
             
