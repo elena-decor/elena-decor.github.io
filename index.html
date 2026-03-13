@@ -547,7 +547,8 @@
         #page-powder-white .back-to-balloons,
         #page-vypusk-karas .back-to-balloons,
         #page-pervyy-god .back-to-balloons,
-        #page-mimosa-march .back-to-balloons {
+        #page-mimosa-march .back-to-balloons,
+        #page-kot-dlya-kota .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -567,7 +568,8 @@
         #page-powder-white .back-to-balloons a,
         #page-vypusk-karas .back-to-balloons a,
         #page-pervyy-god .back-to-balloons a,
-        #page-mimosa-march .back-to-balloons a {
+        #page-mimosa-march .back-to-balloons a,
+        #page-kot-dlya-kota .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -584,7 +586,8 @@
         #page-powder-white .back-to-balloons a:hover,
         #page-vypusk-karas .back-to-balloons a:hover,
         #page-pervyy-god .back-to-balloons a:hover,
-        #page-mimosa-march .back-to-balloons a:hover {
+        #page-mimosa-march .back-to-balloons a:hover,
+        #page-kot-dlya-kota .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -723,7 +726,7 @@
                 </div>
             </div>
 
-            <!-- Административный корпус МРНЦ им. А.Ф. Цыба (НОВАЯ ЛОКАЦИЯ) -->
+            <!-- Административный корпус МРНЦ им. А.Ф. Цыба -->
             <h2>Административный корпус МРНЦ им. А.Ф. Цыба</h2>
             <div class="row masonry">
                 <!-- Mimosa & March -->
@@ -1130,7 +1133,15 @@
                 Милые зверята, грозные хищники, морские обитатели и доисторические динозавры
             </div>
             <div class="row masonry">
-                <!-- здесь пока нет проектов -->
+                <!-- Кот для кота (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('kot-dlya-kota')">
+                        <img src="/images/cat/black kat (4).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Кот для кота</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Красочные праздники 🎨🎂 -->
@@ -1221,6 +1232,15 @@
             </div>
             <h1>Первый год</h1>
             <div class="row masonry" id="pervyy-god-gallery"></div>
+        </div>
+
+        <!-- КОТ ДЛЯ КОТА (все 10 фото) -->
+        <div id="page-kot-dlya-kota" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Кот для кота</h1>
+            <div class="row masonry" id="kot-dlya-kota-gallery"></div>
         </div>
 
         <!-- MIMOSA & MARCH (все 21 фото) -->
@@ -1478,6 +1498,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" onclick="openModal(this.src)">`;
                     pervyyGod.appendChild(column);
+                }
+            }
+            
+            // Кот для кота (1-10)
+            const kot = document.getElementById('kot-dlya-kota-gallery');
+            if (kot) {
+                for (let i = 1; i <= 10; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/cat/black kat (${i}).jpg" onclick="openModal(this.src)">`;
+                    kot.appendChild(column);
                 }
             }
             
