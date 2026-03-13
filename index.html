@@ -546,7 +546,8 @@
         #page-korobka-surpris .back-to-balloons,
         #page-powder-white .back-to-balloons,
         #page-vypusk-karas .back-to-balloons,
-        #page-pervyy-god .back-to-balloons {
+        #page-pervyy-god .back-to-balloons,
+        #page-mimosa-march .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -565,7 +566,8 @@
         #page-korobka-surpris .back-to-balloons a,
         #page-powder-white .back-to-balloons a,
         #page-vypusk-karas .back-to-balloons a,
-        #page-pervyy-god .back-to-balloons a {
+        #page-pervyy-god .back-to-balloons a,
+        #page-mimosa-march .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -581,7 +583,8 @@
         #page-korobka-surpris .back-to-balloons a:hover,
         #page-powder-white .back-to-balloons a:hover,
         #page-vypusk-karas .back-to-balloons a:hover,
-        #page-pervyy-god .back-to-balloons a:hover {
+        #page-pervyy-god .back-to-balloons a:hover,
+        #page-mimosa-march .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -715,6 +718,21 @@
                         <div class="project-info">
                             <div class="project-title">Green Day</div>
                             <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Административный корпус МРНЦ им. А.Ф. Цыба (НОВАЯ ЛОКАЦИЯ) -->
+            <h2>Административный корпус МРНЦ им. А.Ф. Цыба</h2>
+            <div class="row masonry">
+                <!-- Mimosa & March -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('mimosa-march')">
+                        <img class="project-cover" src="/images/march/March (4).jpg" loading="lazy" alt="Mimosa & March">
+                        <div class="project-info">
+                            <div class="project-title">Mimosa & March</div>
+                            <div class="project-tags">фотозона • круглая фотозона • шары • 8 Марта • цветы</div>
                         </div>
                     </div>
                 </div>
@@ -1205,6 +1223,15 @@
             <div class="row masonry" id="pervyy-god-gallery"></div>
         </div>
 
+        <!-- MIMOSA & MARCH (все 21 фото) -->
+        <div id="page-mimosa-march" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('decor')">← Декор</a>
+            </div>
+            <h1>Mimosa & March</h1>
+            <div class="row masonry" id="mimosa-march-gallery"></div>
+        </div>
+
         <!-- POWDER & WHITE (все 22 фото) -->
         <div id="page-powder-white" class="page">
             <div class="back-to-balloons">
@@ -1451,6 +1478,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" onclick="openModal(this.src)">`;
                     pervyyGod.appendChild(column);
+                }
+            }
+            
+            // Mimosa & March (1-21)
+            const mimosa = document.getElementById('mimosa-march-gallery');
+            if (mimosa) {
+                for (let i = 1; i <= 21; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/march/March (${i}).jpg" onclick="openModal(this.src)">`;
+                    mimosa.appendChild(column);
                 }
             }
             
