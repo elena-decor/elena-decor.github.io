@@ -548,7 +548,8 @@
         #page-vypusk-karas .back-to-balloons,
         #page-pervyy-god .back-to-balloons,
         #page-mimosa-march .back-to-balloons,
-        #page-kot-dlya-kota .back-to-balloons {
+        #page-kot-dlya-kota .back-to-balloons,
+        #page-yagodny-miks .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -569,7 +570,8 @@
         #page-vypusk-karas .back-to-balloons a,
         #page-pervyy-god .back-to-balloons a,
         #page-mimosa-march .back-to-balloons a,
-        #page-kot-dlya-kota .back-to-balloons a {
+        #page-kot-dlya-kota .back-to-balloons a,
+        #page-yagodny-miks .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -587,7 +589,8 @@
         #page-vypusk-karas .back-to-balloons a:hover,
         #page-pervyy-god .back-to-balloons a:hover,
         #page-mimosa-march .back-to-balloons a:hover,
-        #page-kot-dlya-kota .back-to-balloons a:hover {
+        #page-kot-dlya-kota .back-to-balloons a:hover,
+        #page-yagodny-miks .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -1101,11 +1104,21 @@
                 Единороги, феи, принцессы — всё, что делает детство волшебным
             </div>
             <div class="row masonry">
+                <!-- Единорог -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('balloons-edinorog')">
                         <img src="/images/edinorog/edinorog (1).jpg" style="width:100%; border-radius:12px;">
                         <div class="project-info">
                             <div class="project-title">Единорог</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Первый год (переехал сюда) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('pervyy-god')">
+                        <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Первый год</div>
                         </div>
                     </div>
                 </div>
@@ -1133,7 +1146,7 @@
                 Милые зверята, грозные хищники, морские обитатели и доисторические динозавры
             </div>
             <div class="row masonry">
-                <!-- Кот для кота (НОВЫЙ ПРОЕКТ) -->
+                <!-- Кот для кота -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('kot-dlya-kota')">
                         <img src="/images/cat/black kat (4).jpg" style="width:100%; border-radius:12px;">
@@ -1150,15 +1163,6 @@
                 Цветовые решения для стильных праздников и поводов для радости
             </div>
             <div class="row masonry">
-                <!-- Первый год -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('pervyy-god')">
-                        <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;">
-                        <div class="project-info">
-                            <div class="project-title">Первый год</div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Нежная магия -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('balloons-nezhnost')">
@@ -1174,6 +1178,15 @@
                         <img src="/images/korobka-surpris/korobka-surpris-1 (2).jpg" style="width:100%; border-radius:12px;">
                         <div class="project-info">
                             <div class="project-title">Коробка сюрприз</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ягодный микс (НОВЫЙ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('yagodny-miks')">
+                        <img src="/images/fruckti/arbuz (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Ягодный микс</div>
                         </div>
                     </div>
                 </div>
@@ -1241,6 +1254,15 @@
             </div>
             <h1>Кот для кота</h1>
             <div class="row masonry" id="kot-dlya-kota-gallery"></div>
+        </div>
+
+        <!-- ЯГОДНЫЙ МИКС (все 9 фото) -->
+        <div id="page-yagodny-miks" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Ягодный микс</h1>
+            <div class="row masonry" id="yagodny-miks-gallery"></div>
         </div>
 
         <!-- MIMOSA & MARCH (все 21 фото) -->
@@ -1509,6 +1531,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/cat/black kat (${i}).jpg" onclick="openModal(this.src)">`;
                     kot.appendChild(column);
+                }
+            }
+            
+            // Ягодный микс (1-9)
+            const yagodny = document.getElementById('yagodny-miks-gallery');
+            if (yagodny) {
+                for (let i = 1; i <= 9; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/fruckti/arbuz (${i}).jpg" onclick="openModal(this.src)">`;
+                    yagodny.appendChild(column);
                 }
             }
             
