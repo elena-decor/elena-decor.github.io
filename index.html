@@ -546,7 +546,8 @@
         #page-korobka-surpris .back-to-balloons,
         #page-powder-white .back-to-balloons,
         #page-vypusk-karas .back-to-balloons,
-        #page-pervyy-god .back-to-balloons,
+        #page-malyshka .back-to-balloons,
+        #page-malysh .back-to-balloons,
         #page-mimosa-march .back-to-balloons,
         #page-kot-dlya-kota .back-to-balloons,
         #page-yagodny-miks .back-to-balloons {
@@ -568,7 +569,8 @@
         #page-korobka-surpris .back-to-balloons a,
         #page-powder-white .back-to-balloons a,
         #page-vypusk-karas .back-to-balloons a,
-        #page-pervyy-god .back-to-balloons a,
+        #page-malyshka .back-to-balloons a,
+        #page-malysh .back-to-balloons a,
         #page-mimosa-march .back-to-balloons a,
         #page-kot-dlya-kota .back-to-balloons a,
         #page-yagodny-miks .back-to-balloons a {
@@ -587,7 +589,8 @@
         #page-korobka-surpris .back-to-balloons a:hover,
         #page-powder-white .back-to-balloons a:hover,
         #page-vypusk-karas .back-to-balloons a:hover,
-        #page-pervyy-god .back-to-balloons a:hover,
+        #page-malyshka .back-to-balloons a:hover,
+        #page-malysh .back-to-balloons a:hover,
         #page-mimosa-march .back-to-balloons a:hover,
         #page-kot-dlya-kota .back-to-balloons a:hover,
         #page-yagodny-miks .back-to-balloons a:hover {
@@ -1113,12 +1116,21 @@
                         </div>
                     </div>
                 </div>
-                <!-- Первый год (переехал сюда) -->
+                <!-- Малышка (бывший Первый год) -->
                 <div class="column">
-                    <div class="project-card" onclick="showPage('pervyy-god')">
+                    <div class="project-card" onclick="showPage('malyshka')">
                         <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;">
                         <div class="project-info">
-                            <div class="project-title">Первый год</div>
+                            <div class="project-title">Малышка</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Малыш (НОВЫЙ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('malysh')">
+                        <img src="/images/first/1boy (6).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Малыш</div>
                         </div>
                     </div>
                 </div>
@@ -1238,13 +1250,13 @@
             <div class="row masonry" id="korobka-surpris-gallery"></div>
         </div>
 
-        <!-- ПЕРВЫЙ ГОД (все 15 фото) -->
-        <div id="page-pervyy-god" class="page">
+        <!-- МАЛЫШКА (бывший Первый год) (все 15 фото) -->
+        <div id="page-malyshka" class="page">
             <div class="back-to-balloons">
                 <a onclick="showPage('balloons')">← Шары</a>
             </div>
-            <h1>Первый год</h1>
-            <div class="row masonry" id="pervyy-god-gallery"></div>
+            <h1>Малышка</h1>
+            <div class="row masonry" id="malyshka-gallery"></div>
         </div>
 
         <!-- КОТ ДЛЯ КОТА (все 10 фото) -->
@@ -1263,6 +1275,15 @@
             </div>
             <h1>Ягодный микс</h1>
             <div class="row masonry" id="yagodny-miks-gallery"></div>
+        </div>
+
+        <!-- МАЛЫШ (все 7 фото) -->
+        <div id="page-malysh" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Малыш</h1>
+            <div class="row masonry" id="malysh-gallery"></div>
         </div>
 
         <!-- MIMOSA & MARCH (все 21 фото) -->
@@ -1512,14 +1533,14 @@
                 }
             }
             
-            // Первый год (1-15)
-            const pervyyGod = document.getElementById('pervyy-god-gallery');
-            if (pervyyGod) {
+            // Малышка (1-15)
+            const malyshka = document.getElementById('malyshka-gallery');
+            if (malyshka) {
                 for (let i = 1; i <= 15; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    pervyyGod.appendChild(column);
+                    malyshka.appendChild(column);
                 }
             }
             
@@ -1542,6 +1563,17 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/fruckti/arbuz (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     yagodny.appendChild(column);
+                }
+            }
+            
+            // Малыш (1-7)
+            const malysh = document.getElementById('malysh-gallery');
+            if (malysh) {
+                for (let i = 1; i <= 7; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/first/1boy (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    malysh.appendChild(column);
                 }
             }
             
