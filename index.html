@@ -1181,7 +1181,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Ягодный микс (НОВЫЙ) -->
+                <!-- Ягодный микс -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('yagodny-miks')">
                         <img src="/images/fruckti/arbuz (1).jpg" style="width:100%; border-radius:12px;">
@@ -1432,7 +1432,7 @@
             document.getElementById('photoModal').style.display = 'none';
         }
         
-        // АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ ГАЛЕРЕЙ
+        // АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ ГАЛЕРЕЙ (С ДОБАВЛЕННЫМ loading="lazy")
         window.addEventListener('load', function() {
             // Мини фотозоны (1-124)
             const mini = document.getElementById('mini-gallery');
@@ -1440,7 +1440,7 @@
                 for (let i = 1; i <= 124; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/mini/mini (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/mini/mini (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     mini.appendChild(column);
                 }
             }
@@ -1451,7 +1451,7 @@
                 for (let i = 1; i <= 8; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/silver/silver-HB (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/silver/silver-HB (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     greenBirthday.appendChild(column);
                 }
             }
@@ -1462,7 +1462,7 @@
                 for (let i = 1; i <= 46; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/silver/green-day/green-day (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/silver/green-day/green-day (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     greenDay.appendChild(column);
                 }
             }
@@ -1474,7 +1474,7 @@
                 for (let num of oldPhotos) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/nezhnost/nezhnost (${num}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/nezhnost/nezhnost (${num}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     neznost.appendChild(column);
                 }
             }
@@ -1485,7 +1485,7 @@
                 for (let i = 1; i <= 15; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/edinorog/edinorog (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/edinorog/edinorog (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     edinorog.appendChild(column);
                 }
             }
@@ -1496,7 +1496,7 @@
                 for (let i = 1; i <= 21; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/supergeroi/supergeroi (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/supergeroi/supergeroi (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     superheroes.appendChild(column);
                 }
             }
@@ -1507,7 +1507,7 @@
                 for (let i = 1; i <= 17; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     korobka.appendChild(column);
                 }
             }
@@ -1518,7 +1518,7 @@
                 for (let i = 1; i <= 15; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     pervyyGod.appendChild(column);
                 }
             }
@@ -1529,7 +1529,7 @@
                 for (let i = 1; i <= 10; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/cat/black kat (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/cat/black kat (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     kot.appendChild(column);
                 }
             }
@@ -1540,7 +1540,7 @@
                 for (let i = 1; i <= 9; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/fruckti/arbuz (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/fruckti/arbuz (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     yagodny.appendChild(column);
                 }
             }
@@ -1551,7 +1551,7 @@
                 for (let i = 1; i <= 21; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/march/March (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/march/March (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     mimosa.appendChild(column);
                 }
             }
@@ -1562,7 +1562,7 @@
                 for (let i = 1; i <= 22; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/fazenda/powder and white/powder and white (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/fazenda/powder and white/powder and white (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     powder.appendChild(column);
                 }
             }
@@ -1573,7 +1573,7 @@
                 for (let i = 1; i <= 18; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/karas/karas-vipusk/karas-vipusk (${i}).jpg" onclick="openModal(this.src)">`;
+                    column.innerHTML = `<img src="/images/karas/karas-vipusk/karas-vipusk (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     vypusk.appendChild(column);
                 }
             }
