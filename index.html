@@ -550,7 +550,10 @@
         #page-malysh .back-to-balloons,
         #page-mimosa-march .back-to-balloons,
         #page-kot-dlya-kota .back-to-balloons,
-        #page-yagodny-miks .back-to-balloons {
+        #page-yagodny-miks .back-to-balloons,
+        #page-muz-instrument .back-to-balloons,
+        #page-aist .back-to-balloons,
+        #page-hearts .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -573,7 +576,10 @@
         #page-malysh .back-to-balloons a,
         #page-mimosa-march .back-to-balloons a,
         #page-kot-dlya-kota .back-to-balloons a,
-        #page-yagodny-miks .back-to-balloons a {
+        #page-yagodny-miks .back-to-balloons a,
+        #page-muz-instrument .back-to-balloons a,
+        #page-aist .back-to-balloons a,
+        #page-hearts .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -593,7 +599,10 @@
         #page-malysh .back-to-balloons a:hover,
         #page-mimosa-march .back-to-balloons a:hover,
         #page-kot-dlya-kota .back-to-balloons a:hover,
-        #page-yagodny-miks .back-to-balloons a:hover {
+        #page-yagodny-miks .back-to-balloons a:hover,
+        #page-muz-instrument .back-to-balloons a:hover,
+        #page-aist .back-to-balloons a:hover,
+        #page-hearts .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -1116,7 +1125,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Малышка (бывший Первый год) -->
+                <!-- Малышка -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('malyshka')">
                         <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;">
@@ -1125,7 +1134,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Малыш (НОВЫЙ) -->
+                <!-- Малыш -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('malysh')">
                         <img src="/images/first/1boy (6).jpg" style="width:100%; border-radius:12px;">
@@ -1164,6 +1173,32 @@
                         <img src="/images/cat/black kat (4).jpg" style="width:100%; border-radius:12px;">
                         <div class="project-info">
                             <div class="project-title">Кот для кота</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Аист (НОВЫЙ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('aist')">
+                        <img src="/images/aist/aist (4).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Аист</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Мир увлечений ⚽🎸 (НОВЫЙ РАЗДЕЛ) -->
+            <h2>Мир увлечений ⚽🎸</h2>
+            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+                Спорт, музыка и всё, что вдохновляет
+            </div>
+            <div class="row masonry">
+                <!-- Музыкальные инструменты -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('muz-instrument')">
+                        <img src="/images/instrument/instrument (1).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Музыкальные инструменты</div>
                         </div>
                     </div>
                 </div>
@@ -1210,7 +1245,15 @@
                 Для особенных дней в календаре — зимних, весенних и романтичных
             </div>
             <div class="row masonry">
-                <!-- здесь пока нет проектов -->
+                <!-- Сердца (НОВЫЙ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('hearts')">
+                        <img src="/images/heart/heart (12).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Сердца</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1250,13 +1293,22 @@
             <div class="row masonry" id="korobka-surpris-gallery"></div>
         </div>
 
-        <!-- МАЛЫШКА (бывший Первый год) (все 15 фото) -->
+        <!-- МАЛЫШКА (все 15 фото) -->
         <div id="page-malyshka" class="page">
             <div class="back-to-balloons">
                 <a onclick="showPage('balloons')">← Шары</a>
             </div>
             <h1>Малышка</h1>
             <div class="row masonry" id="malyshka-gallery"></div>
+        </div>
+
+        <!-- МАЛЫШ (все 7 фото) -->
+        <div id="page-malysh" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Малыш</h1>
+            <div class="row masonry" id="malysh-gallery"></div>
         </div>
 
         <!-- КОТ ДЛЯ КОТА (все 10 фото) -->
@@ -1277,13 +1329,31 @@
             <div class="row masonry" id="yagodny-miks-gallery"></div>
         </div>
 
-        <!-- МАЛЫШ (все 7 фото) -->
-        <div id="page-malysh" class="page">
+        <!-- МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ (все 3 фото) -->
+        <div id="page-muz-instrument" class="page">
             <div class="back-to-balloons">
                 <a onclick="showPage('balloons')">← Шары</a>
             </div>
-            <h1>Малыш</h1>
-            <div class="row masonry" id="malysh-gallery"></div>
+            <h1>Музыкальные инструменты</h1>
+            <div class="row masonry" id="muz-instrument-gallery"></div>
+        </div>
+
+        <!-- АИСТ (все 10 фото) -->
+        <div id="page-aist" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Аист</h1>
+            <div class="row masonry" id="aist-gallery"></div>
+        </div>
+
+        <!-- СЕРДЦА (все 23 фото) -->
+        <div id="page-hearts" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Сердца</h1>
+            <div class="row masonry" id="hearts-gallery"></div>
         </div>
 
         <!-- MIMOSA & MARCH (все 21 фото) -->
@@ -1488,7 +1558,7 @@
                 }
             }
             
-            // Нежная магия (только нежность, без заек)
+            // Нежная магия (только нежность)
             const neznost = document.getElementById('nezhnost-gallery');
             if (neznost) {
                 const oldPhotos = [1,3,5,7,9,11,13,15,17];
@@ -1544,6 +1614,17 @@
                 }
             }
             
+            // Малыш (1-7)
+            const malysh = document.getElementById('malysh-gallery');
+            if (malysh) {
+                for (let i = 1; i <= 7; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/first/1boy (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    malysh.appendChild(column);
+                }
+            }
+            
             // Кот для кота (1-10)
             const kot = document.getElementById('kot-dlya-kota-gallery');
             if (kot) {
@@ -1566,14 +1647,36 @@
                 }
             }
             
-            // Малыш (1-7)
-            const malysh = document.getElementById('malysh-gallery');
-            if (malysh) {
-                for (let i = 1; i <= 7; i++) {
+            // Музыкальные инструменты (1-3)
+            const muz = document.getElementById('muz-instrument-gallery');
+            if (muz) {
+                for (let i = 1; i <= 3; i++) {
                     const column = document.createElement('div');
                     column.className = 'column';
-                    column.innerHTML = `<img src="/images/first/1boy (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    malysh.appendChild(column);
+                    column.innerHTML = `<img src="/images/instrument/instrument (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    muz.appendChild(column);
+                }
+            }
+            
+            // Аист (1-10)
+            const aist = document.getElementById('aist-gallery');
+            if (aist) {
+                for (let i = 1; i <= 10; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/aist/aist (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    aist.appendChild(column);
+                }
+            }
+            
+            // Сердца (1-23)
+            const hearts = document.getElementById('hearts-gallery');
+            if (hearts) {
+                for (let i = 1; i <= 23; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/heart/heart (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    hearts.appendChild(column);
                 }
             }
             
