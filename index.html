@@ -1526,22 +1526,45 @@
     <div class="protection-note">фотографии защищены</div>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sidenav').classList.toggle('open');
-            document.getElementById('overlay').classList.toggle('show');
-        }
-        function closeMenu() {
-            document.getElementById('sidenav').classList.remove('open');
-            document.getElementById('overlay').classList.remove('show');
-        }
-        function closeAccordion() {
-            const content = document.getElementById('accordionContent');
-            const arrow = document.getElementById('accordionArrow');
-            if (content && arrow) {
-                content.classList.remove('open');
-                arrow.classList.remove('open');
+        // ============================================
+        // КОНФИГУРАЦИЯ ГАЛЕРЕЙ
+        // ============================================
+        const GALLERIES = [
+            { id: 'mini-gallery', path: '/images/mini/mini', count: 124 },
+            { id: 'green-birthday-gallery', path: '/images/silver/silver-HB', count: 8 },
+            { id: 'green-day-gallery', path: '/images/silver/green-day/green-day', count: 46 },
+            { id: 'nezhnost-gallery', path: '/images/nezhnost/nezhnost', count: 17, numbers: [1,3,5,7,9,11,13,15,17] },
+            { id: 'edinorog-gallery', path: '/images/edinorog/edinorog', count: 15 },
+            { id: 'superheroes-gallery', path: '/images/supergeroi/supergeroi', count: 21 },
+            { id: 'korobka-surpris-gallery', path: '/images/korobka-surpris/korobka-surpris-1', count: 17 },
+            { id: 'malyshka-gallery', path: '/images/nezhnost/zayka', count: 15 },
+            { id: 'malysh-gallery', path: '/images/first/1boy', count: 7 },
+            { id: 'kot-dlya-kota-gallery', path: '/images/cat/black kat', count: 10 },
+            { id: 'yagodny-miks-gallery', path: '/images/fruckti/arbuz', count: 9 },
+            { id: 'muz-instrument-gallery', path: '/images/instrument/instrument', count: 3 },
+            { id: 'aist-gallery', path: '/images/aist/aist', count: 10 },
+            { id: 'hearts-gallery', path: '/images/heart/heart', count: 23 },
+            { id: 'minecraft-gallery', path: '/images/main/main', count: 10 },
+            { id: 'pikachu-gallery', path: '/images/pikachu/pikachu', count: 12 },
+            { id: 'mimosa-march-gallery', path: '/images/march/March', count: 21 },
+            { id: 'powder-white-gallery', path: '/images/fazenda/powder and white/powder and white', count: 22 },
+            { id: 'vypusk-karas-gallery', path: '/images/karas/karas-vipusk/karas-vipusk', count: 18 }
+        ];
+
+        // ============================================
+        // ФУНКЦИИ ДЛЯ НАВИГАЦИИ
+        // ============================================
+        function showPageFromHash() {
+            const hash = window.location.hash.substring(1) || 'about';
+            const page = document.getElementById('page-' + hash);
+            if (page) {
+                document.querySelectorAll('.page').forEach(p => {
+                    p.classList.remove('active');
+                });
+                page.classList.add('active');
             }
         }
+
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
@@ -1555,261 +1578,122 @@
             closeAccordion();
             window.scrollTo(0, 0);
         }
+
+        // ============================================
+        // ФУНКЦИИ ДЛЯ МЕНЮ
+        // ============================================
+        function toggleMenu() {
+            document.getElementById('sidenav').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('show');
+            const menuButton = document.querySelector('.menu-button');
+            const isExpanded = document.getElementById('sidenav').classList.contains('open');
+            menuButton.setAttribute('aria-expanded', isExpanded);
+        }
+
+        function closeMenu() {
+            document.getElementById('sidenav').classList.remove('open');
+            document.getElementById('overlay').classList.remove('show');
+            document.querySelector('.menu-button').setAttribute('aria-expanded', 'false');
+        }
+
+        // ============================================
+        // ФУНКЦИИ ДЛЯ АККОРДЕОНА
+        // ============================================
+        function closeAccordion() {
+            const content = document.getElementById('accordionContent');
+            const arrow = document.getElementById('accordionArrow');
+            const header = document.querySelector('.accordion-header');
+            if (content && arrow) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+                header.setAttribute('aria-expanded', 'false');
+            }
+        }
+
         function toggleAccordion() {
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
+            const header = document.querySelector('.accordion-header');
             if (content && arrow) {
+                const isOpen = content.classList.contains('open');
                 content.classList.toggle('open');
                 arrow.classList.toggle('open');
+                header.setAttribute('aria-expanded', !isOpen);
             }
         }
+
+        // ============================================
+        // ФУНКЦИИ ДЛЯ МОДАЛЬНОГО ОКНА
+        // ============================================
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('photoModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // ============================================
+        // ГЕНЕРАЦИЯ ГАЛЕРЕЙ
+        // ============================================
+        function generateGalleries() {
+            GALLERIES.forEach(gallery => {
+                const container = document.getElementById(gallery.id);
+                if (!container) return;
+
+                const numbers = gallery.numbers || Array.from({ length: gallery.count }, (_, i) => i + 1);
+                
+                numbers.forEach(num => {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    const img = document.createElement('img');
+                    img.src = `${gallery.path} (${num}).jpg`;
+                    img.loading = 'lazy';
+                    img.alt = `Фото ${num} из галереи`;
+                    img.draggable = false;
+                    img.onclick = () => openModal(img.src);
+                    column.appendChild(img);
+                    container.appendChild(column);
+                });
+            });
+        }
+
+        // ============================================
+        // ОБРАБОТЧИКИ СОБЫТИЙ
+        // ============================================
         document.addEventListener('click', function(e) {
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
+            const header = document.querySelector('.accordion-header');
             if (content && content.classList.contains('open') && accordion && !accordion.contains(e.target)) {
                 content.classList.remove('open');
                 const arrow = document.getElementById('accordionArrow');
                 if (arrow) arrow.classList.remove('open');
-            }
-        });
-        document.querySelectorAll('img').forEach(img => {
-            img.setAttribute('draggable', 'false');
-        });
-        function openModal(src) {
-            document.getElementById('modalImage').src = src;
-            document.getElementById('photoModal').style.display = 'block';
-        }
-        function closeModal() {
-            document.getElementById('photoModal').style.display = 'none';
-        }
-        
-        // АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ ГАЛЕРЕЙ
-        window.addEventListener('load', function() {
-            // Мини фотозоны (1-124)
-            const mini = document.getElementById('mini-gallery');
-            if (mini) {
-                for (let i = 1; i <= 124; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/mini/mini (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    mini.appendChild(column);
-                }
-            }
-            
-            // Green Birthday (1-8)
-            const greenBirthday = document.getElementById('green-birthday-gallery');
-            if (greenBirthday) {
-                for (let i = 1; i <= 8; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/silver/silver-HB (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    greenBirthday.appendChild(column);
-                }
-            }
-            
-            // Green Day (1-46)
-            const greenDay = document.getElementById('green-day-gallery');
-            if (greenDay) {
-                for (let i = 1; i <= 46; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/silver/green-day/green-day (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    greenDay.appendChild(column);
-                }
-            }
-            
-            // Нежная магия (только нежность, без заек)
-            const neznost = document.getElementById('nezhnost-gallery');
-            if (neznost) {
-                const oldPhotos = [1,3,5,7,9,11,13,15,17];
-                for (let num of oldPhotos) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/nezhnost/nezhnost (${num}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    neznost.appendChild(column);
-                }
-            }
-            
-            // Единорог (1-15)
-            const edinorog = document.getElementById('edinorog-gallery');
-            if (edinorog) {
-                for (let i = 1; i <= 15; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/edinorog/edinorog (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    edinorog.appendChild(column);
-                }
-            }
-            
-            // Супергерои (1-21)
-            const superheroes = document.getElementById('superheroes-gallery');
-            if (superheroes) {
-                for (let i = 1; i <= 21; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/supergeroi/supergeroi (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    superheroes.appendChild(column);
-                }
-            }
-            
-            // Коробка сюрприз (1-17)
-            const korobka = document.getElementById('korobka-surpris-gallery');
-            if (korobka) {
-                for (let i = 1; i <= 17; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/korobka-surpris/korobka-surpris-1 (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    korobka.appendChild(column);
-                }
-            }
-            
-            // Малышка (1-15)
-            const malyshka = document.getElementById('malyshka-gallery');
-            if (malyshka) {
-                for (let i = 1; i <= 15; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/nezhnost/zayka (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    malyshka.appendChild(column);
-                }
-            }
-            
-            // Малыш (1-7)
-            const malysh = document.getElementById('malysh-gallery');
-            if (malysh) {
-                for (let i = 1; i <= 7; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/first/1boy (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    malysh.appendChild(column);
-                }
-            }
-            
-            // Кот для кота (1-10)
-            const kot = document.getElementById('kot-dlya-kota-gallery');
-            if (kot) {
-                for (let i = 1; i <= 10; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/cat/black kat (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    kot.appendChild(column);
-                }
-            }
-            
-            // Ягодный микс (1-9)
-            const yagodny = document.getElementById('yagodny-miks-gallery');
-            if (yagodny) {
-                for (let i = 1; i <= 9; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/fruckti/arbuz (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    yagodny.appendChild(column);
-                }
-            }
-            
-            // Музыкальные инструменты (1-3)
-            const muz = document.getElementById('muz-instrument-gallery');
-            if (muz) {
-                for (let i = 1; i <= 3; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/instrument/instrument (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    muz.appendChild(column);
-                }
-            }
-            
-            // Аист (1-10)
-            const aist = document.getElementById('aist-gallery');
-            if (aist) {
-                for (let i = 1; i <= 10; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/aist/aist (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    aist.appendChild(column);
-                }
-            }
-            
-            // Сердца (1-23)
-            const hearts = document.getElementById('hearts-gallery');
-            if (hearts) {
-                for (let i = 1; i <= 23; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/heart/heart (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    hearts.appendChild(column);
-                }
-            }
-            
-            // Minecraft (1-10)
-            const minecraft = document.getElementById('minecraft-gallery');
-            if (minecraft) {
-                for (let i = 1; i <= 10; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/main/main (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    minecraft.appendChild(column);
-                }
-            }
-            
-            // Пикачу (1-12)
-            const pikachu = document.getElementById('pikachu-gallery');
-            if (pikachu) {
-                for (let i = 1; i <= 12; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/pikachu/pikachu (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    pikachu.appendChild(column);
-                }
-            }
-            
-            // Mimosa & March (1-21)
-            const mimosa = document.getElementById('mimosa-march-gallery');
-            if (mimosa) {
-                for (let i = 1; i <= 21; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/march/March (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    mimosa.appendChild(column);
-                }
-            }
-            
-            // Powder & White (1-22)
-            const powder = document.getElementById('powder-white-gallery');
-            if (powder) {
-                for (let i = 1; i <= 22; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/fazenda/powder and white/powder and white (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    powder.appendChild(column);
-                }
-            }
-            
-            // Выпускной Карас (1-18)
-            const vypusk = document.getElementById('vypusk-karas-gallery');
-            if (vypusk) {
-                for (let i = 1; i <= 18; i++) {
-                    const column = document.createElement('div');
-                    column.className = 'column';
-                    column.innerHTML = `<img src="/images/karas/karas-vipusk/karas-vipusk (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
-                    vypusk.appendChild(column);
-                }
-            }
-            
-            // Обновляем хеш при загрузке
-            const hash = window.location.hash.substring(1) || 'about';
-            const page = document.getElementById('page-' + hash);
-            if (page) {
-                document.querySelectorAll('.page').forEach(p => {
-                    p.classList.remove('active');
-                });
-                page.classList.add('active');
+                header.setAttribute('aria-expanded', 'false');
             }
         });
 
-        // Обработчик кнопок "Назад/Вперёд" в браузере
-        window.addEventListener('hashchange', function() {
-            const hash = window.location.hash.substring(1) || 'about';
-            showPage(hash);
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+        });
+
+        window.addEventListener('hashchange', showPageFromHash);
+
+        // ============================================
+        // ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ
+        // ============================================
+        window.addEventListener('load', function() {
+            showPageFromHash();
+            generateGalleries();
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>
