@@ -118,8 +118,11 @@
             margin-bottom: 15px;
         }
         
-        .sidenav a {
+        /* Стили для кнопок в меню */
+        .sidenav button {
             display: block;
+            width: 100%;
+            text-align: left;
             padding: 10px 0;
             color: #555;
             text-decoration: none;
@@ -127,10 +130,13 @@
             font-weight: 300;
             transition: all 0.2s;
             cursor: pointer;
+            border: none;
+            background: none;
             border-bottom: 1px solid #f5f5f5;
+            font-family: inherit;
         }
         
-        .sidenav a:hover {
+        .sidenav button:hover {
             color: #67bed9;
             padding-left: 10px;
         }
@@ -335,7 +341,10 @@
             padding-top: 8px;
         }
         
+        /* Стили для кнопок "назад" */
         .back-link {
+            background: none;
+            border: none;
             display: inline-block;
             margin: 20px 0 30px;
             color: #888;
@@ -345,6 +354,7 @@
             cursor: pointer;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
+            font-family: inherit;
         }
         
         .back-link:hover {
@@ -503,7 +513,6 @@
         /* ЗАЩИТА ФОТО */
         img {
             -webkit-user-drag: none;
-            user-drag: none;
             -webkit-touch-callout: none;
         }
         
@@ -567,51 +576,56 @@
             backdrop-filter: blur(5px);
         }
 
-        [id^="page-balloons-"] .back-to-balloons a,
-        #page-mini-photozones .back-to-balloons a,
-        #page-green-birthday .back-to-balloons a,
-        #page-green-day .back-to-balloons a,
-        #page-superheroes .back-to-balloons a,
-        #page-korobka-surpris .back-to-balloons a,
-        #page-powder-white .back-to-balloons a,
-        #page-vypusk-karas .back-to-balloons a,
-        #page-malyshka .back-to-balloons a,
-        #page-malysh .back-to-balloons a,
-        #page-mimosa-march .back-to-balloons a,
-        #page-kot-dlya-kota .back-to-balloons a,
-        #page-yagodny-miks .back-to-balloons a,
-        #page-muz-instrument .back-to-balloons a,
-        #page-aist .back-to-balloons a,
-        #page-hearts .back-to-balloons a,
-        #page-minecraft .back-to-balloons a,
-        #page-pikachu .back-to-balloons a,
-        #page-balloons-edinorog .back-to-balloons a {
+        [id^="page-balloons-"] .back-to-balloons button,
+        #page-mini-photozones .back-to-balloons button,
+        #page-green-birthday .back-to-balloons button,
+        #page-green-day .back-to-balloons button,
+        #page-superheroes .back-to-balloons button,
+        #page-korobka-surpris .back-to-balloons button,
+        #page-powder-white .back-to-balloons button,
+        #page-vypusk-karas .back-to-balloons button,
+        #page-malyshka .back-to-balloons button,
+        #page-malysh .back-to-balloons button,
+        #page-mimosa-march .back-to-balloons button,
+        #page-kot-dlya-kota .back-to-balloons button,
+        #page-yagodny-miks .back-to-balloons button,
+        #page-muz-instrument .back-to-balloons button,
+        #page-aist .back-to-balloons button,
+        #page-hearts .back-to-balloons button,
+        #page-minecraft .back-to-balloons button,
+        #page-pikachu .back-to-balloons button,
+        #page-balloons-edinorog .back-to-balloons button {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
             font-weight: 400;
             display: inline-block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-family: inherit;
         }
 
-        [id^="page-balloons-"] .back-to-balloons a:hover,
-        #page-mini-photozones .back-to-balloons a:hover,
-        #page-green-birthday .back-to-balloons a:hover,
-        #page-green-day .back-to-balloons a:hover,
-        #page-superheroes .back-to-balloons a:hover,
-        #page-korobka-surpris .back-to-balloons a:hover,
-        #page-powder-white .back-to-balloons a:hover,
-        #page-vypusk-karas .back-to-balloons a:hover,
-        #page-malyshka .back-to-balloons a:hover,
-        #page-malysh .back-to-balloons a:hover,
-        #page-mimosa-march .back-to-balloons a:hover,
-        #page-kot-dlya-kota .back-to-balloons a:hover,
-        #page-yagodny-miks .back-to-balloons a:hover,
-        #page-muz-instrument .back-to-balloons a:hover,
-        #page-aist .back-to-balloons a:hover,
-        #page-hearts .back-to-balloons a:hover,
-        #page-minecraft .back-to-balloons a:hover,
-        #page-pikachu .back-to-balloons a:hover,
-        #page-balloons-edinorog .back-to-balloons a:hover {
+        [id^="page-balloons-"] .back-to-balloons button:hover,
+        #page-mini-photozones .back-to-balloons button:hover,
+        #page-green-birthday .back-to-balloons button:hover,
+        #page-green-day .back-to-balloons button:hover,
+        #page-superheroes .back-to-balloons button:hover,
+        #page-korobka-surpris .back-to-balloons button:hover,
+        #page-powder-white .back-to-balloons button:hover,
+        #page-vypusk-karas .back-to-balloons button:hover,
+        #page-malyshka .back-to-balloons button:hover,
+        #page-malysh .back-to-balloons button:hover,
+        #page-mimosa-march .back-to-balloons button:hover,
+        #page-kot-dlya-kota .back-to-balloons button:hover,
+        #page-yagodny-miks .back-to-balloons button:hover,
+        #page-muz-instrument .back-to-balloons button:hover,
+        #page-aist .back-to-balloons button:hover,
+        #page-hearts .back-to-balloons button:hover,
+        #page-minecraft .back-to-balloons button:hover,
+        #page-pikachu .back-to-balloons button:hover,
+        #page-balloons-edinorog .back-to-balloons button:hover {
             text-decoration: underline;
         }
     </style>
@@ -650,12 +664,12 @@
     <div class="sidenav" id="sidenav">
         <h3>Меню</h3>
         <ul>
-            <li><a onclick="showPage('about'); closeMenu()">О себе</a></li>
-            <li><a onclick="showPage('decor'); closeMenu()">Декор</a></li>
-            <li><a onclick="showPage('photozone'); closeMenu()">Фотозона в студии</a></li>
-            <li><a onclick="showPage('balloons'); closeMenu()">Шары</a></li>
-            <li><a onclick="showPage('brides'); closeMenu()">Невесты</a></li>
-            <li><a onclick="showPage('contacts'); closeMenu()">Контакты</a></li>
+            <li><button onclick="showPage('about'); closeMenu()">О себе</button></li>
+            <li><button onclick="showPage('decor'); closeMenu()">Декор</button></li>
+            <li><button onclick="showPage('photozone'); closeMenu()">Фотозона в студии</button></li>
+            <li><button onclick="showPage('balloons'); closeMenu()">Шары</button></li>
+            <li><button onclick="showPage('brides'); closeMenu()">Невесты</button></li>
+            <li><button onclick="showPage('contacts'); closeMenu()">Контакты</button></li>
         </ul>
     </div>
 
@@ -689,7 +703,7 @@
         <!-- ДЕКОР -->
         <div id="page-decor" class="page">
             <h1>Декор</h1>
-            <div class="back-link" onclick="showPage('about')">← на главную</div>
+            <button class="back-link" onclick="showPage('about')">← на главную</button>
 
             <!-- GoodWin Hall -->
             <h2>GoodWin Hall</h2>
@@ -981,7 +995,7 @@
         <!-- ФОТОЗОНА В СТУДИИ -->
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
-            <div class="back-link" onclick="showPage('about')">← на главную</div>
+            <button class="back-link" onclick="showPage('about')">← на главную</button>
             
             <div class="row masonry">
                 <!-- 1. Выписка -->
@@ -1088,7 +1102,7 @@
         <!-- МИНИ ФОТОЗОНЫ (все 124 фото) -->
         <div id="page-mini-photozones" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('photozone')">← Фотозона в студии</a>
+                <button onclick="showPage('photozone')">← Фотозона в студии</button>
             </div>
             <h1>Мини фотозоны</h1>
             <div class="row masonry" id="mini-gallery"></div>
@@ -1097,7 +1111,7 @@
         <!-- GREEN BIRTHDAY (все 8 фото) -->
         <div id="page-green-birthday" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('decor')">← Декор</a>
+                <button onclick="showPage('decor')">← Декор</button>
             </div>
             <h1>Green Birthday</h1>
             <div class="row masonry" id="green-birthday-gallery"></div>
@@ -1106,7 +1120,7 @@
         <!-- GREEN DAY (все 46 фото) -->
         <div id="page-green-day" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('decor')">← Декор</a>
+                <button onclick="showPage('decor')">← Декор</button>
             </div>
             <h1>Green Day</h1>
             <div class="row masonry" id="green-day-gallery"></div>
@@ -1116,7 +1130,7 @@
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
             <div style="margin-bottom:20px;">
-                <a onclick="showPage('about')" style="color:#67bed9; cursor:pointer;">← Главная</a>
+                <button onclick="showPage('about')" style="color:#67bed9; cursor:pointer; background:none; border:none; font-size:16px;">← Главная</button>
             </div>
 
             <!-- Мир сказок ✨ -->
@@ -1215,7 +1229,7 @@
                 </div>
             </div>
 
-            <!-- Мир увлечений ⚽🎸 (НОВЫЙ РАЗДЕЛ) -->
+            <!-- Мир увлечений ⚽🎸 -->
             <h2>Мир увлечений ⚽🎸</h2>
             <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
                 Спорт, музыка и всё, что вдохновляет
@@ -1288,7 +1302,7 @@
         <!-- НЕЖНАЯ МАГИЯ -->
         <div id="page-balloons-nezhnost" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Нежная магия</h1>
             <div class="row masonry" id="nezhnost-gallery"></div>
@@ -1297,7 +1311,7 @@
         <!-- ЕДИНОРОГ -->
         <div id="page-balloons-edinorog" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Единорог</h1>
             <div class="row masonry" id="edinorog-gallery"></div>
@@ -1306,7 +1320,7 @@
         <!-- СУПЕРГЕРОИ (все 21 фото) -->
         <div id="page-superheroes" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Супергерои</h1>
             <div class="row masonry" id="superheroes-gallery"></div>
@@ -1315,7 +1329,7 @@
         <!-- КОРОБКА СЮРПРИЗ (все 17 фото) -->
         <div id="page-korobka-surpris" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Коробка сюрприз</h1>
             <div class="row masonry" id="korobka-surpris-gallery"></div>
@@ -1324,7 +1338,7 @@
         <!-- МАЛЫШКА (все 15 фото) -->
         <div id="page-malyshka" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Малышка</h1>
             <div class="row masonry" id="malyshka-gallery"></div>
@@ -1333,7 +1347,7 @@
         <!-- МАЛЫШ (все 7 фото) -->
         <div id="page-malysh" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Малыш</h1>
             <div class="row masonry" id="malysh-gallery"></div>
@@ -1342,7 +1356,7 @@
         <!-- КОТ ДЛЯ КОТА (все 10 фото) -->
         <div id="page-kot-dlya-kota" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Кот для кота</h1>
             <div class="row masonry" id="kot-dlya-kota-gallery"></div>
@@ -1351,7 +1365,7 @@
         <!-- ЯГОДНЫЙ МИКС (все 9 фото) -->
         <div id="page-yagodny-miks" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Ягодный микс</h1>
             <div class="row masonry" id="yagodny-miks-gallery"></div>
@@ -1360,7 +1374,7 @@
         <!-- МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ (все 3 фото) -->
         <div id="page-muz-instrument" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Музыкальные инструменты</h1>
             <div class="row masonry" id="muz-instrument-gallery"></div>
@@ -1369,7 +1383,7 @@
         <!-- АИСТ (все 10 фото) -->
         <div id="page-aist" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Аист</h1>
             <div class="row masonry" id="aist-gallery"></div>
@@ -1378,7 +1392,7 @@
         <!-- СЕРДЦА (все 23 фото) -->
         <div id="page-hearts" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Сердца</h1>
             <div class="row masonry" id="hearts-gallery"></div>
@@ -1387,7 +1401,7 @@
         <!-- MINECRAFT (все 10 фото) -->
         <div id="page-minecraft" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Minecraft</h1>
             <div class="row masonry" id="minecraft-gallery"></div>
@@ -1396,7 +1410,7 @@
         <!-- ПИКАЧУ (все 12 фото) -->
         <div id="page-pikachu" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('balloons')">← Шары</a>
+                <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Пикачу</h1>
             <div class="row masonry" id="pikachu-gallery"></div>
@@ -1405,7 +1419,7 @@
         <!-- MIMOSA & MARCH (все 21 фото) -->
         <div id="page-mimosa-march" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('decor')">← Декор</a>
+                <button onclick="showPage('decor')">← Декор</button>
             </div>
             <h1>Mimosa & March</h1>
             <div class="row masonry" id="mimosa-march-gallery"></div>
@@ -1414,7 +1428,7 @@
         <!-- POWDER & WHITE (все 22 фото) -->
         <div id="page-powder-white" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('decor')">← Декор</a>
+                <button onclick="showPage('decor')">← Декор</button>
             </div>
             <h1>Powder & White</h1>
             <div class="row masonry" id="powder-white-gallery"></div>
@@ -1423,7 +1437,7 @@
         <!-- ВЫПУСКНОЙ КАРАС (все 18 фото) -->
         <div id="page-vypusk-karas" class="page">
             <div class="back-to-balloons">
-                <a onclick="showPage('decor')">← Декор</a>
+                <button onclick="showPage('decor')">← Декор</button>
             </div>
             <h1>Выпускной</h1>
             <div class="row masonry" id="vypusk-karas-gallery"></div>
@@ -1432,7 +1446,7 @@
         <!-- НЕВЕСТЫ -->
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
-            <div class="back-link" onclick="showPage('about')">← на главную</div>
+            <button class="back-link" onclick="showPage('about')">← на главную</button>
             <div style="margin: 20px 0 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
                 <h3 style="color:#67bed9; font-weight:300; margin-bottom:10px;">Свадебные и вечерние платья в Обнинске</h3>
                 <p style="color:#555; line-height:1.6; font-weight:300;">
@@ -1457,7 +1471,7 @@
         <!-- КОНТАКТЫ -->
         <div id="page-contacts" class="page">
             <h1>Контакты</h1>
-            <div class="back-link" onclick="showPage('about')">← на главную</div>
+            <button class="back-link" onclick="showPage('about')">← на главную</button>
             <h3 style="color:#67bed9; font-weight:300;">🎈 Самовывоз шаров, декор</h3>
             <p style="margin-bottom: 10px; font-weight:300;">ул. Гагарина, 46, Обнинск</p>
             <div style="width:100%; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px;">
@@ -1569,7 +1583,7 @@
             document.getElementById('photoModal').style.display = 'none';
         }
         
-        // АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ ГАЛЕРЕЙ (С ДОБАВЛЕННЫМ loading="lazy")
+        // АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ ГАЛЕРЕЙ
         window.addEventListener('load', function() {
             // Мини фотозоны (1-124)
             const mini = document.getElementById('mini-gallery');
@@ -1604,7 +1618,7 @@
                 }
             }
             
-            // Нежная магия (только нежность)
+            // Нежная магия (только нежность, без заек)
             const neznost = document.getElementById('nezhnost-gallery');
             if (neznost) {
                 const oldPhotos = [1,3,5,7,9,11,13,15,17];
@@ -1790,6 +1804,12 @@
                 });
                 page.classList.add('active');
             }
+        });
+
+        // Обработчик кнопок "Назад/Вперёд" в браузере
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash.substring(1) || 'about';
+            showPage(hash);
         });
     </script>
 </body>
