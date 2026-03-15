@@ -553,7 +553,10 @@
         #page-yagodny-miks .back-to-balloons,
         #page-muz-instrument .back-to-balloons,
         #page-aist .back-to-balloons,
-        #page-hearts .back-to-balloons {
+        #page-hearts .back-to-balloons,
+        #page-minecraft .back-to-balloons,
+        #page-pikachu .back-to-balloons,
+        #page-balloons-edinorog .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -579,7 +582,10 @@
         #page-yagodny-miks .back-to-balloons a,
         #page-muz-instrument .back-to-balloons a,
         #page-aist .back-to-balloons a,
-        #page-hearts .back-to-balloons a {
+        #page-hearts .back-to-balloons a,
+        #page-minecraft .back-to-balloons a,
+        #page-pikachu .back-to-balloons a,
+        #page-balloons-edinorog .back-to-balloons a {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -602,7 +608,10 @@
         #page-yagodny-miks .back-to-balloons a:hover,
         #page-muz-instrument .back-to-balloons a:hover,
         #page-aist .back-to-balloons a:hover,
-        #page-hearts .back-to-balloons a:hover {
+        #page-hearts .back-to-balloons a:hover,
+        #page-minecraft .back-to-balloons a:hover,
+        #page-pikachu .back-to-balloons a:hover,
+        #page-balloons-edinorog .back-to-balloons a:hover {
             text-decoration: underline;
         }
     </style>
@@ -1151,11 +1160,30 @@
                 Супергерои, космические саги и любимые вселенные — для отважных и смелых
             </div>
             <div class="row masonry">
+                <!-- Супергерои -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('superheroes')">
                         <img src="/images/supergeroi/supergeroi (9).jpg" style="width:100%; border-radius:12px;">
                         <div class="project-info">
                             <div class="project-title">Супергерои</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Minecraft -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('minecraft')">
+                        <img src="/images/main/main (5).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Minecraft</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Пикачу -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('pikachu')">
+                        <img src="/images/pikachu/pikachu (5).jpg" style="width:100%; border-radius:12px;">
+                        <div class="project-info">
+                            <div class="project-title">Пикачу</div>
                         </div>
                     </div>
                 </div>
@@ -1176,7 +1204,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Аист (НОВЫЙ) -->
+                <!-- Аист -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('aist')">
                         <img src="/images/aist/aist (4).jpg" style="width:100%; border-radius:12px;">
@@ -1245,7 +1273,7 @@
                 Для особенных дней в календаре — зимних, весенних и романтичных
             </div>
             <div class="row masonry">
-                <!-- Сердца (НОВЫЙ) -->
+                <!-- Сердца -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('hearts')">
                         <img src="/images/heart/heart (12).jpg" style="width:100%; border-radius:12px;">
@@ -1354,6 +1382,24 @@
             </div>
             <h1>Сердца</h1>
             <div class="row masonry" id="hearts-gallery"></div>
+        </div>
+
+        <!-- MINECRAFT (все 10 фото) -->
+        <div id="page-minecraft" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Minecraft</h1>
+            <div class="row masonry" id="minecraft-gallery"></div>
+        </div>
+
+        <!-- ПИКАЧУ (все 12 фото) -->
+        <div id="page-pikachu" class="page">
+            <div class="back-to-balloons">
+                <a onclick="showPage('balloons')">← Шары</a>
+            </div>
+            <h1>Пикачу</h1>
+            <div class="row masonry" id="pikachu-gallery"></div>
         </div>
 
         <!-- MIMOSA & MARCH (все 21 фото) -->
@@ -1677,6 +1723,28 @@
                     column.className = 'column';
                     column.innerHTML = `<img src="/images/heart/heart (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
                     hearts.appendChild(column);
+                }
+            }
+            
+            // Minecraft (1-10)
+            const minecraft = document.getElementById('minecraft-gallery');
+            if (minecraft) {
+                for (let i = 1; i <= 10; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/main/main (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    minecraft.appendChild(column);
+                }
+            }
+            
+            // Пикачу (1-12)
+            const pikachu = document.getElementById('pikachu-gallery');
+            if (pikachu) {
+                for (let i = 1; i <= 12; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.innerHTML = `<img src="/images/pikachu/pikachu (${i}).jpg" loading="lazy" onclick="openModal(this.src)">`;
+                    pikachu.appendChild(column);
                 }
             }
             
