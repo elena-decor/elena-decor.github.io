@@ -60,7 +60,7 @@ function restoreScrollPosition() {
 }
 
 function showPage(pageId) {
-    // saveScrollPosition(); // ← закомментировано, убрано мигание
+    saveScrollPosition(); // Сохраняем позицию перед уходом
 
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
@@ -73,9 +73,9 @@ function showPage(pageId) {
     closeMenu();
     closeAccordion();
 
-    // setTimeout(() => {
-    //     restoreScrollPosition(); // ← закомментировано
-    // }, 50);
+    setTimeout(() => {
+        restoreScrollPosition(); // Восстанавливаем позицию при возврате
+    }, 50);
 }
 
 // ============================================
@@ -125,13 +125,21 @@ function toggleAccordion() {
 // ФУНКЦИИ ДЛЯ МОДАЛЬНОГО ОКНА
 // ============================================
 function openModal(src) {
-    document.getElementById('modalImage').src = src;
-    document.getElementById('photoModal').style.display = 'block';
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = src;
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Для доступности: перемещаем фокус в модальное окно
+    setTimeout(() => {
+        document.querySelector('.close').focus();
+    }, 100);
 }
 
 function closeModal() {
-    document.getElementById('photoModal').style.display = 'none';
+    const modal = document.getElementById('photoModal');
+    modal.style.display = 'none';
     document.body.style.overflow = '';
 }
 
@@ -159,6 +167,13 @@ function generateGalleries() {
             img.alt = `Фото ${num} из галереи`;
             img.draggable = false;
             img.onclick = () => openModal(img.src);
+            
+            // Заглушка на случай битой ссылки
+            img.onerror = function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50\' y=\'115\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\'%3EФото не найдено%3C/text%3E%3C/svg%3E';
+                this.alt = 'Изображение временно недоступно';
+            };
+            
             column.appendChild(img);
             container.appendChild(column);
         });
@@ -186,6 +201,29 @@ document.querySelectorAll('img').forEach(img => {
 
 window.addEventListener('hashchange', showPageFromHash);
 
+// Обработка клавиш для модального окна
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+    
+    // Если модальное окно открыто, не даем tab уходить на фон
+    const modal = document.getElementById('photoModal');
+    if (modal.style.display === 'block' && e.key === 'Tab') {
+        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+        }
+    }
+});
+
 // ============================================
 // ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ
 // ============================================
@@ -193,9 +231,8 @@ window.addEventListener('load', function() {
     showPageFromHash();
     generateGalleries();
     
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
+    // Восстанавливаем позицию после полной загрузки
+    setTimeout(() => {
+        restoreScrollPosition();
+    }, 100);
 });
