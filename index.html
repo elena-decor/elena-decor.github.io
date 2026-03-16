@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Декоратор Елена Нестерова | Оформление праздников, фотозоны, воздушые шары</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="description" content="Елена Нестерова — декоратор. Создаю уют и красоту для вашего торжества в Обнинске и области, Калуге и Москве. Фотозоны, декор, шары.">
-    <meta name="keywords" content="декор Обнинск, оформление праздников, фотозона, декор торжеств, выездной декоратор">
+    
+    <!-- SEO метатеги -->
+    <title>Декоратор Елена Нестерова | Оформление праздников в Обнинске и Москве</title>
+    <meta name="description" content="Профессиональный декор праздников, фотозоны, оформление шарами. Работаю в Обнинске, Калуге, Москве и области. Более 50 реализованных проектов.">
+    <meta name="keywords" content="декор Обнинск, оформление праздников, фотозона, воздушные шары, свадебный декоратор">
     <meta name="author" content="Елена Нестерова">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph метатеги -->
-    <meta property="og:title" content="Декоратор Елена Нестерова | Оформление праздников, фотозоны, воздушные шары" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://decor-obninsk.ru/" />
-    <meta property="og:image" content="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:description" content="Елена Нестерова — декоратор. Создаю уют и красоту для вашего торжества в Обнинске и области, Калуге и Москве." />
-    <meta property="og:site_name" content="Декоратор Елена Нестерова" />
-    <meta property="og:locale" content="ru_RU" />
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Декоратор Елена Нестерова">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://decor-obninsk.ru">
+    <meta property="og:image" content="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg">
+    <meta property="og:description" content="Создаю уют и красоту для вашего торжества">
+    <meta property="og:site_name" content="Декоратор Елена Нестерова">
+    <meta property="og:locale" content="ru_RU">
     
-    <!-- Микроразметка -->
-    <meta name="yandex-verification" content="35497f6b8b6e8619" />
-    <meta name="google-site-verification" content="google6d34b75076aa58eb" />
+    <!-- Верификация -->
+    <meta name="yandex-verification" content="35497f6b8b6e8619">
+    <meta name="google-site-verification" content="google6d34b75076aa58eb">
     
-    <!-- Фавикон -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     
     <style>
+        /* ===== ОБНУЛЕНИЕ ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        /* ===== БАЗОВЫЕ СТИЛИ (Mobile First) ===== */
         body {
             background: #fafafa;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding: 20px 20px 120px 20px;
+            padding: 15px 15px 100px 15px;
             color: #333;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.5;
         }
         
-        /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ */
+        /* ПЛАВАЮЩАЯ КНОПКА МЕНЮ (Mobile First) */
         .menu-button {
             position: fixed;
-            bottom: 110px;
-            right: 25px;
-            min-width: 90px;
-            height: 50px;
+            bottom: 100px;
+            right: 15px;
+            min-width: 70px;
+            height: 45px;
             background: #67bed9;
             border-radius: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -59,14 +63,15 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: transform 0.2s, background 0.2s;
             border: none;
             color: white;
-            padding: 0 20px;
-            font-size: 16px;
+            padding: 0 15px;
+            font-size: 14px;
             font-weight: 400;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            will-change: transform;
         }
         
         .menu-button:hover {
@@ -74,25 +79,64 @@
             background: #4a9bbf;
         }
         
-        .menu-icon {
-            font-size: 20px;
-            margin-right: 6px;
+        .menu-button:active {
+            transform: scale(0.98);
         }
         
-        /* ВЫПЛЫВАЮЩАЯ ПАНЕЛЬ */
+        .menu-icon {
+            font-size: 18px;
+            margin-right: 4px;
+        }
+        
+        /* Планшеты */
+        @media (min-width: 768px) {
+            body {
+                padding: 20px 20px 120px 20px;
+            }
+            
+            .menu-button {
+                bottom: 110px;
+                right: 25px;
+                min-width: 90px;
+                height: 50px;
+                padding: 0 20px;
+                font-size: 16px;
+            }
+            
+            .menu-icon {
+                font-size: 20px;
+                margin-right: 6px;
+            }
+        }
+        
+        /* Компьютеры */
+        @media (min-width: 1024px) {
+            .menu-button {
+                bottom: 120px;
+            }
+        }
+        
+        /* ВЫПЛЫВАЮЩАЯ ПАНЕЛЬ (Mobile First) */
         .sidenav {
             position: fixed;
-            left: -300px;
+            left: -100%;
             top: 0;
-            width: 280px;
+            width: 100%;
             height: 100vh;
             background: #ffffff;
             box-shadow: 2px 0 20px rgba(0,0,0,0.1);
             z-index: 101;
-            padding: 50px 20px;
+            padding: 60px 20px 30px;
             transition: left 0.3s ease;
             border-right: 1px solid #f0f0f0;
             overflow-y: auto;
+        }
+        
+        @media (min-width: 480px) {
+            .sidenav {
+                width: 320px;
+                left: -320px;
+            }
         }
         
         .sidenav.open {
@@ -100,11 +144,11 @@
         }
         
         .sidenav h3 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 300;
             color: #67bed9;
             margin-bottom: 30px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #f0f0f0;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -118,15 +162,14 @@
             margin-bottom: 15px;
         }
         
-        /* Стили для кнопок в меню */
         .sidenav button {
             display: block;
             width: 100%;
             text-align: left;
-            padding: 10px 0;
+            padding: 12px 0;
             color: #555;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 300;
             transition: all 0.2s;
             cursor: pointer;
@@ -139,6 +182,13 @@
         .sidenav button:hover {
             color: #67bed9;
             padding-left: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .sidenav button {
+                padding: 10px 0;
+                font-size: 16px;
+            }
         }
         
         /* Затемнение фона */
@@ -162,7 +212,31 @@
             flex: 1;
         }
         
-        /* СТРАНИЦЫ */
+        /* Плашка о разработке */
+        .dev-banner {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 40px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .dev-banner {
+                padding: 12px 20px;
+                margin-bottom: 30px;
+                font-size: 14px;
+            }
+        }
+        
+        /* ===== СТРАНИЦЫ ===== */
         .page {
             display: none;
             contain: content;
@@ -173,31 +247,273 @@
             display: block;
         }
         
-        /* Плашка о разработке */
-        .dev-banner {
-            background: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 40px;
-            padding: 12px 20px;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #888;
-            font-size: 14px;
+        .page h1 {
+            font-size: 26px;
             font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px 0 25px;
+            color: #222;
+            text-align: center;
         }
         
-        /* ГЛАВНАЯ СТРАНИЦА */
+        @media (min-width: 768px) {
+            .page h1 {
+                font-size: 32px;
+                margin: 30px 0 40px;
+            }
+        }
+        
+        .page h2 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 30px 0 15px;
+            color: #444;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        @media (min-width: 768px) {
+            .page h2 {
+                font-size: 24px;
+                margin: 40px 0 20px;
+            }
+        }
+        
+        /* ===== УЛУЧШЕННАЯ MASONRY СЕТКА ===== */
+        .row.masonry {
+            display: block;
+            column-count: 2;
+            column-gap: 12px;
+            transition: column-count 0.3s ease;
+        }
+        
+        /* Адаптивные колонки */
+        @media (min-width: 480px) {
+            .row.masonry { column-count: 2; }
+        }
+        
+        @media (min-width: 600px) {
+            .row.masonry { column-count: 3; }
+        }
+        
+        @media (min-width: 900px) {
+            .row.masonry { 
+                column-count: 4;
+                column-gap: 15px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .row.masonry { 
+                column-count: 5;
+                column-gap: 20px;
+            }
+        }
+        
+        @media (min-width: 1600px) {
+            .row.masonry { 
+                column-count: 6;
+                column-gap: 20px;
+            }
+        }
+        
+        .row.masonry .column {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            opacity: 0;
+            animation: fadeInColumn 0.4s ease forwards;
+            will-change: transform;
+        }
+        
+        @keyframes fadeInColumn {
+            to { opacity: 1; }
+        }
+        
+        /* Скелетон (пустышка) во время загрузки */
+        .row.masonry .column::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                #f0f0f0 25%,
+                #e0e0e0 50%,
+                #f0f0f0 75%
+            );
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 12px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        
+        .row.masonry .column.loading::before {
+            opacity: 1;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .row.masonry .column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s;
+            position: relative;
+            z-index: 2;
+            background: #f5f5f5;
+            opacity: 0;
+            will-change: transform;
+        }
+        
+        .row.masonry .column img.loaded {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .row.masonry .column img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .row.masonry {
+                column-gap: 15px;
+            }
+            
+            .row.masonry .column {
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* ===== КАРТОЧКИ ПРОЕКТОВ ===== */
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #eee;
+            display: block;
+            width: 100%;
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s;
+            cursor: pointer;
+            will-change: transform;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .project-card:active {
+            transform: translateY(-2px);
+        }
+        
+        .project-cover {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f5f5f5;
+        }
+        
+        .project-info {
+            padding: 12px 12px 8px;
+        }
+        
+        .project-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #222;
+        }
+        
+        @media (min-width: 768px) {
+            .project-title {
+                font-size: 18px;
+            }
+            
+            .project-info {
+                padding: 12px 16px 8px;
+            }
+        }
+        
+        .project-tags {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.5;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .project-tags {
+                font-size: 13px;
+            }
+        }
+        
+        /* ===== КНОПКИ НАЗАД ===== */
+        .back-link,
+        [id^="page-"] .back-to-balloons button {
+            background: none;
+            border: none;
+            display: inline-block;
+            margin: 10px 0 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            font-family: inherit;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover,
+        [id^="page-"] .back-to-balloons button:hover {
+            color: #67bed9;
+            border-bottom-color: #67bed9;
+        }
+        
+        @media (min-width: 768px) {
+            .back-link,
+            [id^="page-"] .back-to-balloons button {
+                margin: 20px 0 30px;
+                font-size: 14px;
+            }
+        }
+        
+        /* ===== О СЕБЕ ===== */
         .about-container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 15px;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .about-container {
+                padding: 40px 20px;
+                flex-direction: row;
+                gap: 40px;
+            }
         }
         
         .about-text {
@@ -206,6 +522,8 @@
         
         .about-photo {
             flex: 1 1 300px;
+            width: 100%;
+            max-width: 400px;
         }
         
         .about-photo img {
@@ -213,13 +531,21 @@
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #f5f5f5;
         }
         
         .about-text h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 300;
             margin-bottom: 20px;
             color: #222;
+            text-align: left;
+        }
+        
+        @media (min-width: 768px) {
+            .about-text h1 {
+                font-size: 32px;
+            }
         }
         
         .about-text p {
@@ -235,160 +561,7 @@
             font-weight: 400;
         }
         
-        /* ===== АДАПТИВНАЯ СЕТКА ===== */
-        .page h1 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: #222;
-            text-align: center;
-        }
-        
-        .page h2 {
-            font-size: 22px;
-            font-weight: 400;
-            margin: 40px 0 20px;
-            color: #444;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 0 0 30px 0;
-        }
-        
-        /* ===== MASONRY КАК В PINTEREST ===== */
-        .row.masonry {
-            display: block;
-            column-count: 2;
-            column-gap: 15px;
-        }
-
-        @media (min-width: 600px) {
-            .row.masonry {
-                column-count: 3;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .row.masonry {
-                column-count: 4;
-            }
-        }
-
-        .row.masonry .column {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 15px;
-            break-inside: avoid;
-        }
-
-        .row.masonry .column img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .row.masonry .column img:hover {
-            transform: scale(1.02);
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid #eee;
-            display: block;
-            width: 100%;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
-        
-        .project-cover {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .project-info {
-            padding: 12px 16px 8px 16px;
-        }
-        
-        .project-title {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 4px;
-            color: #222;
-        }
-        
-        .project-tags {
-            color: #777;
-            font-size: 13px;
-            line-height: 1.5;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 8px;
-        }
-        
-        /* Стили для кнопок "назад" */
-        .back-link {
-            background: none;
-            border: none;
-            display: inline-block;
-            margin: 20px 0 30px;
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 300;
-            cursor: pointer;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            font-family: inherit;
-        }
-        
-        .back-link:hover {
-            color: #67bed9;
-        }
-        
-        .dev-section {
-            background: white;
-            border-radius: 12px;
-            padding: 60px 20px;
-            text-align: center;
-            border: 1px solid #eee;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .dev-section h3 {
-            font-size: 24px;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .dev-section p {
-            color: #888;
-            font-size: 16px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        /* ЗАКРЕПЛЁННАЯ ПЛАШКА */
+        /* ===== ЗАКРЕПЛЁННАЯ ПЛАШКА ===== */
         .fixed-footer {
             position: fixed;
             bottom: 0;
@@ -399,7 +572,13 @@
             backdrop-filter: blur(10px);
             border-top: 1px solid #eee;
             box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-            padding: 15px 20px;
+            padding: 12px 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .fixed-footer {
+                padding: 15px 20px;
+            }
         }
         
         .accordion-container {
@@ -412,7 +591,7 @@
         }
         
         .accordion-header {
-            padding: 15px 25px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -420,15 +599,27 @@
             user-select: none;
         }
         
+        @media (min-width: 768px) {
+            .accordion-header {
+                padding: 15px 25px;
+            }
+        }
+        
         .accordion-header h3 {
             font-weight: 300;
-            font-size: 18px;
+            font-size: 16px;
             color: #333;
             margin: 0;
         }
         
+        @media (min-width: 768px) {
+            .accordion-header h3 {
+                font-size: 18px;
+            }
+        }
+        
         .accordion-arrow {
-            font-size: 20px;
+            font-size: 18px;
             color: #67bed9;
             transition: transform 0.3s ease;
         }
@@ -441,38 +632,21 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
-            padding: 0 25px;
+            padding: 0 15px;
         }
         
         .accordion-content.open {
-            max-height: none;
-            height: auto;
-            padding: 0 25px 25px 25px;
+            max-height: 600px;
+            padding: 0 15px 15px;
         }
         
-        .qform-container {
-            margin-top: 10px;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 20px 100px 20px;
-            }
-            .menu-button {
-                bottom: 100px;
-            }
-            
-            .accordion-header h3 {
-                font-size: 16px;
-            }
-            
+        @media (min-width: 768px) {
             .accordion-content.open {
-                max-height: none;
-                height: auto;
+                padding: 0 25px 25px;
             }
         }
-
-        /* СТИЛИ ДЛЯ ПОПАПА */
+        
+        /* ===== ПОПАП ===== */
         .modal {
             display: none;
             position: fixed;
@@ -484,11 +658,11 @@
             background-color: rgba(0,0,0,0.9);
             backdrop-filter: blur(5px);
         }
-
+        
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90%;
             position: relative;
             top: 50%;
@@ -496,34 +670,58 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-
+        
+        @media (min-width: 768px) {
+            .modal-content {
+                max-width: 90%;
+            }
+        }
+        
         .close {
             position: absolute;
-            top: 20px;
-            right: 35px;
+            top: 15px;
+            right: 20px;
             color: #fff;
-            font-size: 40px;
+            font-size: 35px;
             font-weight: bold;
             cursor: pointer;
             z-index: 2001;
+            transition: color 0.2s;
         }
-
+        
+        @media (min-width: 768px) {
+            .close {
+                top: 20px;
+                right: 35px;
+                font-size: 40px;
+            }
+        }
+        
         .close:hover {
             color: #67bed9;
         }
-
+        
         /* ЗАЩИТА ФОТО */
         img {
             -webkit-user-drag: none;
-            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .project-card img,
+        .about-photo img,
+        .row.masonry .column img {
+            pointer-events: auto; /* разрешаем клик на фото */
         }
         
         .city-info {
             color: #aaa;
             font-size: 12px;
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
             font-weight: 300;
+            padding: 0 15px;
         }
         
         .protection-note {
@@ -532,124 +730,104 @@
             margin-top: 10px;
             text-align: center;
         }
-
-        /* СПЕЦИАЛЬНО ДЛЯ РАЗДЕЛА ШАРЫ */
-        #page-balloons .column {
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
+        
+        /* Стили для разделов с описанием */
+        .section-description {
+            margin: 5px 0 20px;
+            color: #666;
+            font-weight: 300;
+            font-size: 15px;
+            max-width: 600px;
+            padding: 0 15px;
         }
-
-        @media (max-width: 768px) {
-            #page-balloons .column {
-                max-width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
+        
+        @media (min-width: 768px) {
+            .section-description {
+                margin: 5px 0 20px;
+                font-size: 15px;
+                padding: 0;
             }
         }
-
-        /* ===== ЛИПКАЯ КНОПКА ДЛЯ ВСЕХ ПРОЕКТОВ ===== */
-        [id^="page-balloons-"] .back-to-balloons,
-        #page-mini-photozones .back-to-balloons,
-        #page-green-birthday .back-to-balloons,
-        #page-green-day .back-to-balloons,
-        #page-superheroes .back-to-balloons,
-        #page-korobka-surpris .back-to-balloons,
-        #page-powder-white .back-to-balloons,
-        #page-vypusk-karas .back-to-balloons,
-        #page-malyshka .back-to-balloons,
-        #page-malysh .back-to-balloons,
-        #page-mimosa-march .back-to-balloons,
-        #page-kot-dlya-kota .back-to-balloons,
-        #page-yagodny-miks .back-to-balloons,
-        #page-muz-instrument .back-to-balloons,
-        #page-aist .back-to-balloons,
-        #page-hearts .back-to-balloons,
-        #page-minecraft .back-to-balloons,
-        #page-pikachu .back-to-balloons,
-        #page-balloons-edinorog .back-to-balloons {
-            position: sticky;
-            top: 0;
-            background: #fafafa;
-            padding: 15px 0;
-            z-index: 10;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
+        
+        /* Стили для контактов */
+        .contacts-map {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-
-        [id^="page-balloons-"] .back-to-balloons button,
-        #page-mini-photozones .back-to-balloons button,
-        #page-green-birthday .back-to-balloons button,
-        #page-green-day .back-to-balloons button,
-        #page-superheroes .back-to-balloons button,
-        #page-korobka-surpris .back-to-balloons button,
-        #page-powder-white .back-to-balloons button,
-        #page-vypusk-karas .back-to-balloons button,
-        #page-malyshka .back-to-balloons button,
-        #page-malysh .back-to-balloons button,
-        #page-mimosa-march .back-to-balloons button,
-        #page-kot-dlya-kota .back-to-balloons button,
-        #page-yagodny-miks .back-to-balloons button,
-        #page-muz-instrument .back-to-balloons button,
-        #page-aist .back-to-balloons button,
-        #page-hearts .back-to-balloons button,
-        #page-minecraft .back-to-balloons button,
-        #page-pikachu .back-to-balloons button,
-        #page-balloons-edinorog .back-to-balloons button {
-            color: #67bed9;
+        
+        .contacts-map iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .contacts-map iframe {
+                height: 300px;
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .social-links a {
             text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .dev-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            border: 1px solid #eee;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .dev-section {
+                padding: 60px 20px;
+            }
+        }
+        
+        .dev-section h3 {
+            font-size: 22px;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .dev-section p {
+            color: #888;
             font-size: 16px;
-            font-weight: 400;
-            display: inline-block;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            font-family: inherit;
-        }
-
-        [id^="page-balloons-"] .back-to-balloons button:hover,
-        #page-mini-photozones .back-to-balloons button:hover,
-        #page-green-birthday .back-to-balloons button:hover,
-        #page-green-day .back-to-balloons button:hover,
-        #page-superheroes .back-to-balloons button:hover,
-        #page-korobka-surpris .back-to-balloons button:hover,
-        #page-powder-white .back-to-balloons button:hover,
-        #page-vypusk-karas .back-to-balloons button:hover,
-        #page-malyshka .back-to-balloons button:hover,
-        #page-malysh .back-to-balloons button:hover,
-        #page-mimosa-march .back-to-balloons button:hover,
-        #page-kot-dlya-kota .back-to-balloons button:hover,
-        #page-yagodny-miks .back-to-balloons button:hover,
-        #page-muz-instrument .back-to-balloons button:hover,
-        #page-aist .back-to-balloons button:hover,
-        #page-hearts .back-to-balloons button:hover,
-        #page-minecraft .back-to-balloons button:hover,
-        #page-pikachu .back-to-balloons button:hover,
-        #page-balloons-edinorog .back-to-balloons button:hover {
-            text-decoration: underline;
-        }
-
-        /* Исправление для модального окна формы */
-        .qform-modal,
-        [class*="qform"] .modal-content {
-            max-height: 90vh !important;
-            overflow-y: auto !important;
-            top: 5vh !important;
-            transform: none !important;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 10px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
     </style>
     
     <!-- ЗАЩИТА ОТ ПРАВОГО КЛИКА -->
     <script>
         document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG') {
+            if (e.target.tagName === 'IMG' && !e.target.closest('.project-card') && !e.target.closest('.about-photo')) {
                 e.preventDefault();
                 alert('📸 Фотографии защищены авторским правом. Для использования свяжитесь с Еленой.');
                 return false;
@@ -671,7 +849,7 @@
         Сайт в стадии разработки — материалы постоянно дополняются и обновляются
     </div>
 
-    <div class="menu-button" onclick="toggleMenu()">
+    <div class="menu-button" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false">
         <span class="menu-icon">☰</span> МЕНЮ
     </div>
 
@@ -711,7 +889,12 @@
                     </p>
                 </div>
                 <div class="about-photo">
-                    <img src="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg" alt="Елена" loading="lazy" decoding="async">
+                    <img src="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg" 
+                         alt="Елена Нестерова - декоратор" 
+                         loading="eager" 
+                         fetchpriority="high"
+                         width="500" 
+                         height="600">
                 </div>
             </div>
         </div>
@@ -723,399 +906,53 @@
 
             <!-- GoodWin Hall -->
             <h2>GoodWin Hall</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/UG-4Kn_X0k42jw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/rFT6570D/2025-07-25-14-20-29-print-00022.jpg" loading="lazy" decoding="async" alt="Forest wedding">
-                        <div class="project-info">
-                            <div class="project-title">Forest wedding</div>
-                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы • схема рассадки • салфетки • неон</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="goodwin-gallery"></div>
 
             <!-- Rocket Hall -->
             <h2>Rocket Hall</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/BbZUjWHH2xbIAQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/50cTfwpT/2025-08-02-15-53-04-print-00043.jpg" loading="lazy" decoding="async" alt="Серебро и жемчуг">
-                        <div class="project-info">
-                            <div class="project-title">Серебро и жемчуг</div>
-                            <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона • welcome зона</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/E7mIZQ7wbP9Mhg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/fyqZM8LP/2025-07-19-13-48-36-print-00001.jpg" loading="lazy" decoding="async" alt="Сочная фуксия">
-                        <div class="project-info">
-                            <div class="project-title">Сочная фуксия</div>
-                            <div class="project-tags">фотозона • 14 лет • для нее</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Green Birthday -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('green-birthday')">
-                        <img class="project-cover" src="/images/silver/silver-HB%20(1).jpg" loading="lazy" decoding="async" alt="Green Birthday">
-                        <div class="project-info">
-                            <div class="project-title">Green Birthday</div>
-                            <div class="project-tags">фотозона • шары • ткани • гелиевые шары</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Green Day -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('green-day')">
-                        <img class="project-cover" src="/images/silver/green-day/green-day%20(35).jpg" loading="lazy" decoding="async" alt="Green Day">
-                        <div class="project-info">
-                            <div class="project-title">Green Day</div>
-                            <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="rocket-gallery"></div>
 
             <!-- Административный корпус МРНЦ им. А.Ф. Цыба -->
             <h2>Административный корпус МРНЦ им. А.Ф. Цыба</h2>
-            <div class="row masonry">
-                <!-- Mimosa & March -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('mimosa-march')">
-                        <img class="project-cover" src="/images/march/March (4).jpg" loading="lazy" decoding="async" alt="Mimosa & March">
-                        <div class="project-info">
-                            <div class="project-title">Mimosa & March</div>
-                            <div class="project-tags">фотозона • круглая фотозона • шары • 8 Марта • цветы</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="cyba-gallery"></div>
 
             <!-- Лодочная станция -->
             <h2>Лодочная станция</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/ylgvnU89ehY9Hw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/9fbNDwmw/2025-07-03-13-10-50-print-00015.jpg" loading="lazy" decoding="async" alt="Круглая арка">
-                        <div class="project-info">
-                            <div class="project-title">Круглая арка, белые блоки + ткань</div>
-                            <div class="project-tags">президиум • выездная • круглая арка • гостевые столы</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/pAvYUjq3smKetA" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/zvNffQ0s/2025-07-04-14-36-09-print-00007.jpg" loading="lazy" decoding="async" alt="Белые розы">
-                        <div class="project-info">
-                            <div class="project-title">Белые розы + ткань</div>
-                            <div class="project-tags">президиум • выездная • п-образная арка • гостевые столы • селфи-зеркало</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/V2JZtdw6UfMXaQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/FHjbTY6N/IMG-4098.png" loading="lazy" decoding="async" alt="Бело-зеленый">
-                        <div class="project-info">
-                            <div class="project-title">Бело-зеленый с новыми стойками под цветы</div>
-                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/BHGGzfbsiWjnXQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/xCMc24W7/IMG-7361.jpg" loading="lazy" decoding="async" alt="Белое дерево">
-                        <div class="project-info">
-                            <div class="project-title">Белое дерево и гипсофила</div>
-                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы • схема рассадки</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/0Vv7-bvCkWGMAQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/QMHr1Kmb/2025-08-23-13-14-07-print-00008.jpg" loading="lazy" decoding="async" alt="Я хочу быть с тобой">
-                        <div class="project-info">
-                            <div class="project-title">Я хочу быть с тобой</div>
-                            <div class="project-tags">президиум • гостевые столы • селфи-зеркало • салфетки • неон</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/4_b2nWFxg3JzWA" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/tTktb7QX/IMG-4101.webp" loading="lazy" decoding="async" alt="Black & White">
-                        <div class="project-info">
-                            <div class="project-title">Black & White</div>
-                            <div class="project-tags">президиум • неклассическая выездная • гостевые столы • селфи-зеркало • схема рассадки</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/SxDDvUwuPgoXHQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/8CQZqTZ1/2025-07-25-15-26-30-print-00004.jpg" loading="lazy" decoding="async" alt="Ткани и паникум">
-                        <div class="project-info">
-                            <div class="project-title">Ткани и паникум</div>
-                            <div class="project-tags">президиум • выездная • п-образная арка • гостевые столы • схема рассадки • салфетки • селфи-зеркало</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="boat-gallery"></div>
 
             <!-- Ресторан Веранда -->
             <h2>Ресторан «Веранда»</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/uhhOtxIEk0mt1A" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/ZRwgqywQ/IMG-1265.jpg" loading="lazy" decoding="async" alt="Минимализм">
-                        <div class="project-info">
-                            <div class="project-title">Минимализм с живыми цветами. Новые гостевые стойки</div>
-                            <div class="project-tags">Т-образная рассадка • гостевые столы • салфетки</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/NvyYX39Fll6k_A" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/zvjnNnpw/2025-02-01-12-12-30-print-00012.jpg" loading="lazy" decoding="async" alt="Мох и аспидистра">
-                        <div class="project-info">
-                            <div class="project-title">Мох и аспидистра</div>
-                            <div class="project-tags">президиум • гостевые столы • схема рассадки • салфетки • фотозона</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/XNuQKvpHdVeJuQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/P58Qp85Q/0G7A9816.jpg" loading="lazy" decoding="async" alt="Гипсофила">
-                        <div class="project-info">
-                            <div class="project-title">Гипсофила и воздушная фотозона</div>
-                            <div class="project-tags">Т-образная рассадка • гостевые столы • салфетки • фотозона • неон</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="veranda-gallery"></div>
 
             <!-- Ресторан Карас -->
             <h2>Ресторан «Карас»</h2>
-            <div class="row masonry">
-                <!-- Нежная пудра -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/P1FNgTSvoLFIng" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/Tw12t7JF/2025-10-28-12-14-26-print-00012.jpg" loading="lazy" decoding="async" alt="Нежная пудра">
-                        <div class="project-info">
-                            <div class="project-title">Нежная пудра</div>
-                            <div class="project-tags">фотозона • ДР • для нее • неон</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Белый деревянный бэк + голубые цветы -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/ZrJe-14GkTsV9g" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/B6pYnNW5/IMG-8438.jpg" loading="lazy" decoding="async" alt="Белый деревянный бэк + голубые цветы">
-                        <div class="project-info">
-                            <div class="project-title">Белый деревянный бэк + голубые цветы</div>
-                            <div class="project-tags">президиум • гостевые столы • схема рассадки • фотозона</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Выпускной -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('vypusk-karas')">
-                        <img class="project-cover" src="/images/karas/karas-vipusk/karas-vipusk (12).jpg" loading="lazy" decoding="async" alt="Выпускной">
-                        <div class="project-info">
-                            <div class="project-title">Выпускной</div>
-                            <div class="project-tags">выпускной • фотозона</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="karas-gallery"></div>
 
             <!-- Ресторан-бар LOFT -->
             <h2>Ресторан-бар LOFT</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/Crp-xrELmvBXKg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/wTrmdNrd/078.jpg" loading="lazy" decoding="async" alt="RED wedding">
-                        <div class="project-info">
-                            <div class="project-title">RED wedding</div>
-                            <div class="project-tags">президиум • гостевые столы • букет невесты • гелиевые шары</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="loft-gallery"></div>
 
             <!-- Фазенда -->
             <h2>Фазенда</h2>
-            <div class="row masonry">
-                <!-- Powder & White -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('powder-white')">
-                        <img class="project-cover" src="/images/fazenda/powder and white/powder and white (22).jpg" loading="lazy" decoding="async" alt="Powder & White">
-                        <div class="project-info">
-                            <div class="project-title">Powder & White</div>
-                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы • фотозона • панели solaair</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="fazenda-gallery"></div>
 
             <!-- ЭтноМир -->
             <h2>ЭтноМир</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/rWhypVHdQJUsPQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/T2CjcDh5/IMG-7302.jpg" loading="lazy" decoding="async" alt="Deep in the woods">
-                        <div class="project-info">
-                            <div class="project-title">Deep in the woods</div>
-                            <div class="project-tags">президиум • выездная • классическая арка • гостевые столы</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/rcXC88SCAANwLw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/V6TfYgDL/2020-03-24-06-26-37.jpg" loading="lazy" decoding="async" alt="Peach and Green">
-                        <div class="project-info">
-                            <div class="project-title">Peach and Green</div>
-                            <div class="project-tags">президиум • схема рассадки • букет невесты</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="ethnomir-gallery"></div>
 
             <!-- Яхонты Таруса -->
             <h2>Яхонты Таруса</h2>
-            <div class="row masonry">
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/AxUDM-LwvJr2KQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/Df60DVVm/IMG-2123.jpg" loading="lazy" decoding="async" alt="Country wedding">
-                        <div class="project-info">
-                            <div class="project-title">Country wedding</div>
-                            <div class="project-tags">президиум • гостевые столы • букет невесты</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/3fPi68YPW-Rvcg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/TPPvps7F/2024-04-12-04-12-40-%285%29.jpg" loading="lazy" decoding="async" alt="The Purple Garden">
-                        <div class="project-info">
-                            <div class="project-title">The Purple Garden</div>
-                            <div class="project-tags">президиум • гостевые столы • схема рассадки</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div class="row masonry" id="yahonty-gallery"></div>
         </div>
 
         <!-- ФОТОЗОНА В СТУДИИ -->
         <div id="page-photozone" class="page">
             <h1>Фотозона в студии</h1>
             <button class="back-link" onclick="showPage('about')">← на главную</button>
-            
-            <div class="row masonry">
-                <!-- 1. Выписка -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/eIB0-ux6vLv9Cw" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/3NB7VLX1/DSC00276.jpg" loading="lazy" decoding="async" alt="Выписка">
-                        <div class="project-info">
-                            <div class="project-title">Выписка</div>
-                            <div class="project-tags">панели solaair • фигуры ПВХ • шары</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 2. Феи -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/T_KzIin31jBmtg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/y8LqYL6d/DSC00563.jpg" loading="lazy" decoding="async" alt="Феи">
-                        <div class="project-info">
-                            <div class="project-title">Феи</div>
-                            <div class="project-tags">панели solaair • фигуры ПВХ • шары</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 3. Гендер пати -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/F75Q1MqCiVni_A" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/WzDkHW9X/BRZ-4382.jpg" loading="lazy" decoding="async" alt="Гендер пати">
-                        <div class="project-info">
-                            <div class="project-title">Гендер пати</div>
-                            <div class="project-tags">баннер • фигуры ПВХ • шары</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 4. Девичник -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/B3Ns47Iyook0RQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/qR6KmDDw/DSC00908.jpg" loading="lazy" decoding="async" alt="Девичник">
-                        <div class="project-info">
-                            <div class="project-title">Девичник</div>
-                            <div class="project-tags">баннер • шары • интерьерные цветы • фатин</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 5. Выпускной в детском саду -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/JjrZ4KKlBLiZeQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/Twv26kY4/DSC01579.jpg" loading="lazy" decoding="async" alt="Выпускной в детском саду">
-                        <div class="project-info">
-                            <div class="project-title">Выпускной в детском саду</div>
-                            <div class="project-tags">конструкции • шары • ШДМ</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 6. Яркий выпускной -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/YSABIzMY52PVhg" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/d3Y02J7B/DSC02708.jpg" loading="lazy" decoding="async" alt="Яркий выпускной">
-                        <div class="project-info">
-                            <div class="project-title">Яркий выпускной</div>
-                            <div class="project-tags">панели solaair • шары</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 7. Жемчужная фотозона -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/ptoRWdId_tAs3w" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/y8MCgv3c/DSC02003.jpg" loading="lazy" decoding="async" alt="Жемчужная фотозона">
-                        <div class="project-info">
-                            <div class="project-title">Жемчужная фотозона</div>
-                            <div class="project-tags">конструкции • шары • интерьерные цветы • ткани</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 8. Cocktails bar -->
-                <div class="column">
-                    <a href="https://disk.yandex.ru/d/d0qibKkuZal6FQ" target="_blank" class="project-card">
-                        <img class="project-cover" src="https://i.postimg.cc/CKxrK8mY/DSC02090.jpg" loading="lazy" decoding="async" alt="Cocktails bar">
-                        <div class="project-info">
-                            <div class="project-title">Cocktails bar</div>
-                            <div class="project-tags">панели solaair • шары • интерьерные цветы • конструкции • неон</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- 9. Мини фотозоны -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('mini-photozones')">
-                        <img class="project-cover" src="/images/mini/mini%20(1).jpg" loading="lazy" decoding="async" alt="Мини фотозоны">
-                        <div class="project-info">
-                            <div class="project-title">Мини фотозоны</div>
-                            <div class="project-tags">панели solaair • шары • интерьерные цветы • неон • ПВХ • конструкции</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="photozone-gallery"></div>
         </div>
 
-        <!-- МИНИ ФОТОЗОНЫ (все 124 фото) -->
+        <!-- МИНИ ФОТОЗОНЫ -->
         <div id="page-mini-photozones" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('photozone')">← Фотозона в студии</button>
@@ -1124,7 +961,7 @@
             <div class="row masonry" id="mini-gallery"></div>
         </div>
 
-        <!-- GREEN BIRTHDAY (все 8 фото) -->
+        <!-- GREEN BIRTHDAY -->
         <div id="page-green-birthday" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1133,7 +970,7 @@
             <div class="row masonry" id="green-birthday-gallery"></div>
         </div>
 
-        <!-- GREEN DAY (все 46 фото) -->
+        <!-- GREEN DAY -->
         <div id="page-green-day" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1142,7 +979,7 @@
             <div class="row masonry" id="green-day-gallery"></div>
         </div>
 
-        <!-- ШАРЫ (список проектов) -->
+        <!-- ШАРЫ -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
             <div style="margin-bottom:20px;">
@@ -1151,171 +988,48 @@
 
             <!-- Мир сказок ✨ -->
             <h2>Мир сказок ✨</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Единороги, феи, принцессы — всё, что делает детство волшебным
             </div>
-            <div class="row masonry">
-                <!-- Единорог -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('balloons-edinorog')">
-                        <img src="/images/edinorog/edinorog (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Единорог">
-                        <div class="project-info">
-                            <div class="project-title">Единорог</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Малышка -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('malyshka')">
-                        <img src="/images/nezhnost/zayka (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Малышка">
-                        <div class="project-info">
-                            <div class="project-title">Малышка</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Малыш -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('malysh')">
-                        <img src="/images/first/1boy (6).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Малыш">
-                        <div class="project-info">
-                            <div class="project-title">Малыш</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="fairytale-gallery"></div>
 
             <!-- Мир героев 🦸‍♂️ -->
             <h2>Мир героев 🦸‍♂️</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Супергерои, космические саги и любимые вселенные — для отважных и смелых
             </div>
-            <div class="row masonry">
-                <!-- Супергерои -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('superheroes')">
-                        <img src="/images/supergeroi/supergeroi (9).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Супергерои">
-                        <div class="project-info">
-                            <div class="project-title">Супергерои</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Minecraft -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('minecraft')">
-                        <img src="/images/main/main (5).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Minecraft">
-                        <div class="project-info">
-                            <div class="project-title">Minecraft</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Пикачу -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('pikachu')">
-                        <img src="/images/pikachu/pikachu (5).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Пикачу">
-                        <div class="project-info">
-                            <div class="project-title">Пикачу</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="heroes-gallery"></div>
 
             <!-- Мир животных 🦁 -->
             <h2>Мир животных 🦁</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Милые зверята, грозные хищники, морские обитатели и доисторические динозавры
             </div>
-            <div class="row masonry">
-                <!-- Кот для кота -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('kot-dlya-kota')">
-                        <img src="/images/cat/black kat (4).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Кот для кота">
-                        <div class="project-info">
-                            <div class="project-title">Кот для кота</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Аист -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('aist')">
-                        <img src="/images/aist/aist (4).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Аист">
-                        <div class="project-info">
-                            <div class="project-title">Аист</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="animals-gallery"></div>
 
             <!-- Мир увлечений ⚽🎸 -->
             <h2>Мир увлечений ⚽🎸</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Спорт, музыка и всё, что вдохновляет
             </div>
-            <div class="row masonry">
-                <!-- Музыкальные инструменты -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('muz-instrument')">
-                        <img src="/images/instrument/instrument (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Музыкальные инструменты">
-                        <div class="project-info">
-                            <div class="project-title">Музыкальные инструменты</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="hobbies-gallery"></div>
 
             <!-- Красочные праздники 🎨🎂 -->
             <h2>Красочные праздники 🎨🎂</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Цветовые решения для стильных праздников и поводов для радости
             </div>
-            <div class="row masonry">
-                <!-- Нежная магия -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('balloons-nezhnost')">
-                        <img src="/images/nezhnost/nezhnost (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Нежная магия">
-                        <div class="project-info">
-                            <div class="project-title">Нежная магия</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Коробка сюрприз -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('korobka-surpris')">
-                        <img src="/images/korobka-surpris/korobka-surpris-1 (2).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Коробка сюрприз">
-                        <div class="project-info">
-                            <div class="project-title">Коробка сюрприз</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ягодный микс -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('yagodny-miks')">
-                        <img src="/images/fruckti/arbuz (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Ягодный микс">
-                        <div class="project-info">
-                            <div class="project-title">Ягодный микс</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="colorful-gallery"></div>
 
             <!-- Праздничные даты 🎄❤️ -->
             <h2>Праздничные даты 🎄❤️</h2>
-            <div style="margin: 5px 0 20px; color: #666; font-weight:300; font-size: 15px; max-width: 600px;">
+            <div class="section-description">
                 Для особенных дней в календаре — зимних, весенних и романтичных
             </div>
-            <div class="row masonry">
-                <!-- Сердца -->
-                <div class="column">
-                    <div class="project-card" onclick="showPage('hearts')">
-                        <img src="/images/heart/heart (12).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сердца">
-                        <div class="project-info">
-                            <div class="project-title">Сердца</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row masonry" id="holidays-gallery"></div>
         </div>
 
-        <!-- НЕЖНАЯ МАГИЯ -->
+        <!-- Отдельные галереи шаров -->
         <div id="page-balloons-nezhnost" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1324,7 +1038,6 @@
             <div class="row masonry" id="nezhnost-gallery"></div>
         </div>
 
-        <!-- ЕДИНОРОГ -->
         <div id="page-balloons-edinorog" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1333,7 +1046,6 @@
             <div class="row masonry" id="edinorog-gallery"></div>
         </div>
 
-        <!-- СУПЕРГЕРОИ (все 21 фото) -->
         <div id="page-superheroes" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1342,7 +1054,6 @@
             <div class="row masonry" id="superheroes-gallery"></div>
         </div>
 
-        <!-- КОРОБКА СЮРПРИЗ (все 17 фото) -->
         <div id="page-korobka-surpris" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1351,7 +1062,6 @@
             <div class="row masonry" id="korobka-surpris-gallery"></div>
         </div>
 
-        <!-- МАЛЫШКА (все 15 фото) -->
         <div id="page-malyshka" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1360,7 +1070,6 @@
             <div class="row masonry" id="malyshka-gallery"></div>
         </div>
 
-        <!-- МАЛЫШ (все 7 фото) -->
         <div id="page-malysh" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1369,7 +1078,6 @@
             <div class="row masonry" id="malysh-gallery"></div>
         </div>
 
-        <!-- КОТ ДЛЯ КОТА (все 10 фото) -->
         <div id="page-kot-dlya-kota" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1378,7 +1086,6 @@
             <div class="row masonry" id="kot-dlya-kota-gallery"></div>
         </div>
 
-        <!-- ЯГОДНЫЙ МИКС (все 9 фото) -->
         <div id="page-yagodny-miks" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1387,7 +1094,6 @@
             <div class="row masonry" id="yagodny-miks-gallery"></div>
         </div>
 
-        <!-- МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ (все 3 фото) -->
         <div id="page-muz-instrument" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1396,7 +1102,6 @@
             <div class="row masonry" id="muz-instrument-gallery"></div>
         </div>
 
-        <!-- АИСТ (все 10 фото) -->
         <div id="page-aist" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1405,7 +1110,6 @@
             <div class="row masonry" id="aist-gallery"></div>
         </div>
 
-        <!-- СЕРДЦА (все 23 фото) -->
         <div id="page-hearts" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1414,7 +1118,6 @@
             <div class="row masonry" id="hearts-gallery"></div>
         </div>
 
-        <!-- MINECRAFT (все 10 фото) -->
         <div id="page-minecraft" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1423,7 +1126,6 @@
             <div class="row masonry" id="minecraft-gallery"></div>
         </div>
 
-        <!-- ПИКАЧУ (все 12 фото) -->
         <div id="page-pikachu" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1432,7 +1134,6 @@
             <div class="row masonry" id="pikachu-gallery"></div>
         </div>
 
-        <!-- MIMOSA & MARCH (все 21 фото) -->
         <div id="page-mimosa-march" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1441,7 +1142,6 @@
             <div class="row masonry" id="mimosa-march-gallery"></div>
         </div>
 
-        <!-- POWDER & WHITE (все 22 фото) -->
         <div id="page-powder-white" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1450,7 +1150,6 @@
             <div class="row masonry" id="powder-white-gallery"></div>
         </div>
 
-        <!-- ВЫПУСКНОЙ КАРАС (все 18 фото) -->
         <div id="page-vypusk-karas" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1463,24 +1162,28 @@
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
             <button class="back-link" onclick="showPage('about')">← на главную</button>
-            <div style="margin: 20px 0 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div style="margin: 20px 0 30px; max-width: 600px; margin-left: auto; margin-right: auto; padding: 0 15px;">
                 <h3 style="color:#67bed9; font-weight:300; margin-bottom:10px;">Свадебные и вечерние платья в Обнинске</h3>
                 <p style="color:#555; line-height:1.6; font-weight:300;">
                     Салон «Невеста» предлагает большой выбор элегантных платьев для свадеб, выпускных и торжественных мероприятий. Индивидуальный подход, примерка по предварительной записи. Ждём вас в Обнинске.
                 </p>
             </div>
-            <div class="dev-section" style="margin-bottom: 30px;">
+            <div class="dev-section">
                 <h3>Раздел в разработке</h3>
                 <p>Здесь скоро появятся фотографии невест из моего салона — образы, детали, вдохновение.</p>
             </div>
-            <h3 style="color:#67bed9; font-weight:300;">📍 Свадебный салон «Невеста»</h3>
-            <p style="margin-bottom: 10px; font-weight:300;">ул. Лейпунского, 4, Обнинск</p>
-            <div style="width:100%; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom: 40px;">
-                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1036745795" style="width:100%; height:300px; border:0;" allowfullscreen loading="lazy"></iframe>
+            <h3 style="color:#67bed9; font-weight:300; text-align: center; margin-top: 30px;">📍 Свадебный салон «Невеста»</h3>
+            <p style="text-align: center; margin-bottom: 15px; font-weight:300;">ул. Лейпунского, 4, Обнинск</p>
+            <div class="contacts-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1036745795" loading="lazy"></iframe>
             </div>
-            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
-                <a href="tel:+79036367999" style="text-decoration: none;"><img src="https://img.icons8.com/material-outlined/96/000000/phone--v1.png" alt="Телефон" style="width: 40px; height: 40px;"></a>
-                <a href="https://vk.com/wedding_salon_obninsk" target="_blank" style="text-decoration: none;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vk.svg" alt="VK" style="width: 40px; height: 40px; filter: invert(27%) sepia(70%) saturate(1200%) hue-rotate(180deg) brightness(90%);"></a>
+            <div class="social-links">
+                <a href="tel:+79036367999" aria-label="Позвонить">
+                    <img src="https://img.icons8.com/material-outlined/96/000000/phone--v1.png" alt="Телефон" class="social-icon">
+                </a>
+                <a href="https://vk.com/wedding_salon_obninsk" target="_blank" aria-label="ВКонтакте">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vk.svg" alt="VK" class="social-icon" style="filter: invert(27%) sepia(70%) saturate(1200%) hue-rotate(180deg) brightness(90%);">
+                </a>
             </div>
         </div>
 
@@ -1488,14 +1191,18 @@
         <div id="page-contacts" class="page">
             <h1>Контакты</h1>
             <button class="back-link" onclick="showPage('about')">← на главную</button>
-            <h3 style="color:#67bed9; font-weight:300;">🎈 Самовывоз шаров, декор</h3>
-            <p style="margin-bottom: 10px; font-weight:300;">ул. Гагарина, 46, Обнинск</p>
-            <div style="width:100%; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px;">
-                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=195253953409" style="width:100%; height:300px; border:0;" allowfullscreen loading="lazy"></iframe>
+            <h3 style="color:#67bed9; font-weight:300; text-align: center;">🎈 Самовывоз шаров, декор</h3>
+            <p style="text-align: center; margin-bottom: 15px; font-weight:300;">ул. Гагарина, 46, Обнинск</p>
+            <div class="contacts-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=195253953409" loading="lazy"></iframe>
             </div>
-            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
-                <a href="tel:+79036367999" style="text-decoration: none;"><img src="https://img.icons8.com/material-outlined/96/000000/phone--v1.png" alt="Телефон" style="width: 40px; height: 40px;"></a>
-                <a href="https://t.me/elena_luce_solare" target="_blank" style="text-decoration: none;"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px; height: 40px;"></a>
+            <div class="social-links">
+                <a href="tel:+79036367999" aria-label="Позвонить">
+                    <img src="https://img.icons8.com/material-outlined/96/000000/phone--v1.png" alt="Телефон" class="social-icon">
+                </a>
+                <a href="https://t.me/elena_luce_solare" target="_blank" aria-label="Telegram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="social-icon">
+                </a>
             </div>
         </div>
     </div>
@@ -1503,7 +1210,7 @@
     <!-- ПОДВАЛ -->
     <div class="fixed-footer">
         <div class="accordion-container" id="accordion">
-            <div class="accordion-header" onclick="toggleAccordion()">
+            <div class="accordion-header" onclick="toggleAccordion()" aria-expanded="false">
                 <h3>Нужна помощь с декором? Напишите мне</h3>
                 <span class="accordion-arrow" id="accordionArrow">▼</span>
             </div>
@@ -1535,7 +1242,7 @@
     <!-- ПОПАП -->
     <div id="photoModal" class="modal" onclick="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+        <img class="modal-content" id="modalImage" alt="Увеличенное фото">
     </div>
 
     <div class="city-info">Основные проекты — в Обнинске и городах Калужской области. Также оформляю праздники в Наро‑Фоминске и с радостью выезжаю в Москву.</div>
@@ -1551,9 +1258,37 @@
         // КОНФИГУРАЦИЯ ГАЛЕРЕЙ
         // ============================================
         const GALLERIES = [
+            // Декор
+            { id: 'goodwin-gallery', path: '/images/goodwin/goodwin', count: 5, single: true },
+            { id: 'rocket-gallery', path: '/images/rocket/rocket', count: 8, single: true },
+            { id: 'cyba-gallery', path: '/images/cyba/cyba', count: 6, single: true },
+            { id: 'boat-gallery', path: '/images/boat/boat', count: 12, single: true },
+            { id: 'veranda-gallery', path: '/images/veranda/veranda', count: 10, single: true },
+            { id: 'karas-gallery', path: '/images/karas/karas', count: 9, single: true },
+            { id: 'loft-gallery', path: '/images/loft/loft', count: 4, single: true },
+            { id: 'fazenda-gallery', path: '/images/fazenda/fazenda', count: 7, single: true },
+            { id: 'ethnomir-gallery', path: '/images/ethnomir/ethnomir', count: 6, single: true },
+            { id: 'yahonty-gallery', path: '/images/yahonty/yahonty', count: 5, single: true },
+            
+            // Фотозоны
+            { id: 'photozone-gallery', path: '/images/photozone/photozone', count: 25, single: true },
+            
+            // Мини фотозоны
             { id: 'mini-gallery', path: '/images/mini/mini', count: 124 },
+            
+            // Спецпроекты
             { id: 'green-birthday-gallery', path: '/images/silver/silver-HB', count: 8 },
             { id: 'green-day-gallery', path: '/images/silver/green-day/green-day', count: 46 },
+            
+            // Шары по категориям
+            { id: 'fairytale-gallery', path: '/images/balloons/fairytale/fairytale', count: 15, single: true },
+            { id: 'heroes-gallery', path: '/images/balloons/heroes/heroes', count: 12, single: true },
+            { id: 'animals-gallery', path: '/images/balloons/animals/animals', count: 18, single: true },
+            { id: 'hobbies-gallery', path: '/images/balloons/hobbies/hobbies', count: 8, single: true },
+            { id: 'colorful-gallery', path: '/images/balloons/colorful/colorful', count: 14, single: true },
+            { id: 'holidays-gallery', path: '/images/balloons/holidays/holidays', count: 10, single: true },
+            
+            // Детальные галереи
             { id: 'nezhnost-gallery', path: '/images/nezhnost/nezhnost', count: 17, numbers: [1,3,5,7,9,11,13,15,17] },
             { id: 'edinorog-gallery', path: '/images/edinorog/edinorog', count: 15 },
             { id: 'superheroes-gallery', path: '/images/supergeroi/supergeroi', count: 21 },
@@ -1572,6 +1307,24 @@
             { id: 'powder-white-gallery', path: '/images/fazenda/powder and white/powder and white', count: 22 }
         ];
 
+        // Кэш для галерей
+        let galleriesCache = {};
+
+        // ============================================
+        // ФУНКЦИЯ DEBOUNCE (чтобы не дёргаться)
+        // ============================================
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         // ============================================
         // ФУНКЦИИ ДЛЯ НАВИГАЦИИ
         // ============================================
@@ -1586,11 +1339,14 @@
             }
         }
 
-        // Сохраняем позицию скролла перед уходом
-        function saveScrollPosition() {
+        // Сохраняем позицию скролла перед уходом (с debounce)
+        const saveScrollPosition = debounce(function() {
             const currentPage = document.querySelector('.page.active')?.id || 'about';
             sessionStorage.setItem(`${currentPage}_scroll`, window.scrollY);
-        }
+            
+            // Сохраняем для Masonry
+            saveMasonryScroll();
+        }, 200);
 
         // Восстанавливаем позицию скролла при возврате
         function restoreScrollPosition() {
@@ -1598,45 +1354,104 @@
             const savedPos = sessionStorage.getItem(`${currentPage}_scroll`);
             if (savedPos) {
                 setTimeout(() => {
-                    window.scrollTo(0, parseInt(savedPos));
-                }, 50);
+                    window.scrollTo({
+                        top: parseInt(savedPos),
+                        behavior: 'auto'
+                    });
+                }, 100);
+            }
+        }
+
+        // Сохраняем позиции Masonry галерей
+        function saveMasonryScroll() {
+            const galleries = document.querySelectorAll('.row.masonry');
+            const scrollPositions = {};
+            
+            galleries.forEach((gallery, index) => {
+                const rect = gallery.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    scrollPositions[`gallery_${index}`] = {
+                        top: window.scrollY + rect.top,
+                        time: Date.now()
+                    };
+                }
+            });
+            
+            if (Object.keys(scrollPositions).length > 0) {
+                sessionStorage.setItem('masonry_scroll', JSON.stringify(scrollPositions));
+            }
+        }
+
+        // Восстанавливаем позиции Masonry
+        function restoreMasonryScroll() {
+            const saved = sessionStorage.getItem('masonry_scroll');
+            if (!saved) return;
+            
+            try {
+                const positions = JSON.parse(saved);
+                const now = Date.now();
+                
+                for (const [key, pos] of Object.entries(positions)) {
+                    if (now - pos.time < 300000) { // свежее 5 минут
+                        window.scrollTo({
+                            top: pos.top,
+                            behavior: 'auto'
+                        });
+                        break;
+                    }
+                }
+            } catch (e) {
+                console.warn('Ошибка восстановления скролла:', e);
             }
         }
 
         function showPage(pageId) {
-            saveScrollPosition(); // сохраняем где были
+            saveScrollPosition();
             
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
+            
             const page = document.getElementById('page-' + pageId);
             if (page) {
                 page.classList.add('active');
                 window.location.hash = pageId;
             }
+            
             closeMenu();
             closeAccordion();
             
             setTimeout(() => {
-                restoreScrollPosition(); // возвращаемся туда, где были
-            }, 50);
+                restoreScrollPosition();
+            }, 150);
         }
 
         // ============================================
         // ФУНКЦИИ ДЛЯ МЕНЮ
         // ============================================
         function toggleMenu() {
-            document.getElementById('sidenav').classList.toggle('open');
-            document.getElementById('overlay').classList.toggle('show');
+            const sidenav = document.getElementById('sidenav');
+            const overlay = document.getElementById('overlay');
             const menuButton = document.querySelector('.menu-button');
-            const isExpanded = document.getElementById('sidenav').classList.contains('open');
+            
+            sidenav.classList.toggle('open');
+            overlay.classList.toggle('show');
+            
+            const isExpanded = sidenav.classList.contains('open');
             menuButton.setAttribute('aria-expanded', isExpanded);
+            
+            if (isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
 
         function closeMenu() {
             document.getElementById('sidenav').classList.remove('open');
             document.getElementById('overlay').classList.remove('show');
             document.querySelector('.menu-button').setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
         }
 
         // ============================================
@@ -1646,10 +1461,11 @@
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
             const header = document.querySelector('.accordion-header');
+            
             if (content && arrow) {
                 content.classList.remove('open');
                 arrow.classList.remove('open');
-                header.setAttribute('aria-expanded', 'false');
+                header?.setAttribute('aria-expanded', 'false');
             }
         }
 
@@ -1657,11 +1473,12 @@
             const content = document.getElementById('accordionContent');
             const arrow = document.getElementById('accordionArrow');
             const header = document.querySelector('.accordion-header');
+            
             if (content && arrow) {
                 const isOpen = content.classList.contains('open');
                 content.classList.toggle('open');
                 arrow.classList.toggle('open');
-                header.setAttribute('aria-expanded', !isOpen);
+                header?.setAttribute('aria-expanded', !isOpen);
             }
         }
 
@@ -1669,8 +1486,11 @@
         // ФУНКЦИИ ДЛЯ МОДАЛЬНОГО ОКНА
         // ============================================
         function openModal(src) {
-            document.getElementById('modalImage').src = src;
-            document.getElementById('photoModal').style.display = 'block';
+            const modal = document.getElementById('photoModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = src;
+            modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
@@ -1680,33 +1500,146 @@
         }
 
         // ============================================
-        // ГЕНЕРАЦИЯ ГАЛЕРЕЙ (ОПТИМИЗИРОВАННАЯ)
+        // ПРОВЕРКА ПОДДЕРЖКИ INTERSECTION OBSERVER
+        // ============================================
+        function checkIntersectionObserver() {
+            return 'IntersectionObserver' in window;
+        }
+
+        // ============================================
+        // ГЕНЕРАЦИЯ ГАЛЕРЕЙ С LAZY LOAD И СКЕЛЕТОНАМИ
         // ============================================
         function generateGalleries() {
+            // Сначала проверяем кэш
+            if (Object.keys(galleriesCache).length > 0) {
+                renderGalleriesFromCache();
+                return;
+            }
+
+            // Используем requestIdleCallback если доступен
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => {
+                    generateGalleriesWithLazyLoad();
+                }, { timeout: 2000 });
+            } else {
+                setTimeout(generateGalleriesWithLazyLoad, 500);
+            }
+        }
+
+        function generateGalleriesWithLazyLoad() {
+            const hasObserver = checkIntersectionObserver();
+            let observer;
+            
+            if (hasObserver) {
+                observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const column = entry.target;
+                            const img = column.querySelector('img');
+                            
+                            if (img && img.dataset.src) {
+                                const originalSrc = img.dataset.src;
+                                img.src = originalSrc;
+                                img.removeAttribute('data-src');
+                                
+                                img.onload = () => {
+                                    img.classList.add('loaded');
+                                    column.classList.remove('loading');
+                                };
+                                
+                                if (img.complete) {
+                                    img.classList.add('loaded');
+                                    column.classList.remove('loading');
+                                }
+                            }
+                            
+                            observer.unobserve(column);
+                        }
+                    });
+                }, {
+                    rootMargin: '200px',
+                    threshold: 0.01
+                });
+            }
+
             GALLERIES.forEach(gallery => {
                 const container = document.getElementById(gallery.id);
                 if (!container) return;
 
-                // Очищаем контейнер перед добавлением
+                // Очищаем контейнер
                 container.innerHTML = '';
 
                 const numbers = gallery.numbers || Array.from({ length: gallery.count }, (_, i) => i + 1);
                 
                 numbers.forEach(num => {
                     const column = document.createElement('div');
-                    column.className = 'column';
+                    column.className = 'column loading';
+                    
                     const img = document.createElement('img');
-                    img.src = `${gallery.path} (${num}).jpg`;
-                    img.loading = 'lazy';
-                    img.decoding = 'async';
-                    img.fetchpriority = 'low';
-                    img.alt = `Фото ${num} из галереи`;
+                    
+                    // Для главных фото грузим сразу, для остальных - лениво
+                    if (gallery.single || num <= 2) {
+                        img.src = `${gallery.path} (${num}).jpg`;
+                        img.fetchpriority = num === 1 ? 'high' : 'low';
+                        img.onload = () => {
+                            img.classList.add('loaded');
+                            column.classList.remove('loading');
+                        };
+                    } else {
+                        img.dataset.src = `${gallery.path} (${num}).jpg`;
+                        img.loading = 'lazy';
+                    }
+                    
+                    img.alt = `Фото ${num} из галереи ${gallery.id}`;
+                    img.draggable = false;
+                    img.onclick = () => openModal(img.src || img.dataset.src);
+                    
+                    column.appendChild(img);
+                    container.appendChild(column);
+                    
+                    // Сохраняем в кэш
+                    if (!galleriesCache[gallery.id]) {
+                        galleriesCache[gallery.id] = [];
+                    }
+                    galleriesCache[gallery.id].push({
+                        path: `${gallery.path} (${num}).jpg`,
+                        alt: img.alt
+                    });
+                    
+                    // Если есть Intersection Observer - следим
+                    if (hasObserver && img.dataset.src) {
+                        observer.observe(column);
+                    }
+                });
+            });
+        }
+
+        function renderGalleriesFromCache() {
+            for (const [galleryId, images] of Object.entries(galleriesCache)) {
+                const container = document.getElementById(galleryId);
+                if (!container) continue;
+                
+                container.innerHTML = '';
+                
+                images.forEach((imgData, index) => {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    
+                    const img = document.createElement('img');
+                    img.src = imgData.path;
+                    img.alt = imgData.alt;
+                    img.loading = index < 4 ? 'eager' : 'lazy';
                     img.draggable = false;
                     img.onclick = () => openModal(img.src);
+                    
+                    img.onload = () => {
+                        img.classList.add('loaded');
+                    };
+                    
                     column.appendChild(img);
                     container.appendChild(column);
                 });
-            });
+            }
         }
 
         // ============================================
@@ -1716,19 +1649,29 @@
             const accordion = document.getElementById('accordion');
             const content = document.getElementById('accordionContent');
             const header = document.querySelector('.accordion-header');
-            if (content && content.classList.contains('open') && accordion && !accordion.contains(e.target)) {
+            
+            if (content?.classList.contains('open') && accordion && !accordion.contains(e.target)) {
                 content.classList.remove('open');
                 const arrow = document.getElementById('accordionArrow');
                 if (arrow) arrow.classList.remove('open');
-                header.setAttribute('aria-expanded', 'false');
+                header?.setAttribute('aria-expanded', 'false');
             }
         });
 
+        // Защита от перетаскивания изображений
         document.querySelectorAll('img').forEach(img => {
             img.setAttribute('draggable', 'false');
         });
 
         window.addEventListener('hashchange', showPageFromHash);
+        window.addEventListener('scroll', saveScrollPosition);
+
+        // Закрытие модального окна по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
 
         // ============================================
         // ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ
@@ -1737,12 +1680,20 @@
             showPageFromHash();
             generateGalleries();
             
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
-            });
+            // Восстанавливаем скролл после загрузки
+            setTimeout(() => {
+                restoreScrollPosition();
+                restoreMasonryScroll();
+            }, 200);
         });
+
+        // Обработка изменения ориентации экрана
+        window.addEventListener('resize', debounce(function() {
+            // Перестраиваем Masonry при изменении размера
+            document.querySelectorAll('.row.masonry').forEach(container => {
+                container.style.columnCount = '';
+            });
+        }, 200));
     </script>
 </body>
 </html>
