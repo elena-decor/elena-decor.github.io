@@ -44,38 +44,48 @@ function showPageFromHash() {
 
 // Сохраняем позицию скролла перед уходом
 function saveScrollPosition() {
-    const currentPage = document.querySelector('.page.active')?.id || 'about';
-    sessionStorage.setItem(`${currentPage}_scroll`, window.scrollY);
+    const currentPage = document.querySelector('.page.active')?.id;
+    if (currentPage) {
+        sessionStorage.setItem(`${currentPage}_scroll`, window.scrollY);
+    }
 }
 
 // Восстанавливаем позицию скролла при возврате
-function restoreScrollPosition() {
-    const currentPage = document.querySelector('.page.active')?.id || 'about';
-    const savedPos = sessionStorage.getItem(`${currentPage}_scroll`);
+function restoreScrollPosition(pageId) {
+    const savedPos = sessionStorage.getItem(`${pageId}_scroll`);
     if (savedPos) {
         setTimeout(() => {
-            window.scrollTo(0, parseInt(savedPos));
-        }, 50);
+            window.scrollTo({
+                top: parseInt(savedPos),
+                behavior: 'auto'
+            });
+        }, pageId === 'decor' || pageId === 'balloons' ? 300 : 50);
     }
 }
 
 function showPage(pageId) {
-    saveScrollPosition(); // Сохраняем позицию перед уходом
+    // Сохраняем позицию текущей страницы перед уходом
+    const currentPage = document.querySelector('.page.active')?.id;
+    if (currentPage) {
+        sessionStorage.setItem(`${currentPage}_scroll`, window.scrollY);
+    }
 
+    // Переключаем страницу
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
     });
+    
     const page = document.getElementById('page-' + pageId);
     if (page) {
         page.classList.add('active');
         window.location.hash = pageId;
     }
+    
     closeMenu();
     closeAccordion();
 
-    setTimeout(() => {
-        restoreScrollPosition(); // Восстанавливаем позицию при возврате
-    }, 50);
+    // Восстанавливаем позицию для новой страницы
+    restoreScrollPosition(pageId);
 }
 
 // ============================================
@@ -232,7 +242,6 @@ window.addEventListener('load', function() {
     generateGalleries();
     
     // Восстанавливаем позицию после полной загрузки
-    setTimeout(() => {
-        restoreScrollPosition();
-    }, 100);
+    const currentPage = document.querySelector('.page.active')?.id || 'about';
+    restoreScrollPosition(currentPage);
 });
