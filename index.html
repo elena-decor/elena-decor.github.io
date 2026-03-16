@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Декоратор Елена Нестерова | Оформление праздников, фотозоны, воздушые шары</title>
+    <title>Декоратор Елена Нестерова | Оформление праздников, фотозоны, воздушные шары</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="description" content="Елена Нестерова — декоратор. Создаю уют и красоту для вашего торжества в Обнинске и области, Калуге и Москве. Фотозоны, декор, шары.">
@@ -60,15 +60,6 @@
     </script>
 </head>
 <body>
-    <!-- Микроразметка -->
-    <div style="display:none;" itemscope itemtype="https://schema.org/LocalBusiness">
-        <span itemprop="name">Декоратор Елена Нестерова</span>
-        <span itemprop="areaServed">Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва</span>
-        <span itemprop="priceRange">Договорная</span>
-        <span itemprop="telephone">+79036367999</span>
-        <span itemprop="image">https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg</span>
-    </div>
-
     <div class="dev-banner">
         Сайт в стадии разработки — материалы постоянно дополняются и обновляются
     </div>
@@ -862,8 +853,8 @@
         </div>
 
         <!-- НЕВЕСТЫ -->
-        <div id="page-brides" class="page">
-            <h1>Невесты</h1>
+        <div id="page-brides" class="page" itemscope itemtype="https://schema.org/LocalBusiness">
+            <h1 itemprop="name">Невесты</h1>
             <button class="back-link" onclick="showPage('about')">← на главную</button>
             <div style="margin: 20px 0 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
                 <h3 style="color:#67bed9; font-weight:300; margin-bottom:10px;">Свадебные и вечерние платья в Обнинске</h3>
@@ -884,6 +875,10 @@
                 <a href="tel:+79036367999" style="text-decoration: none;"><img src="https://img.icons8.com/material-outlined/96/000000/phone--v1.png" alt="Телефон" style="width: 40px; height: 40px;"></a>
                 <a href="https://vk.com/wedding_salon_obninsk" target="_blank" style="text-decoration: none;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vk.svg" alt="VK" style="width: 40px; height: 40px; filter: invert(27%) sepia(70%) saturate(1200%) hue-rotate(180deg) brightness(90%);"></a>
             </div>
+            <meta itemprop="telephone" content="+79036367999">
+            <meta itemprop="areaServed" content="Обнинск, Боровск, Жуков, Белоусово, Балабаново, Калуга, Наро-Фоминск, Москва">
+            <meta itemprop="priceRange" content="Договорная">
+            <meta itemprop="image" content="https://i.postimg.cc/BQhxn6hQ/1N0A0644.jpg">
         </div>
 
         <!-- КОНТАКТЫ -->
@@ -935,9 +930,9 @@
     </div>
 
     <!-- ПОПАП -->
-    <div id="photoModal" class="modal" onclick="closeModal()">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div id="photoModal" class="modal" onclick="closeModal()" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+        <span class="close" onclick="closeModal()" role="button" tabindex="0" aria-label="Закрыть">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Увеличенное фото">
     </div>
 
     <div class="city-info">Основные проекты — в Обнинске и городах Калужской области. Также оформляю праздники в Наро‑Фоминске и с радостью выезжаю в Москву.</div>
