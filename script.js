@@ -60,8 +60,8 @@ function restoreScrollPosition() {
 }
 
 function showPage(pageId) {
-    saveScrollPosition(); // сохраняем где были
-    
+    // saveScrollPosition(); // ← закомментировано, убрано мигание
+
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
     });
@@ -72,10 +72,10 @@ function showPage(pageId) {
     }
     closeMenu();
     closeAccordion();
-    
-    setTimeout(() => {
-        restoreScrollPosition(); // возвращаемся туда, где были
-    }, 50);
+
+    // setTimeout(() => {
+    //     restoreScrollPosition(); // ← закомментировано
+    // }, 50);
 }
 
 // ============================================
