@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 20px 20px 120px 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ПЛАВАЮЩАЯ КНОПКА МЕНЮ */
+.menu-button {
+    position: fixed;
+    bottom: 110px;
+    right: 25px;
+    min-width: 90px;
+    height: 50px;
+    background: #67bed9;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+    background: #4a9bbf;
+}
+
+.menu-icon {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+/* ВЫПЛЫВАЮЩАЯ ПАНЕЛЬ */
+.sidenav {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+    z-index: 101;
+    padding: 50px 20px;
+    transition: left 0.3s ease;
+    border-right: 1px solid #f0f0f0;
+    overflow-y: auto;
+}
+
+.sidenav.open {
+    left: 0;
+}
+
+.sidenav h3 {
+    font-size: 18px;
+    font-weight: 300;
+    color: #67bed9;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sidenav ul {
+    list-style: none;
+}
+
+.sidenav li {
+    margin-bottom: 15px;
+}
+
+/* Стили для кнопок в меню */
+.sidenav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #f5f5f5;
+    font-family: inherit;
+}
+
+.sidenav button:hover {
+    color: #67bed9;
+    padding-left: 10px;
+}
+
+/* Затемнение фона */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+    display: none;
+    backdrop-filter: blur(3px);
+}
+
+.overlay.show {
+    display: block;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* СТРАНИЦЫ */
+.page {
+    display: none;
+    contain: content;
+    will-change: transform;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Плашка о разработке */
+.dev-banner {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 40px;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ГЛАВНАЯ СТРАНИЦА */
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+.about-photo {
+    flex: 1 1 300px;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.about-text h1 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.about-highlight {
+    color: #67bed9;
+    font-weight: 400;
+}
+
+/* ===== АДАПТИВНАЯ СЕТКА ===== */
+.page h1 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #222;
+    text-align: center;
+}
+
+.page h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 40px 0 20px;
+    color: #444;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 0 30px 0;
+}
+
+/* ===== MASONRY КАК В PINTEREST ===== */
+.row.masonry {
+    display: block;
+    column-count: 2;
+    column-gap: 15px;
+}
+
+@media (min-width: 600px) {
+    .row.masonry {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 900px) {
+    .row.masonry {
+        column-count: 4;
+    }
+}
+
+.row.masonry .column {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+
+.row.masonry .column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.row.masonry .column img:hover {
+    transform: scale(1.02);
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #eee;
+    display: block;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.project-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-info {
+    padding: 12px 16px 8px 16px;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.project-tags {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 8px;
+}
+
+/* Стили для кнопок "назад" */
+.back-link {
+    background: none;
+    border: none;
+    display: inline-block;
+    margin: 20px 0 30px;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-family: inherit;
+}
+
+.back-link:hover {
+    color: #67bed9;
+}
+
+.dev-section {
+    background: white;
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dev-section h3 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.dev-section p {
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* ЗАКРЕПЛЁННАЯ ПЛАШКА */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #eee;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    padding: 15px 20px;
+}
+
+.accordion-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.accordion-header h3 {
+    font-weight: 300;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.accordion-arrow {
+    font-size: 20px;
+    color: #67bed9;
+    transition: transform 0.3s ease;
+}
+
+.accordion-arrow.open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 25px;
+}
+
+.accordion-content.open {
+    max-height: none;
+    height: auto;
+    padding: 0 25px 25px 25px;
+}
+
+.qform-container {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 20px 100px 20px;
+    }
+    .menu-button {
+        bottom: 100px;
+    }
+    
+    .accordion-header h3 {
+        font-size: 16px;
+    }
+    
+    .accordion-content.open {
+        max-height: none;
+        height: auto;
+    }
+}
+
+/* СТИЛИ ДЛЯ ПОПАПА */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.close:hover {
+    color: #67bed9;
+}
+
+/* ЗАЩИТА ФОТО */
+img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+.city-info {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.protection-note {
+    color: #ccc;
+    font-size: 11px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* СПЕЦИАЛЬНО ДЛЯ РАЗДЕЛА ШАРЫ */
+#page-balloons .column {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    #page-balloons .column {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* ===== ЛИПКАЯ КНОПКА ДЛЯ ВСЕХ ПРОЕКТОВ ===== */
+[id^="page-balloons-"] .back-to-balloons,
+#page-mini-photozones .back-to-balloons,
+#page-green-birthday .back-to-balloons,
+#page-green-day .back-to-balloons,
+#page-superheroes .back-to-balloons,
+#page-korobka-surpris .back-to-balloons,
+#page-powder-white .back-to-balloons,
+#page-vypusk-karas .back-to-balloons,
+#page-malyshka .back-to-balloons,
+#page-malysh .back-to-balloons,
+#page-mimosa-march .back-to-balloons,
+#page-kot-dlya-kota .back-to-balloons,
+#page-yagodny-miks .back-to-balloons,
+#page-muz-instrument .back-to-balloons,
+#page-aist .back-to-balloons,
+#page-hearts .back-to-balloons,
+#page-minecraft .back-to-balloons,
+#page-pikachu .back-to-balloons,
+#page-balloons-edinorog .back-to-balloons {
+    position: sticky;
+    top: 0;
+    background: #fafafa;
+    padding: 15px 0;
+    z-index: 10;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+    backdrop-filter: blur(5px);
+}
+
+[id^="page-balloons-"] .back-to-balloons button,
+#page-mini-photozones .back-to-balloons button,
+#page-green-birthday .back-to-balloons button,
+#page-green-day .back-to-balloons button,
+#page-superheroes .back-to-balloons button,
+#page-korobka-surpris .back-to-balloons button,
+#page-powder-white .back-to-balloons button,
+#page-vypusk-karas .back-to-balloons button,
+#page-malyshka .back-to-balloons button,
+#page-malysh .back-to-balloons button,
+#page-mimosa-march .back-to-balloons button,
+#page-kot-dlya-kota .back-to-balloons button,
+#page-yagodny-miks .back-to-balloons button,
+#page-muz-instrument .back-to-balloons button,
+#page-aist .back-to-balloons button,
+#page-hearts .back-to-balloons button,
+#page-minecraft .back-to-balloons button,
+#page-pikachu .back-to-balloons button,
+#page-balloons-edinorog .back-to-balloons button {
+    color: #67bed9;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+[id^="page-balloons-"] .back-to-balloons button:hover,
+#page-mini-photozones .back-to-balloons button:hover,
+#page-green-birthday .back-to-balloons button:hover,
+#page-green-day .back-to-balloons button:hover,
+#page-superheroes .back-to-balloons button:hover,
+#page-korobka-surpris .back-to-balloons button:hover,
+#page-powder-white .back-to-balloons button:hover,
+#page-vypusk-karas .back-to-balloons button:hover,
+#page-malyshka .back-to-balloons button:hover,
+#page-malysh .back-to-balloons button:hover,
+#page-mimosa-march .back-to-balloons button:hover,
+#page-kot-dlya-kota .back-to-balloons button:hover,
+#page-yagodny-miks .back-to-balloons button:hover,
+#page-muz-instrument .back-to-balloons button:hover,
+#page-aist .back-to-balloons button:hover,
+#page-hearts .back-to-balloons button:hover,
+#page-minecraft .back-to-balloons button:hover,
+#page-pikachu .back-to-balloons button:hover,
+#page-balloons-edinorog .back-to-balloons button:hover {
+    text-decoration: underline;
+}
+
+/* Исправление для модального окна формы */
+.qform-modal,
+[class*="qform"] .modal-content {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    top: 5vh !important;
+    transform: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10px;
+}
