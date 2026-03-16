@@ -614,3 +614,27 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 10px;
 }
+
+/* ===== ИСПРАВЛЕНИЕ ПРОБЛЕМ С КЛИКАМИ ===== */
+.project-card {
+    cursor: pointer;
+}
+
+.project-card img {
+    pointer-events: none; /* Картинка не перехватывает клики */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.project-info {
+    cursor: pointer;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .project-card img,
+    .project-info {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
