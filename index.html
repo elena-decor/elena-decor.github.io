@@ -573,7 +573,8 @@
         #page-balloons-edinorog .back-to-balloons,
         #page-green-room .back-to-balloons,
         #page-pine-river-gender .back-to-balloons,
-        #page-pine-river-nature .back-to-balloons {
+        #page-pine-river-nature .back-to-balloons,
+        #page-sochnaya-fuksiya .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -605,7 +606,8 @@
         #page-balloons-edinorog .back-to-balloons button,
         #page-green-room .back-to-balloons button,
         #page-pine-river-gender .back-to-balloons button,
-        #page-pine-river-nature .back-to-balloons button {
+        #page-pine-river-nature .back-to-balloons button,
+        #page-sochnaya-fuksiya .back-to-balloons button {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -639,7 +641,8 @@
         #page-balloons-edinorog .back-to-balloons button:hover,
         #page-green-room .back-to-balloons button:hover,
         #page-pine-river-gender .back-to-balloons button:hover,
-        #page-pine-river-nature .back-to-balloons button:hover {
+        #page-pine-river-nature .back-to-balloons button:hover,
+        #page-sochnaya-fuksiya .back-to-balloons button:hover {
             text-decoration: underline;
         }
     </style>
@@ -934,7 +937,7 @@
                     </a>
                 </div>
                 
-                <!-- Green room by V and E (НОВЫЙ ПРОЕКТ) -->
+                <!-- Green room by V and E -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('green-room')">
                         <img class="project-cover" src="/images/green-room/green_wall (1).JPG" loading="lazy" decoding="async" alt="Green room by V and E">
@@ -946,7 +949,7 @@
                 </div>
             </div>
 
-            <!-- Pine River (НОВАЯ ЛОКАЦИЯ) -->
+            <!-- Pine River -->
             <h2>Pine River</h2>
             <div class="row masonry">
                 <!-- Гендер пати -->
@@ -1168,7 +1171,7 @@
             <div class="row masonry" id="green-day-gallery"></div>
         </div>
 
-        <!-- Green room by V and E (НОВАЯ ГАЛЕРЕЯ) -->
+        <!-- Green room by V and E -->
         <div id="page-green-room" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1177,7 +1180,7 @@
             <div class="row masonry" id="green-room-gallery"></div>
         </div>
 
-        <!-- Pine River - Гендер пати (НОВАЯ ГАЛЕРЕЯ) -->
+        <!-- Pine River - Гендер пати -->
         <div id="page-pine-river-gender" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1186,7 +1189,7 @@
             <div class="row masonry" id="pine-river-gender-gallery"></div>
         </div>
 
-        <!-- Pine River - Нежная гипсофила (НОВАЯ ГАЛЕРЕЯ) -->
+        <!-- Pine River - Нежная гипсофила -->
         <div id="page-pine-river-nature" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('decor')">← Декор</button>
@@ -1345,6 +1348,16 @@
                         <img src="/images/fruckti/arbuz (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Ягодный микс">
                         <div class="project-info">
                             <div class="project-title">Ягодный микс</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Сочная фуксия (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('sochnaya-fuksiya')">
+                        <img src="/images/fushe/fushe (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сочная фуксия">
+                        <div class="project-info">
+                            <div class="project-title">Сочная фуксия</div>
                         </div>
                     </div>
                 </div>
@@ -1512,6 +1525,15 @@
             <div class="row masonry" id="vypusk-karas-gallery"></div>
         </div>
 
+        <!-- СОЧНАЯ ФУКСИЯ (5 фото) (НОВАЯ ГАЛЕРЕЯ) -->
+        <div id="page-sochnaya-fuksiya" class="page">
+            <div class="back-to-balloons">
+                <button onclick="showPage('balloons')">← Шары</button>
+            </div>
+            <h1>Сочная фуксия</h1>
+            <div class="row masonry" id="sochnaya-fuksiya-gallery"></div>
+        </div>
+
         <!-- НЕВЕСТЫ -->
         <div id="page-brides" class="page">
             <h1>Невесты</h1>
@@ -1626,7 +1648,9 @@
             // НОВЫЕ ГАЛЕРЕИ
             { id: 'green-room-gallery', path: '/images/green-room/green_wall', count: 17, extension: 'JPG' },
             { id: 'pine-river-gender-gallery', path: '/images/pine-river/gender/pine-river-gender', count: 6 },
-            { id: 'pine-river-nature-gallery', path: '/images/pine-river/nature/nature', count: 30 }
+            { id: 'pine-river-nature-gallery', path: '/images/pine-river/nature/nature', count: 30 },
+            // Сочная фуксия (5 фото)
+            { id: 'sochnaya-fuksiya-gallery', path: '/images/fushe/fushe', count: 5 }
         ];
 
         // ============================================
