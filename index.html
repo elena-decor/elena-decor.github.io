@@ -577,7 +577,8 @@
         #page-sochnaya-fuksiya .back-to-balloons,
         #page-cocktail-party .back-to-balloons,
         #page-drakosha .back-to-balloons,
-        #page-sochnoe-godovasie .back-to-balloons {
+        #page-sochnoe-godovasie .back-to-balloons,
+        #page-better-together .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -613,7 +614,8 @@
         #page-sochnaya-fuksiya .back-to-balloons button,
         #page-cocktail-party .back-to-balloons button,
         #page-drakosha .back-to-balloons button,
-        #page-sochnoe-godovasie .back-to-balloons button {
+        #page-sochnoe-godovasie .back-to-balloons button,
+        #page-better-together .back-to-balloons button {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -651,7 +653,8 @@
         #page-sochnaya-fuksiya .back-to-balloons button:hover,
         #page-cocktail-party .back-to-balloons button:hover,
         #page-drakosha .back-to-balloons button:hover,
-        #page-sochnoe-godovasie .back-to-balloons button:hover {
+        #page-sochnoe-godovasie .back-to-balloons button:hover,
+        #page-better-together .back-to-balloons button:hover {
             text-decoration: underline;
         }
     </style>
@@ -861,6 +864,17 @@
                             <div class="project-tags">президиум • выездная • п-образная арка • гостевые столы • схема рассадки • салфетки • селфи-зеркало</div>
                         </div>
                     </a>
+                </div>
+                
+                <!-- Better Together (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('better-together')">
+                        <img class="project-cover" src="/images/lodochnaya/vmeste/vmeste (45).jpg" loading="lazy" decoding="async" alt="Better Together">
+                        <div class="project-info">
+                            <div class="project-title">Better Together</div>
+                            <div class="project-tags">президиум • гостевые столы • выездная регистрация • П-образная арка • схема рассадки • неон</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1207,6 +1221,15 @@
             <div class="row masonry" id="pine-river-nature-gallery"></div>
         </div>
 
+        <!-- Better Together (НОВАЯ ГАЛЕРЕЯ) -->
+        <div id="page-better-together" class="page">
+            <div class="back-to-balloons">
+                <button onclick="showPage('decor')">← Декор</button>
+            </div>
+            <h1>Better Together</h1>
+            <div class="row masonry" id="better-together-gallery"></div>
+        </div>
+
         <!-- ШАРЫ (список проектов) -->
         <div id="page-balloons" class="page">
             <h1>Шары</h1>
@@ -1248,7 +1271,7 @@
                     </div>
                 </div>
                 
-                <!-- Сочное годовасие (НОВЫЙ ПРОЕКТ) -->
+                <!-- Сочное годовасие -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('sochnoe-godovasie')">
                         <img src="/images/one year/one year (8).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сочное годовасие">
@@ -1319,7 +1342,7 @@
                     </div>
                 </div>
                 
-                <!-- Дракоша (НОВЫЙ ПРОЕКТ) -->
+                <!-- Дракоша -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('drakosha')">
                         <img src="/images/dracon/dracon (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Дракоша">
@@ -1408,7 +1431,7 @@
                     </div>
                 </div>
                 
-                <!-- Cocktail Party (НОВЫЙ ПРОЕКТ) -->
+                <!-- Cocktail Party -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('cocktail-party')">
                         <img src="/images/party/party (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Cocktail Party">
@@ -1573,7 +1596,7 @@
             <div class="row masonry" id="sochnaya-fuksiya-gallery"></div>
         </div>
 
-        <!-- COCKTAIL PARTY (6 фото) (НОВЫЙ ПРОЕКТ) -->
+        <!-- COCKTAIL PARTY (6 фото) -->
         <div id="page-cocktail-party" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1582,7 +1605,7 @@
             <div class="row masonry" id="cocktail-party-gallery"></div>
         </div>
 
-        <!-- ДРАКОША (5 фото) (НОВЫЙ ПРОЕКТ) -->
+        <!-- ДРАКОША (5 фото) -->
         <div id="page-drakosha" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1591,7 +1614,7 @@
             <div class="row masonry" id="drakosha-gallery"></div>
         </div>
 
-        <!-- СОЧНОЕ ГОДОВАСИЕ (13 фото) (НОВЫЙ ПРОЕКТ) -->
+        <!-- СОЧНОЕ ГОДОВАСИЕ (13 фото) -->
         <div id="page-sochnoe-godovasie" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
@@ -1719,7 +1742,9 @@
             // НОВЫЕ ГАЛЕРЕИ (пакет №2)
             { id: 'cocktail-party-gallery', path: '/images/party/party', count: 6 },
             { id: 'drakosha-gallery', path: '/images/dracon/dracon', count: 5 },
-            { id: 'sochnoe-godovasie-gallery', path: '/images/one year/one year', count: 13 }
+            { id: 'sochnoe-godovasie-gallery', path: '/images/one year/one year', count: 13 },
+            // НОВАЯ ГАЛЕРЕЯ (пакет №3)
+            { id: 'better-together-gallery', path: '/images/lodochnaya/vmeste/vmeste', count: 46 }
         ];
 
         // ============================================
