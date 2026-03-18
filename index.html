@@ -574,7 +574,10 @@
         #page-green-room .back-to-balloons,
         #page-pine-river-gender .back-to-balloons,
         #page-pine-river-nature .back-to-balloons,
-        #page-sochnaya-fuksiya .back-to-balloons {
+        #page-sochnaya-fuksiya .back-to-balloons,
+        #page-cocktail-party .back-to-balloons,
+        #page-drakosha .back-to-balloons,
+        #page-sochnoe-godovasie .back-to-balloons {
             position: sticky;
             top: 0;
             background: #fafafa;
@@ -607,7 +610,10 @@
         #page-green-room .back-to-balloons button,
         #page-pine-river-gender .back-to-balloons button,
         #page-pine-river-nature .back-to-balloons button,
-        #page-sochnaya-fuksiya .back-to-balloons button {
+        #page-sochnaya-fuksiya .back-to-balloons button,
+        #page-cocktail-party .back-to-balloons button,
+        #page-drakosha .back-to-balloons button,
+        #page-sochnoe-godovasie .back-to-balloons button {
             color: #67bed9;
             text-decoration: none;
             font-size: 16px;
@@ -642,7 +648,10 @@
         #page-green-room .back-to-balloons button:hover,
         #page-pine-river-gender .back-to-balloons button:hover,
         #page-pine-river-nature .back-to-balloons button:hover,
-        #page-sochnaya-fuksiya .back-to-balloons button:hover {
+        #page-sochnaya-fuksiya .back-to-balloons button:hover,
+        #page-cocktail-party .back-to-balloons button:hover,
+        #page-drakosha .back-to-balloons button:hover,
+        #page-sochnoe-godovasie .back-to-balloons button:hover {
             text-decoration: underline;
         }
     </style>
@@ -1238,6 +1247,16 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Сочное годовасие (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('sochnoe-godovasie')">
+                        <img src="/images/one year/one year (8).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сочное годовасие">
+                        <div class="project-info">
+                            <div class="project-title">Сочное годовасие</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Мир героев 🦸‍♂️ -->
@@ -1299,6 +1318,16 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Дракоша (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('drakosha')">
+                        <img src="/images/dracon/dracon (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Дракоша">
+                        <div class="project-info">
+                            <div class="project-title">Дракоша</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Мир увлечений ⚽🎸 -->
@@ -1352,7 +1381,7 @@
                     </div>
                 </div>
                 
-                <!-- Сочная фуксия (НОВЫЙ ПРОЕКТ) -->
+                <!-- Сочная фуксия -->
                 <div class="column">
                     <div class="project-card" onclick="showPage('sochnaya-fuksiya')">
                         <img src="/images/fushe/fushe (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сочная фуксия">
@@ -1375,6 +1404,16 @@
                         <img src="/images/heart/heart (12).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Сердца">
                         <div class="project-info">
                             <div class="project-title">Сердца</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cocktail Party (НОВЫЙ ПРОЕКТ) -->
+                <div class="column">
+                    <div class="project-card" onclick="showPage('cocktail-party')">
+                        <img src="/images/party/party (1).jpg" style="width:100%; border-radius:12px;" loading="lazy" decoding="async" alt="Cocktail Party">
+                        <div class="project-info">
+                            <div class="project-title">Cocktail Party</div>
                         </div>
                     </div>
                 </div>
@@ -1525,13 +1564,40 @@
             <div class="row masonry" id="vypusk-karas-gallery"></div>
         </div>
 
-        <!-- СОЧНАЯ ФУКСИЯ (5 фото) (НОВАЯ ГАЛЕРЕЯ) -->
+        <!-- СОЧНАЯ ФУКСИЯ (5 фото) -->
         <div id="page-sochnaya-fuksiya" class="page">
             <div class="back-to-balloons">
                 <button onclick="showPage('balloons')">← Шары</button>
             </div>
             <h1>Сочная фуксия</h1>
             <div class="row masonry" id="sochnaya-fuksiya-gallery"></div>
+        </div>
+
+        <!-- COCKTAIL PARTY (6 фото) (НОВЫЙ ПРОЕКТ) -->
+        <div id="page-cocktail-party" class="page">
+            <div class="back-to-balloons">
+                <button onclick="showPage('balloons')">← Шары</button>
+            </div>
+            <h1>Cocktail Party</h1>
+            <div class="row masonry" id="cocktail-party-gallery"></div>
+        </div>
+
+        <!-- ДРАКОША (5 фото) (НОВЫЙ ПРОЕКТ) -->
+        <div id="page-drakosha" class="page">
+            <div class="back-to-balloons">
+                <button onclick="showPage('balloons')">← Шары</button>
+            </div>
+            <h1>Дракоша</h1>
+            <div class="row masonry" id="drakosha-gallery"></div>
+        </div>
+
+        <!-- СОЧНОЕ ГОДОВАСИЕ (13 фото) (НОВЫЙ ПРОЕКТ) -->
+        <div id="page-sochnoe-godovasie" class="page">
+            <div class="back-to-balloons">
+                <button onclick="showPage('balloons')">← Шары</button>
+            </div>
+            <h1>Сочное годовасие</h1>
+            <div class="row masonry" id="sochnoe-godovasie-gallery"></div>
         </div>
 
         <!-- НЕВЕСТЫ -->
@@ -1645,12 +1711,15 @@
             { id: 'mimosa-march-gallery', path: '/images/march/March', count: 21 },
             { id: 'vypusk-karas-gallery', path: '/images/karas/karas-vipusk/karas-vipusk', count: 18 },
             { id: 'powder-white-gallery', path: '/images/fazenda/powder and white/powder and white', count: 22 },
-            // НОВЫЕ ГАЛЕРЕИ
+            // НОВЫЕ ГАЛЕРЕИ (пакет №1)
             { id: 'green-room-gallery', path: '/images/green-room/green_wall', count: 17, extension: 'JPG' },
             { id: 'pine-river-gender-gallery', path: '/images/pine-river/gender/pine-river-gender', count: 6 },
             { id: 'pine-river-nature-gallery', path: '/images/pine-river/nature/nature', count: 30 },
-            // Сочная фуксия (5 фото)
-            { id: 'sochnaya-fuksiya-gallery', path: '/images/fushe/fushe', count: 5 }
+            { id: 'sochnaya-fuksiya-gallery', path: '/images/fushe/fushe', count: 5 },
+            // НОВЫЕ ГАЛЕРЕИ (пакет №2)
+            { id: 'cocktail-party-gallery', path: '/images/party/party', count: 6 },
+            { id: 'drakosha-gallery', path: '/images/dracon/dracon', count: 5 },
+            { id: 'sochnoe-godovasie-gallery', path: '/images/one year/one year', count: 13 }
         ];
 
         // ============================================
